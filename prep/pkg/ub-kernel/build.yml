@@ -1,0 +1,4 @@
+image: ub-kernel
+network: true
+arches:
+  - amd64
