@@ -1,0 +1,8 @@
+*.efi
+*.img
+*.tar
+*.swp
+*.zip
+*-kernel
+*-cmdline
+*-state
