@@ -1,6 +1,4 @@
 kernel:
-  image: rneugeba/fc-kernel:0cc56c7316d8e13425fd3991c4d9ebe9d10d617e
-  # This does not extract kernel modules
-  tar: none
+  image: rneugeba/fc-kernel:e4194bce6fd6835291c99e5e08b372fd6541aa2a
 init:
   - rneugeba/init-exit:86f092eca2b5108c39de8908545846b4b2e70733
