@@ -1,0 +1,49 @@
+From 2032af968cd7c319f7f4f4712e8597c242f25549 Mon Sep 17 00:00:00 2001
+From: Rolf Neugebauer <rn@rneugeba.io>
+Date: Wed, 23 Jan 2019 20:14:35 +0000
+Subject: [PATCH] vmm:Add a magic debug port similar to qemu
+
+qemu has an optional debug port, defaulting to 0xf4 to
+cause an immidiate exit from the VMM. Add this to firecracker
+
+DO NOT MERGE THIS
+
+Signed-off-by: Rolf Neugebauer <rn@rneugeba.io>
+---
+ vmm/src/lib.rs | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/vmm/src/lib.rs b/vmm/src/lib.rs
+index 079b591..5a99033 100644
+--- a/vmm/src/lib.rs
++++ b/vmm/src/lib.rs
+@@ -52,6 +52,7 @@ use std::fmt::{Display, Formatter};
+ use std::fs::{metadata, File, OpenOptions};
+ use std::os::unix::io::{AsRawFd, RawFd};
+ use std::path::PathBuf;
++use std::process;
+ use std::result;
+ use std::sync::atomic::{AtomicUsize, Ordering, ATOMIC_USIZE_INIT};
+ use std::sync::mpsc::{channel, Receiver, Sender, TryRecvError};
+@@ -88,6 +89,7 @@ use vmm_config::vsock::{VsockDeviceConfig, VsockDeviceConfigs, VsockError};
+ use vstate::{Vcpu, Vm};
+ 
+ const DEFAULT_KERNEL_CMDLINE: &str = "reboot=k panic=1 pci=off nomodules 8250.nr_uarts=0";
++const MAGIC_DEBUG_EXIT: u16 = 0x00f4;
+ const MAGIC_IOPORT_SIGNAL_GUEST_BOOT_COMPLETE: u16 = 0x03f0;
+ const MAGIC_VALUE_SIGNAL_GUEST_BOOT_COMPLETE: u8 = 123;
+ const VCPU_RTSIG_OFFSET: i32 = 0;
+@@ -965,6 +967,10 @@ impl Vmm {
+                                         METRICS.vcpu.exit_io_in.inc();
+                                     }
+                                     VcpuExit::IoOut(addr, data) => {
++                                        if addr == MAGIC_DEBUG_EXIT
++                                        {
++                                            process::exit(0);
++                                        }
+                                         if addr == MAGIC_IOPORT_SIGNAL_GUEST_BOOT_COMPLETE
+                                             && data[0] == MAGIC_VALUE_SIGNAL_GUEST_BOOT_COMPLETE
+                                         {
+-- 
+2.17.1
+
