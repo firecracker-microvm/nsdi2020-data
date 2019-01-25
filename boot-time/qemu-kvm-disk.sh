@@ -5,7 +5,6 @@
 qemu-system-x86_64 \
     ${QEMU_COMMON} \
     -no-acpi \
-    -machine q35 \
     -device virtio-blk-pci,drive=d0 \
         -drive if=none,id=d0,format=raw,file=../img/boot-time-disk.img \
     -kernel ../img/boot-time-pci-vmlinuz \

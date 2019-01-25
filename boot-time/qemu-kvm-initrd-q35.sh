@@ -5,6 +5,7 @@
 qemu-system-x86_64 \
     ${QEMU_COMMON} \
     -no-acpi \
+    -machine q35 \
     -kernel ../img/boot-time-pci-vmlinuz \
     -initrd ../img/boot-time-initrd.img \
     -append "init=/init"
