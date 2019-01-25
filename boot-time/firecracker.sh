@@ -17,7 +17,7 @@ curl -s --unix-socket "$SOCK" -i \
         \"mem_size_mib\": 512,
         \"cpu_template\": \"T2\",
         \"ht_enabled\": true
-    }"
+    }"  > /dev/null
 
 # Set kernel
 curl -s --unix-socket "$SOCK" -i \
@@ -26,8 +26,8 @@ curl -s --unix-socket "$SOCK" -i \
      -H "Content-Type: application/json" \
          -d "{
         \"kernel_image_path\": \"$KERNEL\",
-        \"boot_args\": \"console=ttyS0 reboot=k panic=1 pci=off init=/init\"
-    }"
+        \"boot_args\": \"reboot=k panic=1 pci=off init=/init\"
+    }" > /dev/null
 
 # set rootfs
 curl -s --unix-socket "$SOCK" -i \
@@ -39,7 +39,7 @@ curl -s --unix-socket "$SOCK" -i \
         \"path_on_host\": \"$ROOTFS\",
         \"is_root_device\": true,
         \"is_read_only\": false
-    }"
+    }"  > /dev/null
 
 # start
 curl -s --unix-socket "$SOCK" -i \
@@ -48,7 +48,7 @@ curl -s --unix-socket "$SOCK" -i \
      -H  "Content-Type: application/json" \
          -d "{
         \"action_type\": \"InstanceStart\"
-     }"
+     }"  > /dev/null
 
 wait $FC_PID
 rm ${SOCK}
