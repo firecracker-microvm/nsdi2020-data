@@ -56,8 +56,11 @@ RUN ./configure \
 
 RUN make -j "$(getconf _NPROCESSORS_ONLN)"
 
+RUN apt install -y seabios
+
 RUN mkdir -p /res/bios && \
     cp x86_64-softmmu/qemu-system-x86_64 /res && \
-    cp pc-bios/* /res/bios || true
+    cp -r /usr/share/seabios/* /res/bios && \
+    cp pc-bios/efi-e1000.rom /res/bios
 
 ENTRYPOINT cp -r /res/* /out
