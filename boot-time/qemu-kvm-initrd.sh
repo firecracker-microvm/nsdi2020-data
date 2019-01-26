@@ -2,8 +2,7 @@
 
 . ./qemu-kvm-common.sh
 
-qemu-system-x86_64 \
-    ${QEMU_COMMON} \
+${QEMU} \
     -no-acpi \
     -kernel ../img/boot-time-pci-vmlinuz \
     -initrd ../img/boot-time-initrd.img \

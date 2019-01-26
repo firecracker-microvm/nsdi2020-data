@@ -2,8 +2,7 @@
 
 . ./qemu-kvm-common.sh
 
-qemu-system-x86_64 \
-    ${QEMU_COMMON} \
+${QEMU} \
     -no-acpi \
     -machine q35 \
     -device virtio-blk-pci,drive=d0 \

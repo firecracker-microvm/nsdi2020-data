@@ -2,8 +2,7 @@
 
 . ./qemu-kvm-common.sh
 
-qemu-system-x86_64 \
-    ${QEMU_COMMON} \
+${QEMU} \
     -no-acpi \
     -device virtio-blk-pci,drive=d0 \
         -drive if=none,id=d0,format=raw,file=../img/boot-time-disk.img \
