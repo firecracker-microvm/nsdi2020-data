@@ -4,7 +4,8 @@ rand=$RANDOM
 FC=../bin/firecracker
 LOGFILE=./fc-$rand.log
 SOCK=./fc-$rand.sock
-
+CORES=1
+MEM=256
 
 while [ $# -gt 0 ]; do
     case $1 in
@@ -13,6 +14,10 @@ while [ $# -gt 0 ]; do
         -k) shift; KERNEL=$1
             ;;
         -r) shift; ROOTFS=$1
+            ;;
+        -c) shift; CORES=$1
+            ;;
+        -m) shift; MEM=$1
             ;;
         -t) shift; TIMEFILE=$1
             ;;
@@ -38,8 +43,8 @@ curl -s --unix-socket "$SOCK" -i \
      -H "accept: application/json" \
      -H "Content-Type: application/json" \
          -d "{
-        \"vcpu_count\": 1,
-        \"mem_size_mib\": 512,
+        \"vcpu_count\": $CORES,
+        \"mem_size_mib\": $MEM,
         \"cpu_template\": \"T2\",
         \"ht_enabled\": true
     }" > /dev/null

@@ -3,7 +3,10 @@
 rand=$RANDOM
 QEMU=../bin/qemu-system-x86_64
 LOGFILE=./qemu-$rand.log
-MACHINE=pc
+CORES=1
+MEM=256
+ARCH=pc
+
 
 while [ $# -gt 0 ]; do
     case $1 in
@@ -13,11 +16,15 @@ while [ $# -gt 0 ]; do
             ;;
         -r) shift; ROOTFS=$1
             ;;
+        -c) shift; CORES=$1
+            ;;
+        -m) shift; MEM=$1
+            ;;
         -t) shift; TIMEFILE=$1
             ;;
         -l) shift; LOGFILE=$1
             ;;
-        -m) shift; MACHINE=$1
+        -a) shift; ARCH=$1
             ;;
         -d) DEBUG=yes
             ;;
@@ -30,11 +37,11 @@ done
 # Common QEMU command line options
 QEMU="$QEMU 
         -L ../bin/bios \
-        -smp 1 \
-        -m 512 \
+        -smp $CORES \
+        -m $MEM \
         -accel kvm \
         -cpu host \
-        -machine $MACHINE \
+        -machine $ARCH \
         -display none \
         -nographic \
         -vga none \
