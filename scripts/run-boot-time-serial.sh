@@ -4,6 +4,9 @@
 
 ITER=1000
 DIR=../data/
+CORES=1
+MEM=256
+
 
 while [ $# -gt 0 ]; do
     case $1 in
@@ -28,6 +31,8 @@ for i in $(seq ${ITER}); do
     ./start-fc.sh -b ../bin/firecracker \
                   -k ../img/boot-time-vmlinux \
                   -r ../img/boot-time-disk.img \
+                  -c $CORES \
+                  -m $MEM \
                   -t ${FC_RES}
     sleep 0.4
     killall firecracker 2> /dev/null
@@ -39,6 +44,8 @@ for i in $(seq ${ITER}); do
     ./start-qemu.sh -b ../bin/qemu-system-x86_64 \
                     -k ../img/boot-time-vmlinuz \
                     -r ../img/boot-time-disk.img \
+                    -c $CORES \
+                    -m $MEM \
                     -t ${QEMU_RES}
     sleep 0.4
     killall qemu-system-x86_64 2> /dev/null
