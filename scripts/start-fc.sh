@@ -1,14 +1,15 @@
-#! /bin/bash
+#! /bin/bash -e
 
-rand=$RANDOM
+# defaults
+ID=$RANDOM
 FC=../bin/firecracker
-LOGFILE=./fc-$rand.log
-SOCK=./fc-$rand.sock
 CORES=1
 MEM=256
 
 while [ $# -gt 0 ]; do
     case $1 in
+        -i) shift; ID=$1
+            ;;
         -b) shift; FC=$1
             ;;
         -k) shift; KERNEL=$1
@@ -31,65 +32,89 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-# TODO: Enable serial console output on debug
+LOGFILE="/tmp/fc-$ID.log"
+SOCK="/tmp/fc-$ID.sock"
+rm -f "$SOCK"
+
+CURL=(curl --silent --show-error --header Content-Type:application/json --unix-socket "${SOCK}" --write-out "HTTP %{http_code}")
+
+curl_put() {
+    local URL_PATH="$1"
+    local OUTPUT RC
+    OUTPUT="$("${CURL[@]}" -X PUT --data @- "http://localhost/${URL_PATH#/}" 2>&1)"
+    RC="$?"
+    if [ "$RC" -ne 0 ]; then
+        echo "Error: curl PUT ${URL_PATH} failed with exit code $RC, output:"
+        echo "$OUTPUT"
+        return 1
+    fi
+    # Error if output doesn't end with "HTTP 2xx"
+    if [[ "$OUTPUT" != *HTTP\ 2[0-9][0-9] ]]; then
+        echo "Error: curl PUT ${URL_PATH} failed with non-2xx HTTP status code, output:"
+        echo "$OUTPUT"
+        return 1
+    fi
+}
 
 us_start=$(($(date +%s%N)/1000))
-$FC --api-sock $SOCK 2> ${LOGFILE} &
+
+$FC --api-sock "$SOCK" 2> "$LOGFILE" &
 FC_PID=$!
 
-# Create VM
-curl -s --unix-socket "$SOCK" -i \
-     -X PUT "http://localhost/machine-config" \
-     -H "accept: application/json" \
-     -H "Content-Type: application/json" \
-         -d "{
-        \"vcpu_count\": $CORES,
-        \"mem_size_mib\": $MEM,
-        \"cpu_template\": \"T2\",
-        \"ht_enabled\": true
-    }" > /dev/null
+while [ ! -e "$SOCK" ]; do
+    sleep 0.001s
+done
 
-# Set kernel
-curl -s --unix-socket "$SOCK" -i \
-     -X PUT "http://localhost/boot-source" \
-     -H "accept: application/json" \
-     -H "Content-Type: application/json" \
-         -d "{
-        \"kernel_image_path\": \"$KERNEL\",
-        \"boot_args\": \"reboot=k panic=1 pci=off init=/init\"
-    }" > /dev/null
+# Create VM
+curl_put '/machine-config' <<EOF
+{
+    "vcpu_count": $CORES,
+    "mem_size_mib": $MEM,
+    "cpu_template": "T2",
+    "ht_enabled": true
+}
+EOF
+
+# Kernel
+KERNEL_ARGS="panic=1 pci=off reboot=k tsc=reliable ipv6.disable=1 init=/init"
+if [ "x$DEBUG" = "x" ]; then
+    KERNEL_ARGS="$KERNEL_ARGS quiet 8250.nr_uarts=0"
+else
+    KERNEL_ARGS="$KERNEL_ARGS console=ttyS0"
+fi
+curl_put '/boot-source' <<EOF
+{
+  "kernel_image_path": "$KERNEL",
+  "boot_args": "$KERNEL_ARGS"
+}
+EOF
 
 # set rootfs
-curl -s --unix-socket "$SOCK" -i \
-     -X PUT "http://localhost/drives/rootfs" \
-     -H "accept: application/json" \
-     -H "Content-Type: application/json" \
-         -d "{
-        \"drive_id\": \"rootfs\",
-        \"path_on_host\": \"$ROOTFS\",
-        \"is_root_device\": true,
-        \"is_read_only\": false
-    }" > /dev/null
+curl_put '/drives/1' <<EOF
+{
+  "drive_id": "1",
+  "path_on_host": "$ROOTFS",
+  "is_root_device": true,
+  "is_read_only": true
+}
+EOF
 
-# start
-curl -s --unix-socket "$SOCK" -i \
-     -X PUT "http://localhost/actions" \
-     -H  "accept: application/json" \
-     -H  "Content-Type: application/json" \
-         -d "{
-        \"action_type\": \"InstanceStart\"
-     }" > /dev/null
+curl_put '/actions' <<EOF
+{
+    "action_type": "InstanceStart"
+}
+EOF
 
-wait $FC_PID
+wait $FC_PID || true
 us_end=$(($(date +%s%N)/1000))
 
-fc_time=$(grep -oE '[0-9]+ ms' $LOGFILE | grep -oE '[0-9]+')
+fc_time=$(grep -oE '[0-9]+ ms' "$LOGFILE" | grep -oE '[0-9]+')
 us_time=$(expr $us_end - $us_start)
 
 if [ "x$TIMEFILE" = "x" ]; then
-    echo $us_time $fc_time
+    echo "$us_time $fc_time"
 else
-    echo $us_time $fc_time >> $TIMEFILE
+    echo "$us_time" "$fc_time" >> "$TIMEFILE"
 fi
 
-rm ${SOCK}
+rm "$SOCK"
