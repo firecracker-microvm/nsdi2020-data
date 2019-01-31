@@ -42,7 +42,7 @@ rm -f *.log
 killall qemu-system-x86_64 2> /dev/null
 for i in $(seq ${ITER}); do
     ./start-qemu.sh -b ../bin/qemu-system-x86_64 \
-                    -k ../img/boot-time-vmlinuz \
+                    -k ../img/boot-time-pci-vmlinuz \
                     -r ../img/boot-time-disk.img \
                     -c $CORES \
                     -m $MEM \
