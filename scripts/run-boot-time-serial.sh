@@ -38,6 +38,7 @@ for i in $(seq ${ITER}); do
     killall firecracker 2> /dev/null
 done
 rm -f *.log
+./gen-cdf.py ${FC_RES}
 
 killall qemu-system-x86_64 2> /dev/null
 for i in $(seq ${ITER}); do
@@ -51,10 +52,11 @@ for i in $(seq ${ITER}); do
     killall qemu-system-x86_64 2> /dev/null
 done
 rm -f *.log
+./gen-cdf.py ${QEMU_RES}
+
 
 # Munch the data
 echo "bootsecs,vmm" > ${RES}
-
 while IFS= read -r l; do
     # $l is in microseconds
     s=$(echo "scale=3; $l/1000000" | bc)
