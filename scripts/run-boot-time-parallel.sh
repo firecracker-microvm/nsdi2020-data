@@ -22,7 +22,7 @@ done
 
 mkdir -p ${DIR}
 
-FC_RES=${DIR}/boot-times-parallel-${PARALLEL}-firecracker.dat
+FC_RES=${DIR}/boot-times-parallel-${PARALLEL}-fc.dat
 QEMU_RES=${DIR}/boot-times-parallel-${PARALLEL}-qemu.dat
 RES=${DIR}/boot-times-parallel-${PARALLEL}.csv
 

@@ -20,7 +20,7 @@ done
 
 mkdir -p ${DIR}
 
-FC_RES=${DIR}/boot-times-serial-firecracker.dat
+FC_RES=${DIR}/boot-times-serial-fc.dat
 QEMU_RES=${DIR}/boot-times-serial-qemu.dat
 RES=${DIR}/boot-times-serial.csv
 
