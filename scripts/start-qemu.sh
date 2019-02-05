@@ -17,6 +17,8 @@ while [ $# -gt 0 ]; do
             ;;
         -r) shift; ROOTFS=$1
             ;;
+        -a) shift; RAMDISK=$1
+            ;;
         -c) shift; CORES=$1
             ;;
         -m) shift; MEM=$1
@@ -33,7 +35,7 @@ done
 
 
 # Common QEMU command line options
-QEMU="$QEMU 
+QEMU="$QEMU \
         -L ../bin/bios \
         -smp $CORES \
         -m $MEM \
@@ -55,13 +57,25 @@ else
     KERNEL_ARGS="$KERNEL_ARGS console=ttyS0"
 fi
 
+if [ "x$RAMDISK" != "x" ]; then
+    QEMU="$QEMU \
+        -initrd $RAMDISK \
+        "
+fi
+
+if [ "x$ROOTFS" != "x" ]; then
+    QEMU="$QEMU \
+        -device virtio-blk-pci,drive=d0 \
+        -drive if=none,id=d0,format=raw,readonly=on,file=$ROOTFS \
+        "
+    ROOT="root=/dev/vda"
+fi
+
 us_start=$(($(date +%s%N)/1000))
 
 ${QEMU} \
-    -device virtio-blk-pci,drive=d0 \
-        -drive if=none,id=d0,format=raw,readonly=on,file="$ROOTFS" \
     -kernel "$KERNEL" \
-    -append "root=/dev/vda init=/init $KERNEL_ARGS"
+    -append "$ROOT init=/init $KERNEL_ARGS"
 
 us_end=$(($(date +%s%N)/1000))
 us_time=$(expr $us_end - $us_start)
