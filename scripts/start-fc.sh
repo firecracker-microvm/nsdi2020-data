@@ -65,9 +65,18 @@ while [ ! -e "$SOCK" ]; do
     sleep 0.001s
 done
 
+# This script provides a full-featured bash implementation, and a fast Go implementation. Set
+# this to 'go' to get the fast one.
+CONFIG_IMPL=go
+
+if [ "$CONFIG_IMPL" = "go" ]; then
+    # Configure the VM by using the config-fc Go program
+    ./config-fc $SOCK
+else
+    # Configure the VM by calling the API with 'curl'
 # Create VM
 curl_put '/machine-config' <<EOF
-{
+{   
     "vcpu_count": $CORES,
     "mem_size_mib": $MEM,
     "cpu_template": "T2",
@@ -104,6 +113,8 @@ curl_put '/actions' <<EOF
     "action_type": "InstanceStart"
 }
 EOF
+
+fi 
 
 wait $FC_PID || true
 us_end=$(($(date +%s%N)/1000))
