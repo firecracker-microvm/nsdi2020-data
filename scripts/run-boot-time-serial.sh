@@ -29,7 +29,7 @@ rm -f ${FC_RES} ${QEMU_RES} ${RES}
 killall firecracker 2> /dev/null
 for i in $(seq ${ITER}); do
     ./start-fc.sh -b ../bin/firecracker \
-                  -k ../img/boot-time-vmlinux \
+                  -k ../img/boot-time-pci-vmlinux \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
                   -m $MEM \
