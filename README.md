@@ -16,6 +16,7 @@ The following should build everything:
 cd ./prep
 make -C firecracker
 make -C qemu
+make -C config-fc
 make -C linuxkit
 make -C pkg
 make -C img
@@ -24,7 +25,7 @@ make -C img
 Binaries (and BIOS) are placed into `./bin` and kernel and root
 filesystem images are placed into `./img`.
 
-A working `docker` installation is required for building, but not for
-running the tests and you should be able to copy the `./bin` and
-`./img` directories to a target system to run tests there without
-`docker`.
+A working `docker` and `go` installation is required for building, but
+not for running the tests and you should be able to copy the `./bin`
+and `./img` directories to a target system to run tests there without
+these pre-requisites.
