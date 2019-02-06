@@ -71,7 +71,7 @@ CONFIG_IMPL=go
 
 if [ "$CONFIG_IMPL" = "go" ]; then
     # Configure the VM by using the config-fc Go program
-    ./config-fc $SOCK
+    ../bin/config-fc $SOCK
 else
     # Configure the VM by calling the API with 'curl'
 # Create VM
