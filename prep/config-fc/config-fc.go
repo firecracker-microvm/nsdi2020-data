@@ -8,10 +8,10 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"net"
 	"net/http"
-	"os"
 )
 
 type Machine struct {
@@ -32,6 +32,8 @@ type Drive struct {
 	IsRootDevice bool   `json:"is_root_device,omitempty"`
 	IsReadOnly   bool   `json:"is_read_only,omitempty"`
 }
+
+const commonArgs = "panic=1 pci=off reboot=k tsc=reliable ipv6.disable=1 init=/init"
 
 const start_json = `{
     "action_type": "InstanceStart"
@@ -68,9 +70,20 @@ func fc_api(client *http.Client, path, body string) error {
 
 func main() {
 
+	socketOpt := flag.String("s", "", "Path to the firecracker control socket")
+
+	kernelOpt := flag.String("k", "../img/boot-time-vmlinux", "Path to the kernel image")
+	rootfsOpt := flag.String("r", "../img/boot-time-disk.img", "Path to the root disk")
+	coresOpt := flag.Int("c", 1, "Number of cores for the VM")
+	memOpt := flag.Int("m", 256, "Amount of memory in MB")
+
+	debugOpt := flag.Bool("d", false, "Enable debug output")
+
+	flag.Parse()
+
 	machine := Machine{
-		VCPUs:       1,
-		Memory:      256,
+		VCPUs:       *coresOpt,
+		Memory:      *memOpt,
 		CPUTemplate: "T2",
 		HyperThread: true,
 	}
@@ -81,9 +94,14 @@ func main() {
 	machine_json := string(b)
 
 	kernel := Kernel{
-		ImagePath: "../img/boot-time-vmlinux",
-		BootArgs:  "panic=1 pci=off reboot=k tsc=reliable ipv6.disable=1 init=/init quiet 8250.nr_uarts=0",
+		ImagePath: *kernelOpt,
 	}
+	if *debugOpt {
+		kernel.BootArgs = commonArgs + " console=ttyS0"
+	} else {
+		kernel.BootArgs = commonArgs + " quiet 8250.nr_uarts=0"
+	}
+
 	b, err = json.Marshal(kernel)
 	if err != nil {
 		panic(err)
@@ -92,7 +110,7 @@ func main() {
 
 	drive := Drive{
 		DriveId:      "1",
-		Path:         "../img/boot-time-disk.img",
+		Path:         *rootfsOpt,
 		IsRootDevice: true,
 		IsReadOnly:   true,
 	}
@@ -102,7 +120,7 @@ func main() {
 	}
 	drive_json := string(b)
 
-	client := make_client(os.Args[1])
+	client := make_client(*socketOpt)
 	if err := fc_api(client, "machine-config", machine_json); err != nil {
 		panic(err)
 	}
