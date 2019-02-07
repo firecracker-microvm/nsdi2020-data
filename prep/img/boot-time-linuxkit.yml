@@ -1,0 +1,4 @@
+kernel:
+  image: linuxkit/kernel:4.14.94
+init:
+  - rneugeba/init-exit:86f092eca2b5108c39de8908545846b4b2e70733

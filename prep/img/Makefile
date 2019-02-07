@@ -7,6 +7,8 @@ TARGETS += ../../img/boot-time-vmlinuz
 TARGETS += ../../img/boot-time-pci-vmlinux
 TARGETS += ../../img/boot-time-pci-vmlinuz
 
+TARGETS += ../../img/boot-time-linuxkit-vmlinux
+
 TARGETS += ../../img/boot-time-initrd.img
 TARGETS += ../../img/boot-time-disk.img
 
@@ -32,6 +34,10 @@ build: $(TARGETS)
 ../../img/boot-time-pci-vmlinuz: boot-time-pci.yml
 	$(LK) build -format kernel+initrd $<
 	cp boot-time-pci-kernel $@
+
+../../img/boot-time-linuxkit-vmlinux: boot-time-linuxkit.yml
+	$(LK) build -format kernel+initrd -decompress-kernel $<
+	cp boot-time-linuxkit-kernel $@
 
 
 ../../img/boot-time-initrd.img: boot-time.yml
