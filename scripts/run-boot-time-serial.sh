@@ -21,9 +21,10 @@ mkdir -p ${DIR}
 
 FC_RES=${DIR}/boot-times-serial-fc.dat
 QEMU_RES=${DIR}/boot-times-serial-qemu.dat
+QBOOT_RES=${DIR}/boot-times-serial-qboot.dat
 RES=${DIR}/boot-times-serial.csv
 
-rm -f ${FC_RES} ${QEMU_RES} ${RES}
+rm -f ${FC_RES} ${QEMU_RES} ${QBOOT_RES} ${RES}
 
 killall firecracker 2> /dev/null
 for i in $(seq ${ITER}); do
@@ -52,6 +53,21 @@ for i in $(seq ${ITER}); do
 done
 rm -f *.log
 ./gen-cdf.py ${QEMU_RES}
+
+killall qemu-system-x86_64 2> /dev/null
+for i in $(seq ${ITER}); do
+    ./start-qemu.sh -b ../bin/qemu-system-x86_64 \
+                    -k ../img/boot-time-pci-vmlinuz \
+                    -r ../img/boot-time-disk.img \
+                    -f qboot.bin \
+                    -c $CORES \
+                    -m $MEM \
+                    -t ${QBOOT_RES}
+    sleep 0.4
+    killall qemu-system-x86_64 2> /dev/null
+done
+rm -f *.log
+./gen-cdf.py ${QBOOT_RES}
 
 
 # Munch the data

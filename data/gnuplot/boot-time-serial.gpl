@@ -7,6 +7,7 @@
 
 fc_dat = sprintf("%s/boot-times-serial-fc-cdf.dat", base)
 qemu_dat = sprintf("%s/boot-times-serial-qemu-cdf.dat", base)
+qboot_dat = sprintf("%s/boot-times-serial-qboot-cdf.dat", base)
 
 out_file = sprintf("%s/boot-times-serial.pdf", base)
 
@@ -30,3 +31,4 @@ plot \
      fc_dat          index 1 using 1:2         w l lw 2 t 'Firecracker Boot', \
      fc_dat          index 0 using ($1/1000):2 w l lw 2 t 'Firecracker E2E', \
      qemu_dat        index 0 using ($1/1000):2 w l lw 2 t 'Qemu E2E', \
+     qboot_dat       index 0 using ($1/1000):2 w l lw 2 t 'Qemu qboot E2E', \
