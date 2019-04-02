@@ -1,7 +1,7 @@
-From 2032af968cd7c319f7f4f4712e8597c242f25549 Mon Sep 17 00:00:00 2001
+From 4aa9f8467c657d9a92ffd24127bf631ee6b7ea2c Mon Sep 17 00:00:00 2001
 From: Rolf Neugebauer <rn@rneugeba.io>
-Date: Wed, 23 Jan 2019 20:14:35 +0000
-Subject: [PATCH] vmm:Add a magic debug port similar to qemu
+Date: Tue, 2 Apr 2019 20:27:57 +0100
+Subject: [PATCH] vmm: Add a magic debug port similar to qemu
 
 qemu has an optional debug port, defaulting to 0xf4 to
 cause an immidiate exit from the VMM. Add this to firecracker
@@ -14,30 +14,30 @@ Signed-off-by: Rolf Neugebauer <rn@rneugeba.io>
  1 file changed, 6 insertions(+)
 
 diff --git a/vmm/src/lib.rs b/vmm/src/lib.rs
-index 079b591..5a99033 100644
+index 68bf385..e34b367 100644
 --- a/vmm/src/lib.rs
 +++ b/vmm/src/lib.rs
-@@ -52,6 +52,7 @@ use std::fmt::{Display, Formatter};
- use std::fs::{metadata, File, OpenOptions};
+@@ -54,6 +54,7 @@ use std::fs::{metadata, File, OpenOptions};
+ use std::io;
  use std::os::unix::io::{AsRawFd, RawFd};
  use std::path::PathBuf;
 +use std::process;
  use std::result;
  use std::sync::atomic::{AtomicUsize, Ordering, ATOMIC_USIZE_INIT};
  use std::sync::mpsc::{channel, Receiver, Sender, TryRecvError};
-@@ -88,6 +89,7 @@ use vmm_config::vsock::{VsockDeviceConfig, VsockDeviceConfigs, VsockError};
- use vstate::{Vcpu, Vm};
- 
- const DEFAULT_KERNEL_CMDLINE: &str = "reboot=k panic=1 pci=off nomodules 8250.nr_uarts=0";
-+const MAGIC_DEBUG_EXIT: u16 = 0x00f4;
+@@ -106,6 +107,7 @@ use vstate::{Vcpu, Vm};
+ /// - `i8042.dumbkbd` do not attempt to control kbd state via the i8042 (save boot time).
+ const DEFAULT_KERNEL_CMDLINE: &str = "reboot=k panic=1 pci=off nomodules 8250.nr_uarts=0 \
+                                       i8042.noaux i8042.nomux i8042.nopnp i8042.dumbkbd";
++const MAGIC_IOPORT_DEBUG_EXIT: u16 = 0x00f4;
  const MAGIC_IOPORT_SIGNAL_GUEST_BOOT_COMPLETE: u16 = 0x03f0;
  const MAGIC_VALUE_SIGNAL_GUEST_BOOT_COMPLETE: u8 = 123;
  const VCPU_RTSIG_OFFSET: i32 = 0;
-@@ -965,6 +967,10 @@ impl Vmm {
+@@ -1065,6 +1067,10 @@ impl Vmm {
                                          METRICS.vcpu.exit_io_in.inc();
                                      }
                                      VcpuExit::IoOut(addr, data) => {
-+                                        if addr == MAGIC_DEBUG_EXIT
++                                        if addr == MAGIC_IOPORT_DEBUG_EXIT
 +                                        {
 +                                            process::exit(0);
 +                                        }
