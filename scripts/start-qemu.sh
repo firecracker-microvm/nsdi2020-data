@@ -27,6 +27,8 @@ while [ $# -gt 0 ]; do
             ;;
         -a) shift; ARCH=$1
             ;;
+        -f) shift; FW=$1
+            ;;
         -d) DEBUG=yes
             ;;
     esac
@@ -70,6 +72,13 @@ if [ "x$ROOTFS" != "x" ]; then
         "
     ROOT="root=/dev/vda"
 fi
+
+if [ "x$FW" != "x" ]; then
+    QEMU="$QEMU \
+        -bios $FW \
+        "
+fi
+
 
 us_start=$(($(date +%s%N)/1000))
 
