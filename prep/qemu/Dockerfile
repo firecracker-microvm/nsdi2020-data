@@ -82,4 +82,15 @@ RUN mkdir -p /res/bios && \
     cp -r /usr/share/seabios/* /res/bios && \
     cp pc-bios/efi-e1000.rom /res/bios
 
+RUN cd / && \
+    apt install -y libc6-dev-i386 && \
+    git clone https://github.com/bonzini/qboot && \
+    cd qboot && \
+       git checkout 295dd902155035151caae3e4db3f41c8deebba34
+
+WORKDIR /qboot
+
+RUN make && \
+    cp bios.bin /res/bios/qboot.bin
+
 ENTRYPOINT cp -r /res/* /out
