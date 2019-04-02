@@ -17,7 +17,7 @@ while [ $# -gt 0 ]; do
             ;;
         -r) shift; ROOTFS=$1
             ;;
-        -a) shift; RAMDISK=$1
+        -k) shift; RAMDISK=$1
             ;;
         -c) shift; CORES=$1
             ;;
