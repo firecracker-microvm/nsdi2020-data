@@ -76,11 +76,16 @@ RUN ./configure \
         --disable-rbd \
         --disable-virtfs
 
-
-
 RUN make -j "$(getconf _NPROCESSORS_ONLN)"
 
+RUN cd / && \
+        apt update && \
+        apt install -y curl && \
+        OVMF_URL=$(curl --silent https://api.github.com/repos/intel/ovmf-virt/releases/latest | grep -o https://.*OVMF.fd) && \
+        curl -fsSLO $OVMF_URL
+
 RUN mkdir -p /res/bios && \
-    cp x86_64_virt-softmmu/qemu-system-x86_64_virt /res/nemu-system-x86_64
+        cp x86_64_virt-softmmu/qemu-system-x86_64_virt /res/nemu-system-x86_64 && \
+        cp /OVMF.fd /res/bios
 
 ENTRYPOINT cp -r /res/* /out
