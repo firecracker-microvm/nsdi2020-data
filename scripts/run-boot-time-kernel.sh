@@ -28,7 +28,7 @@ rm -f ${RES_PCI} ${RES_LK}
 
 killall firecracker 2> /dev/null
 for i in $(seq ${ITER}); do
-    ./start-fc.sh -b ../bin/firecracker \
+    ./util_start_fc.sh -b ../bin/firecracker \
                   -k ../img/boot-time-pci-vmlinux \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
@@ -38,11 +38,11 @@ for i in $(seq ${ITER}); do
     killall firecracker 2> /dev/null
 done
 rm -f *.log
-./gen-cdf.py ${RES_PCI}
+./util_gen_cdf.py ${RES_PCI}
 
 killall firecracker 2> /dev/null
 for i in $(seq ${ITER}); do
-    ./start-fc.sh -b ../bin/firecracker \
+    ./util_start_fc.sh -b ../bin/firecracker \
                   -k ../img/boot-time-linuxkit-vmlinux \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
@@ -52,4 +52,4 @@ for i in $(seq ${ITER}); do
     killall firecracker 2> /dev/null
 done
 rm -f *.log
-./gen-cdf.py ${RES_LK}
+./util_gen_cdf.py ${RES_LK}

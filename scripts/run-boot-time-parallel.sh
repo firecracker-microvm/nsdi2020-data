@@ -30,7 +30,7 @@ RES=${DIR}/boot-times-parallel-${PARALLEL}.csv
 rm -f ${FC_RES} ${QEMU_RES} ${RES}
 
 killall firecracker 2> /dev/null
-seq 1 $ITER | xargs -L1 -P$PARALLEL ./start-fc.sh -b ../bin/firecracker \
+seq 1 $ITER | xargs -L1 -P$PARALLEL ./util_start_fc.sh -b ../bin/firecracker \
                   -k ../img/boot-time-vmlinux \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
@@ -41,7 +41,7 @@ killall firecracker 2> /dev/null
 
 killall qemu-system-x86_64 2> /dev/null
 
-seq 1 $ITER | xargs -L1 -P$PARALLEL  ./start-qemu.sh -b ../bin/qemu-system-x86_64 \
+seq 1 $ITER | xargs -L1 -P$PARALLEL  ./util_start-qemu.sh -b ../bin/qemu-system-x86_64 \
                     -k ../img/boot-time-vmlinuz \
                     -r ../img/boot-time-disk.img \
                     -c $CORES \
@@ -106,7 +106,7 @@ RES=${DIR}/boot-times-parallel-${PARALLEL}.csv
 rm -f ${FC_RES} ${QEMU_RES} ${RES}
 
 killall firecracker 2> /dev/null
-seq 1 $ITER | xargs -L1 -P$PARALLEL ./start-fc.sh -b ../bin/firecracker \
+seq 1 $ITER | xargs -L1 -P$PARALLEL ./util_start_fc.sh -b ../bin/firecracker \
                   -k ../img/boot-time-vmlinux \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
@@ -117,7 +117,7 @@ killall firecracker 2> /dev/null
 
 killall qemu-system-x86_64 2> /dev/null
 
-seq 1 $ITER | xargs -L1 -P$PARALLEL  ./start-qemu.sh -b ../bin/qemu-system-x86_64 \
+seq 1 $ITER | xargs -L1 -P$PARALLEL  ./util_start-qemu.sh -b ../bin/qemu-system-x86_64 \
                     -k ../img/boot-time-vmlinuz \
                     -r ../img/boot-time-disk.img \
                     -c $CORES \

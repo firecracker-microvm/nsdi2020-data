@@ -28,7 +28,7 @@ rm -f ${FC_RES} ${QEMU_RES} ${QBOOT_RES} ${RES}
 
 killall firecracker 2> /dev/null
 for i in $(seq ${ITER}); do
-    ./start-fc.sh -b ../bin/firecracker \
+    ./util_start_fc.sh -b ../bin/firecracker \
                   -k ../img/boot-time-vmlinux \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
@@ -38,11 +38,11 @@ for i in $(seq ${ITER}); do
     killall firecracker 2> /dev/null
 done
 rm -f *.log
-./gen-cdf.py ${FC_RES}
+./util_gen_cdf.py ${FC_RES}
 
 killall qemu-system-x86_64 2> /dev/null
 for i in $(seq ${ITER}); do
-    ./start-qemu.sh -b ../bin/qemu-system-x86_64 \
+    ./util_start-qemu.sh -b ../bin/qemu-system-x86_64 \
                     -k ../img/boot-time-pci-vmlinuz \
                     -r ../img/boot-time-disk.img \
                     -c $CORES \
@@ -52,11 +52,11 @@ for i in $(seq ${ITER}); do
     killall qemu-system-x86_64 2> /dev/null
 done
 rm -f *.log
-./gen-cdf.py ${QEMU_RES}
+./util_gen_cdf.py ${QEMU_RES}
 
 killall qemu-system-x86_64 2> /dev/null
 for i in $(seq ${ITER}); do
-    ./start-qemu.sh -b ../bin/qemu-system-x86_64 \
+    ./util_start-qemu.sh -b ../bin/qemu-system-x86_64 \
                     -k ../img/boot-time-pci-vmlinuz \
                     -r ../img/boot-time-disk.img \
                     -f qboot.bin \
@@ -67,7 +67,7 @@ for i in $(seq ${ITER}); do
     killall qemu-system-x86_64 2> /dev/null
 done
 rm -f *.log
-./gen-cdf.py ${QBOOT_RES}
+./util_gen_cdf.py ${QBOOT_RES}
 
 
 # Munch the data
