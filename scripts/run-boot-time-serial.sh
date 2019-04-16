@@ -42,7 +42,7 @@ rm -f *.log
 
 killall qemu-system-x86_64 2> /dev/null
 for i in $(seq ${ITER}); do
-    ./util_start-qemu.sh -b ../bin/qemu-system-x86_64 \
+    ./util_start_qemu.sh -b ../bin/qemu-system-x86_64 \
                     -k ../img/boot-time-pci-vmlinuz \
                     -r ../img/boot-time-disk.img \
                     -c $CORES \
@@ -56,7 +56,7 @@ rm -f *.log
 
 killall qemu-system-x86_64 2> /dev/null
 for i in $(seq ${ITER}); do
-    ./util_start-qemu.sh -b ../bin/qemu-system-x86_64 \
+    ./util_start_qemu.sh -b ../bin/qemu-system-x86_64 \
                     -k ../img/boot-time-pci-vmlinuz \
                     -r ../img/boot-time-disk.img \
                     -f qboot.bin \
