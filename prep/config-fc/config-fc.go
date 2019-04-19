@@ -31,10 +31,10 @@ type Kernel struct {
 
 // Drive is the minimal information needed to attach a disk to a VM
 type Drive struct {
-	DriveID      string `json:"drive_id,omitempty"`
-	Path         string `json:"path_on_host,omitempty"`
-	IsRootDevice bool   `json:"is_root_device,omitempty"`
-	IsReadOnly   bool   `json:"is_read_only,omitempty"`
+	DriveID      string `json:"drive_id"`
+	Path         string `json:"path_on_host"`
+	IsRootDevice bool   `json:"is_root_device"`
+	IsReadOnly   bool   `json:"is_read_only"`
 }
 
 // NetDev is the minimal information needed to attach a network device to a VM
