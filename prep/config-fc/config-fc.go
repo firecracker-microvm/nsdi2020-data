@@ -14,6 +14,7 @@ import (
 	"net/http"
 )
 
+// Machine is the minimal information needed to create a VM
 type Machine struct {
 	VCPUs       int    `json:"vcpu_count,omitempty"`
 	Memory      int    `json:"mem_size_mib,omitempty"`
@@ -21,13 +22,15 @@ type Machine struct {
 	HyperThread bool   `json:"ht_enabled,omitempty"`
 }
 
+// Kernel is the minimal information needed to specify the kernel
 type Kernel struct {
 	ImagePath string `json:"kernel_image_path,omitempty"`
 	BootArgs  string `json:"boot_args,omitempty"`
 }
 
+// Drive is the minimal information needed to attach a disk to a VM
 type Drive struct {
-	DriveId      string `json:"drive_id,omitempty"`
+	DriveID      string `json:"drive_id,omitempty"`
 	Path         string `json:"path_on_host,omitempty"`
 	IsRootDevice bool   `json:"is_root_device,omitempty"`
 	IsReadOnly   bool   `json:"is_read_only,omitempty"`
@@ -35,11 +38,11 @@ type Drive struct {
 
 const commonArgs = "panic=1 pci=off reboot=k tsc=reliable ipv6.disable=1 init=/init"
 
-const start_json = `{
+const startJSON = `{
     "action_type": "InstanceStart"
 }`
 
-func make_client(socket string) *http.Client {
+func newClient(socket string) *http.Client {
 	return &http.Client{
 		Transport: &http.Transport{
 			DialContext: func(_ context.Context, _, _ string) (net.Conn, error) {
@@ -49,10 +52,10 @@ func make_client(socket string) *http.Client {
 	}
 }
 
-func fc_api(client *http.Client, path, body string) error {
+func fcAPI(client *http.Client, path, body string) error {
 	uri := fmt.Sprintf("http://localhost/%s", path)
-	body_buf := bytes.NewBuffer([]byte(body))
-	req, e := http.NewRequest(http.MethodPut, uri, body_buf)
+	bodyBuf := bytes.NewBuffer([]byte(body))
+	req, e := http.NewRequest(http.MethodPut, uri, bodyBuf)
 	if e != nil {
 		return e
 	}
@@ -91,7 +94,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	machine_json := string(b)
+	machineJSON := string(b)
 
 	kernel := Kernel{
 		ImagePath: *kernelOpt,
@@ -106,10 +109,10 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	kernel_json := string(b)
+	kernelJSON := string(b)
 
 	drive := Drive{
-		DriveId:      "1",
+		DriveID:      "1",
 		Path:         *rootfsOpt,
 		IsRootDevice: true,
 		IsReadOnly:   true,
@@ -118,19 +121,19 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	drive_json := string(b)
+	driveJSON := string(b)
 
-	client := make_client(*socketOpt)
-	if err := fc_api(client, "machine-config", machine_json); err != nil {
+	client := newClient(*socketOpt)
+	if err := fcAPI(client, "machine-config", machineJSON); err != nil {
 		panic(err)
 	}
-	if err := fc_api(client, "drives/1", drive_json); err != nil {
+	if err := fcAPI(client, "drives/1", driveJSON); err != nil {
 		panic(err)
 	}
-	if err := fc_api(client, "boot-source", kernel_json); err != nil {
+	if err := fcAPI(client, "boot-source", kernelJSON); err != nil {
 		panic(err)
 	}
-	if err := fc_api(client, "actions", start_json); err != nil {
+	if err := fcAPI(client, "actions", startJSON); err != nil {
 		panic(err)
 	}
 }
