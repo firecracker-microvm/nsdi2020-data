@@ -7,7 +7,7 @@ set -x
 ## https://github.com/firecracker-microvm/firecracker-demo
 
 # Number of Tap devices to create
-NUM_TAPS="${1:-10}"
+NUM_TAPS="${1:-1}"
 
 if [[ $EUID -ne 0 ]]; then
     echo "This script must be run as root"
