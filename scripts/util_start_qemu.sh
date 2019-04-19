@@ -25,11 +25,13 @@ while [ $# -gt 0 ]; do
             ;;
         -n) NET=on
             ;;
+        -f) shift; DISK=$1
+            ;;
         -t) shift; TIMEFILE=$1
             ;;
         -a) shift; ARCH=$1
             ;;
-        -f) shift; FW=$1
+        -w) shift; FW=$1
             ;;
         -d) DEBUG=yes
             ;;
@@ -96,6 +98,13 @@ else
     QEMU="$QEMU \
          -nic none \
          "
+fi
+
+if [ "x$DISK" != "x" ]; then
+    QEMU="$QEMU \
+        -device virtio-blk-pci,drive=d1 \
+        -drive if=none,id=d1,format=raw,readonly=on,file=$DISK \
+        "
 fi
 
 us_start=$(($(date +%s%N)/1000))
