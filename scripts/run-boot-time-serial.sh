@@ -59,7 +59,7 @@ for i in $(seq ${ITER}); do
     ./util_start_qemu.sh -b ../bin/qemu-system-x86_64 \
                     -k ../img/boot-time-pci-vmlinuz \
                     -r ../img/boot-time-disk.img \
-                    -f qboot.bin \
+                    -w qboot.bin \
                     -c $CORES \
                     -m $MEM \
                     -t ${QBOOT_RES}
