@@ -1,10 +1,13 @@
 #! /bin/bash -e
 
+set -x
+
 # defaults
 ID=$RANDOM
 FC=../bin/firecracker
 CORES=1
 MEM=256
+NET=
 
 while [ $# -gt 0 ]; do
     case $1 in
@@ -19,6 +22,8 @@ while [ $# -gt 0 ]; do
         -c) shift; CORES=$1
             ;;
         -m) shift; MEM=$1
+            ;;
+        -n) NET=on
             ;;
         -t) shift; TIMEFILE=$1
             ;;
@@ -36,6 +41,16 @@ LOGFILE="/tmp/fc-$ID.log"
 SOCK="/tmp/fc-$ID.sock"
 rm -f "$SOCK"
 
+NETCFG=
+if [ -n "$NET" ]; then
+    TAP_DEV=$(./util_ipam.sh -t $ID)
+    TAP_IP=$(./util_ipam.sh -h $ID)
+    VM_MAC=$(./util_ipam.sh -a $ID)
+    VM_IP=$(./util_ipam.sh -v $ID)
+    VM_MASK=$(./util_ipam.sh -m $ID)
+    NETCFG="-n ${TAP_DEV},${TAP_IP},${VM_MAC},${VM_IP},${VM_MASK}"
+fi
+
 us_start=$(($(date +%s%N)/1000))
 
 $FC --api-sock "$SOCK" 2> "$LOGFILE" &
@@ -46,7 +61,7 @@ while [ ! -e "$SOCK" ]; do
 done
 
 # Configure the VM by using the config-fc Go program
-../bin/config-fc -s $SOCK -k ${KERNEL} -r ${ROOTFS} -c ${CORES} -m ${MEM} ${DEBUG}
+../bin/config-fc -s $SOCK -k ${KERNEL} -r ${ROOTFS} -c ${CORES} -m ${MEM} ${NETCFG} ${DEBUG}
 
 wait $FC_PID || true
 us_end=$(($(date +%s%N)/1000))
