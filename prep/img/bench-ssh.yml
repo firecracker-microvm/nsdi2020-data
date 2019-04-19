@@ -1,0 +1,30 @@
+kernel:
+  image: rneugeba/fc-kernel:dd95ec7c4c86cf0c19c057a1359697bb09b09bac
+init:
+  - linuxkit/init:v0.7
+  - linuxkit/runc:v0.7
+  - linuxkit/containerd:v0.7
+  - linuxkit/ca-certificates:v0.7
+onboot:
+  - name: sysctl
+    image: linuxkit/sysctl:v0.7
+  - name: rngd1
+    image: linuxkit/rngd:v0.7
+    command: ["/sbin/rngd", "-1"]
+services:
+  - name: getty
+    image: linuxkit/getty:v0.7
+    env:
+     - INSECURE=true
+  - name: rngd
+    image: linuxkit/rngd:v0.7
+  - name: sshd
+    image: rneugeba/sshd-bench:fd192fe98f287fbd8b5b29fdc3e21265f4e8ad2c
+files:
+  - path: root/.ssh/authorized_keys
+    source: ./ssh-bench.pub
+    mode: "0600"
+    optional: true
+trust:
+  org:
+    - linuxkit

@@ -59,6 +59,7 @@ build: $(TARGETS)
 	sudo losetup -d $(LOOP)
 	rmdir boot-time.img
 	mv $(@F) $@
+	rm boot-time.tar
 boot-time.tar: boot-time.yml
 	$(LK) build -format tar $<
 
@@ -82,5 +83,6 @@ boot-time.tar: boot-time.yml
 	sudo losetup -d $(LOOP)
 	rmdir bench-ssh.img
 	mv $(@F) $@
+	rm bench-ssh.tar
 bench-ssh.tar: bench-ssh.yml
 	$(LK) build -format tar $<
