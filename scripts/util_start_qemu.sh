@@ -5,7 +5,7 @@ QEMU=../bin/qemu-system-x86_64
 CORES=1
 MEM=256
 ARCH=pc
-
+NET=
 
 while [ $# -gt 0 ]; do
     case $1 in
@@ -22,6 +22,8 @@ while [ $# -gt 0 ]; do
         -c) shift; CORES=$1
             ;;
         -m) shift; MEM=$1
+            ;;
+        -n) NET=on
             ;;
         -t) shift; TIMEFILE=$1
             ;;
@@ -47,7 +49,6 @@ QEMU="$QEMU \
         -display none \
         -nographic \
         -vga none \
-        -nic none \
         -no-acpi \
         -device isa-debug-exit,iobase=0xf4,iosize=0x4 \
 "
@@ -79,6 +80,23 @@ if [ "x$FW" != "x" ]; then
         "
 fi
 
+if [ "x$NET" != "x" ]; then
+    TAP_DEV=$(./util_ipam.sh -t $ID)
+    TAP_IP=$(./util_ipam.sh -h $ID)
+    VM_MAC=$(./util_ipam.sh -a $ID)
+    VM_IP=$(./util_ipam.sh -v $ID)
+    VM_MASK=$(./util_ipam.sh -m $ID)
+
+    KERNEL_ARGS="$KERNEL_ARGS ip=$VM_IP::$TAP_IP:VM_MASK::eth0:off"
+
+    QEMU="$QEMU \
+        -device virtio-net-pci,mac=$VM_MAC,netdev=n0 \
+        -netdev tap,id=n0,ifname=$TAP_DEV"
+else
+    QEMU="$QEMU \
+         -nic none \
+         "
+fi
 
 us_start=$(($(date +%s%N)/1000))
 
