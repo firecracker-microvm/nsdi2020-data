@@ -80,7 +80,8 @@ RUN apt install -y seabios
 RUN mkdir -p /res/bios && \
     cp x86_64-softmmu/qemu-system-x86_64 /res && \
     cp -r /usr/share/seabios/* /res/bios && \
-    cp pc-bios/efi-e1000.rom /res/bios
+    cp pc-bios/efi-e1000.rom /res/bios && \
+    cp pc-bios/efi-virtio.rom /res/bios
 
 RUN cd / && \
     apt install -y libc6-dev-i386 && \
