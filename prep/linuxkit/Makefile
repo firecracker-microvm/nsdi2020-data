@@ -1,16 +1,7 @@
 # Quick hacky makefile to build linuxkit with docker
 
-LK_COMMIT := 9a818a1446d6
-../../bin/linuxkit: linuxkit/bin/linuxkit
-	mkdir -p $(@D)
-	cp $< $(@D)
+URL := https://github.com/linuxkit/linuxkit/releases/download/v0.7/linuxkit-linux-amd64
 
-linuxkit/bin/linuxkit: linuxkit
-	cd $< && git checkout $(LK_COMMIT)
-	cd $< && make bin/linuxkit
-
-linuxkit:
-	git clone https://github.com/linuxkit/linuxkit.git
-
-clean:
-	rm -rf linuxkit
+../../bin/linuxkit:
+	curl -fsSL -o $@ $(URL)
+	chmod ugo+x $@
