@@ -79,6 +79,7 @@ func main() {
 	rootfsOpt := flag.String("r", "../img/boot-time-disk.img", "Path to the root disk")
 	coresOpt := flag.Int("c", 1, "Number of cores for the VM")
 	memOpt := flag.Int("m", 256, "Amount of memory in MB")
+	diskOpt := flag.String("disk", "", "Path to additional disk")
 
 	debugOpt := flag.Bool("d", false, "Enable debug output")
 
@@ -132,6 +133,22 @@ func main() {
 	}
 	if err := fcAPI(client, "boot-source", kernelJSON); err != nil {
 		panic(err)
+	}
+	if *diskOpt != "" {
+		disk := Drive{
+			DriveID:      "2",
+			Path:         *diskOpt,
+			IsRootDevice: false,
+			IsReadOnly:   false,
+		}
+		b, err = json.Marshal(disk)
+		if err != nil {
+			panic(err)
+		}
+		diskJSON := string(b)
+		if err := fcAPI(client, "drives/2", diskJSON); err != nil {
+			panic(err)
+		}
 	}
 	if err := fcAPI(client, "actions", startJSON); err != nil {
 		panic(err)
