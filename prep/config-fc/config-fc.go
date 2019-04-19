@@ -12,6 +12,7 @@ import (
 	"fmt"
 	"net"
 	"net/http"
+	"strings"
 )
 
 // Machine is the minimal information needed to create a VM
@@ -34,6 +35,13 @@ type Drive struct {
 	Path         string `json:"path_on_host,omitempty"`
 	IsRootDevice bool   `json:"is_root_device,omitempty"`
 	IsReadOnly   bool   `json:"is_read_only,omitempty"`
+}
+
+// NetDev is the minimal information needed to attach a network device to a VM
+type NetDev struct {
+	InterfaceID string `json:"iface_id,omitempty"`
+	GuestMAC    string `json:"guest_mac,omitempty"`
+	HostDev     string `json:"host_dev_name,omitempty"`
 }
 
 const commonArgs = "panic=1 pci=off reboot=k tsc=reliable ipv6.disable=1 init=/init"
@@ -80,6 +88,7 @@ func main() {
 	coresOpt := flag.Int("c", 1, "Number of cores for the VM")
 	memOpt := flag.Int("m", 256, "Amount of memory in MB")
 	diskOpt := flag.String("disk", "", "Path to additional disk")
+	netOpt := flag.String("n", "", "Network configuration 'tap,tap ip,mac,vm ip,mask'")
 
 	debugOpt := flag.Bool("d", false, "Enable debug output")
 
@@ -97,13 +106,34 @@ func main() {
 	}
 	machineJSON := string(b)
 
+	var netJSON string
+	var netArgs string
+	if *netOpt != "" {
+		netCfg := strings.SplitN(*netOpt, ",", 5)
+		if len(netCfg) != 5 {
+			panic("Network config")
+		}
+		netDev := NetDev{
+			InterfaceID: "1",
+			GuestMAC:    netCfg[2],
+			HostDev:     netCfg[0],
+		}
+		b, err := json.Marshal(netDev)
+		if err != nil {
+			panic(err)
+		}
+		netJSON = string(b)
+
+		netArgs = " ip=" + netCfg[3] + "::" + netCfg[1] + ":" + netCfg[4] + "::eth0:off"
+	}
+
 	kernel := Kernel{
 		ImagePath: *kernelOpt,
 	}
 	if *debugOpt {
-		kernel.BootArgs = commonArgs + " console=ttyS0"
+		kernel.BootArgs = commonArgs + netArgs + " console=ttyS0"
 	} else {
-		kernel.BootArgs = commonArgs + " quiet 8250.nr_uarts=0"
+		kernel.BootArgs = commonArgs + netArgs + " quiet 8250.nr_uarts=0"
 	}
 
 	b, err = json.Marshal(kernel)
@@ -124,16 +154,7 @@ func main() {
 	}
 	driveJSON := string(b)
 
-	client := newClient(*socketOpt)
-	if err := fcAPI(client, "machine-config", machineJSON); err != nil {
-		panic(err)
-	}
-	if err := fcAPI(client, "drives/1", driveJSON); err != nil {
-		panic(err)
-	}
-	if err := fcAPI(client, "boot-source", kernelJSON); err != nil {
-		panic(err)
-	}
+	var diskJSON string
 	if *diskOpt != "" {
 		disk := Drive{
 			DriveID:      "2",
@@ -145,8 +166,26 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		diskJSON := string(b)
+		diskJSON = string(b)
+	}
+
+	client := newClient(*socketOpt)
+	if err := fcAPI(client, "machine-config", machineJSON); err != nil {
+		panic(err)
+	}
+	if err := fcAPI(client, "drives/1", driveJSON); err != nil {
+		panic(err)
+	}
+	if err := fcAPI(client, "boot-source", kernelJSON); err != nil {
+		panic(err)
+	}
+	if diskJSON != "" {
 		if err := fcAPI(client, "drives/2", diskJSON); err != nil {
+			panic(err)
+		}
+	}
+	if netJSON != "" {
+		if err := fcAPI(client, "network-interfaces/1", netJSON); err != nil {
 			panic(err)
 		}
 	}
