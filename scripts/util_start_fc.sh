@@ -25,6 +25,8 @@ while [ $# -gt 0 ]; do
             ;;
         -n) NET=on
             ;;
+        -f) shift; DISK=$1
+            ;;
         -t) shift; TIMEFILE=$1
             ;;
         -l) shift; LOGFILE=$1
@@ -42,13 +44,18 @@ SOCK="/tmp/fc-$ID.sock"
 rm -f "$SOCK"
 
 NETCFG=
-if [ -n "$NET" ]; then
+if [ "x$NET" != "x" ]; then
     TAP_DEV=$(./util_ipam.sh -t $ID)
     TAP_IP=$(./util_ipam.sh -h $ID)
     VM_MAC=$(./util_ipam.sh -a $ID)
     VM_IP=$(./util_ipam.sh -v $ID)
     VM_MASK=$(./util_ipam.sh -m $ID)
     NETCFG="-n ${TAP_DEV},${TAP_IP},${VM_MAC},${VM_IP},${VM_MASK}"
+fi
+
+DISKCFG=
+if [ "x$DISK" != "x" ]; then
+    DISKCFG="-disk $DISK"
 fi
 
 us_start=$(($(date +%s%N)/1000))
@@ -61,7 +68,7 @@ while [ ! -e "$SOCK" ]; do
 done
 
 # Configure the VM by using the config-fc Go program
-../bin/config-fc -s $SOCK -k ${KERNEL} -r ${ROOTFS} -c ${CORES} -m ${MEM} ${NETCFG} ${DEBUG}
+../bin/config-fc -s $SOCK -k ${KERNEL} -r ${ROOTFS} -c ${CORES} -m ${MEM} ${NETCFG} ${DISKCFG} ${DEBUG}
 
 wait $FC_PID || true
 us_end=$(($(date +%s%N)/1000))
