@@ -29,3 +29,17 @@ A working `docker` and `go` installation is required for building, but
 not for running the tests and you should be able to copy the `./bin`
 and `./img` directories to a target system to run tests there without
 these pre-requisites.
+
+## Prepare the host
+
+This assumes you are running on a Ubuntu system.
+
+Install some host side utilities
+
+```
+sudo apt update
+sudo apt install \
+    iperf3 
+    numactl \
+    hwloc-nox
+```
