@@ -9,14 +9,11 @@ import sys
 import os
 import collections
 
-if len(sys.argv) != 2:
-    sys.exit("Please provide a file name")
+if len(sys.argv) != 3:
+    sys.exit("Please provide a input and output file name")
 
 infn = sys.argv[1]
-outfn = os.path.splitext(infn)[0]
-outfn += "-cdf.dat"
-
-print(outfn)
+outfn = sys.argv[2]
 
 # Data is a list of Counters
 data = []
