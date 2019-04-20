@@ -117,8 +117,12 @@ printf "1-stream\t10-streams\n"                    > ${LOCAL_RES}
 printf "RX\tTX\tRX\tTX\n"                         >> ${LOCAL_RES}
 printf "${RX01G}\t${RX01G}\t${RX10G}\t${RX10G}\n" >> ${LOCAL_RES}
 
-sleep 5
+if [ $(grep -c rdrand /proc/cpuinfo) -eq 0 ]; then
+    echo "benchmark rootfs needs CPU rdrand support"
+    exit 1
+fi
 
+sleep 5
 killall firecracker 2> /dev/null
 echo "Firecracker: Starting..."
 ./util_start_fc.sh \
