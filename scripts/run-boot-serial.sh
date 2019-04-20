@@ -120,12 +120,12 @@ for i in $(seq ${ITER}); do
                     -m $MEM \
                     -i 0 \
                     -n \
-                    -t ${QEMU_QBOOT_DAT}
+                    -t ${QEMU_QBOOT_NET_DAT}
     sleep 0.4
     killall qemu-system-x86_64 2> /dev/null
 done
 rm -f *.log
-./util_gen_cdf.py ${QEMU_QBOOT_DAT} ${QEMU_QBOOT_CDF}
+./util_gen_cdf.py ${QEMU_QBOOT_NET_DAT} ${QEMU_QBOOT_NET_CDF}
 
 
 # Create R compliant data
