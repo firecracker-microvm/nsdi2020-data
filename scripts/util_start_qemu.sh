@@ -93,7 +93,7 @@ if [ "x$NET" != "x" ]; then
 
     QEMU="$QEMU \
         -device virtio-net-pci,mac=$VM_MAC,netdev=n0 \
-        -netdev tap,id=n0,ifname=$TAP_DEV"
+        -netdev tap,id=n0,script=no,ifname=$TAP_DEV"
 else
     QEMU="$QEMU \
          -nic none \
