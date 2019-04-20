@@ -1,7 +1,5 @@
 #! /bin/bash -e
 
-set -x
-
 # defaults
 ID=$RANDOM
 FC=../bin/firecracker
