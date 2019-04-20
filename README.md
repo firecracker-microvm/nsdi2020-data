@@ -38,8 +38,9 @@ Install some host side utilities
 
 ```
 sudo apt update
-sudo apt install \
-    iperf3 
-    numactl \
+sudo apt install -y \
+    iperf3 \
+    jq \
     hwloc-nox
+    numactl \
 ```
