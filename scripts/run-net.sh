@@ -76,7 +76,7 @@ run_remote() {
     TX10G=$(echo "scale = 2; ${TX10} / (1000 * 1000 * 1000)" | bc)
 
     # Should not be necessary
-    killall iperf3 2> /dev/null
+    killall -9 iperf3 2> /dev/null
 
     echo "Ping test"
     ping -n -c 20 ${VM_IP} > ${pre}-ping.txt
@@ -87,9 +87,9 @@ run_remote() {
     printf "${RX01G}\t${TX01G}\t${RX10G}\t${TX10G}\n" >> ${res}
 }
 
-killall firecracker 2> /dev/null
-killall qemu-system-x86_64 2> /dev/null
-killall iperf3 2> /dev/null
+killall -9 firecracker 2> /dev/null
+killall -9 qemu-system-x86_64 2> /dev/null
+killall -9 iperf3 2> /dev/null
 
 sleep 5
 
@@ -107,7 +107,7 @@ iperf3 -t ${TIME} -J -P 10 -c ${TAP_IP} > ${LOCAL_PRE}-rx-10.json
 RX10=$(cat ${LOCAL_PRE}-rx-10.json | jq '.end.sum_sent.bits_per_second')
 RX10G=$(echo "scale = 2; ${RX10} / (1000 * 1000 * 1000)" | bc)
 
-killall iperf3 2> /dev/null
+killall -9 iperf3 2> /dev/null
 
 echo "Ping test"
 ping -n -c 20 ${TAP_IP} > ${LOCAL_PRE}-ping.txt
@@ -123,7 +123,7 @@ if [ $(grep -c rdrand /proc/cpuinfo) -eq 0 ]; then
 fi
 
 sleep 5
-killall firecracker 2> /dev/null
+killall -9 firecracker 2> /dev/null
 echo "Firecracker: Starting..."
 ./util_start_fc.sh \
     -b ../bin/firecracker \
@@ -138,10 +138,10 @@ echo "Firecracker: Starting..."
 # 10 seconds should be enough
 sleep 10
 run_remote ${FC_PRE} ${FC_RES}
-killall firecracker 2> /dev/null
+killall -9 firecracker 2> /dev/null
 
 sleep 5
-killall qemu-system-x86_64 2> /dev/null
+killall -9 qemu-system-x86_64 2> /dev/null
 echo "qemu: Starting..."
 ./util_start_qemu.sh \
     -b ../bin/qemu-system-x86_64 \
@@ -156,4 +156,4 @@ echo "qemu: Starting..."
 # 10 seconds should be enough
 sleep 10
 run_remote ${QEMU_PRE} ${QEMU_RES}
-killall qemu-system-x86_64 2> /dev/null
+killall -9 qemu-system-x86_64 2> /dev/null

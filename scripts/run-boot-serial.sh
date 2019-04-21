@@ -42,7 +42,7 @@ rm -f ${FC_NET_DAT} ${QEMU_QBOOT_NET_DAT}
 rm -f ${FC_NET_CDF} ${QEMU_QBOOT_NET_CDF}
 
 # Firecracker base
-killall firecracker 2> /dev/null
+killall -9 firecracker 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Firecracker: $i"
     ./util_start_fc.sh -b ../bin/firecracker \
@@ -52,13 +52,13 @@ for i in $(seq ${ITER}); do
                   -m $MEM \
                   -t ${FC_DAT}
     sleep 1
-    killall firecracker 2> /dev/null
+    killall -9 firecracker 2> /dev/null
 done
 rm -f *.log
 ./util_gen_cdf.py ${FC_DAT} ${FC_CDF}
 
 # Firecracker base + Network
-killall firecracker 2> /dev/null
+killall -9 firecracker 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Firecracker+Net: $i"
     ./util_start_fc.sh -b ../bin/firecracker \
@@ -70,13 +70,13 @@ for i in $(seq ${ITER}); do
                   -n \
                   -t ${FC_NET_DAT}
     sleep 1
-    killall firecracker 2> /dev/null
+    killall -9 firecracker 2> /dev/null
 done
 rm -f *.log
 ./util_gen_cdf.py ${FC_NET_DAT} ${FC_NET_CDF}
 
 # Qemu base
-killall qemu-system-x86_64 2> /dev/null
+killall -9 qemu-system-x86_64 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Qemu: $i"
     ./util_start_qemu.sh -b ../bin/qemu-system-x86_64 \
@@ -86,13 +86,13 @@ for i in $(seq ${ITER}); do
                     -m $MEM \
                     -t ${QEMU_DAT}
     sleep 1
-    killall qemu-system-x86_64 2> /dev/null
+    killall -9 qemu-system-x86_64 2> /dev/null
 done
 rm -f *.log
 ./util_gen_cdf.py ${QEMU_DAT} ${QEMU_CDF}
 
 # Qemu with qboot
-killall qemu-system-x86_64 2> /dev/null
+killall -9 qemu-system-x86_64 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Qemu+qboot: $i"
     ./util_start_qemu.sh -b ../bin/qemu-system-x86_64 \
@@ -103,13 +103,13 @@ for i in $(seq ${ITER}); do
                     -m $MEM \
                     -t ${QEMU_QBOOT_DAT}
     sleep 0.4
-    killall qemu-system-x86_64 2> /dev/null
+    killall -9 qemu-system-x86_64 2> /dev/null
 done
 rm -f *.log
 ./util_gen_cdf.py ${QEMU_QBOOT_DAT} ${QEMU_QBOOT_CDF}
 
 # Qemu with qboot + Network
-killall qemu-system-x86_64 2> /dev/null
+killall -9 qemu-system-x86_64 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Qemu+qboot+Net: $i"
     ./util_start_qemu.sh -b ../bin/qemu-system-x86_64 \
@@ -122,7 +122,7 @@ for i in $(seq ${ITER}); do
                     -n \
                     -t ${QEMU_QBOOT_NET_DAT}
     sleep 0.4
-    killall qemu-system-x86_64 2> /dev/null
+    killall -9 qemu-system-x86_64 2> /dev/null
 done
 rm -f *.log
 ./util_gen_cdf.py ${QEMU_QBOOT_NET_DAT} ${QEMU_QBOOT_NET_CDF}

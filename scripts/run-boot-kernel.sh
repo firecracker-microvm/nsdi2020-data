@@ -30,7 +30,7 @@ LK_CDF=${DIR}/boot-serial-fc-linuxkit-cdf.dat
 
 rm -f ${PCI_DAT} ${PCI_CDF} ${LK_DAT} ${LK_CDF}
 
-killall firecracker 2> /dev/null
+killall -9 firecracker 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Firecracker+PCI kernel: $i"
     ./util_start_fc.sh -b ../bin/firecracker \
@@ -40,12 +40,12 @@ for i in $(seq ${ITER}); do
                   -m $MEM \
                   -t ${PCI_DAT}
     sleep 0.4
-    killall firecracker 2> /dev/null
+    killall -9 firecracker 2> /dev/null
 done
 rm -f *.log
 ./util_gen_cdf.py ${PCI_DAT} ${PCI_CDF}
 
-killall firecracker 2> /dev/null
+killall -9 firecracker 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Firecracker+LinuxKit kernel: $i"
     ./util_start_fc.sh -b ../bin/firecracker \
@@ -55,7 +55,7 @@ for i in $(seq ${ITER}); do
                   -m $MEM \
                   -t ${LK_DAT}
     sleep 0.4
-    killall firecracker 2> /dev/null
+    killall -9 firecracker 2> /dev/null
 done
 rm -f *.log
 ./util_gen_cdf.py ${LK_DAT} ${LK_CDF}

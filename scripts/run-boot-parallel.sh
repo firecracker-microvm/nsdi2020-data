@@ -33,7 +33,7 @@ CSV=${DIR}/boot-times-parallel-${PARALLEL}.csv
 
 rm -f ${FC_DAT} ${QEMU_DAT} ${CSV}
 
-killall firecracker 2> /dev/null
+killall -9 firecracker 2> /dev/null
 
 seq 1 $ITER | xargs -L1 -P$PARALLEL ./util_start_fc.sh -b ../bin/firecracker \
                   -k ../img/boot-time-vmlinux \
@@ -42,12 +42,12 @@ seq 1 $ITER | xargs -L1 -P$PARALLEL ./util_start_fc.sh -b ../bin/firecracker \
                   -m $MEM \
                   -t ${FC_DAT}
 sleep 10
-killall firecracker 2> /dev/null
+killall -9 firecracker 2> /dev/null
 rm -f *.log
 ./util_gen_cdf.py ${FC_DAT} ${FC_CDF}
 
 
-killall qemu-system-x86_64 2> /dev/null
+killall -9 qemu-system-x86_64 2> /dev/null
 seq 1 $ITER | xargs -L1 -P$PARALLEL  ./util_start_qemu.sh -b ../bin/qemu-system-x86_64 \
                     -k ../img/boot-time-pci-vmlinuz \
                     -r ../img/boot-time-disk.img \
@@ -56,7 +56,7 @@ seq 1 $ITER | xargs -L1 -P$PARALLEL  ./util_start_qemu.sh -b ../bin/qemu-system-
                     -m $MEM \
                     -t ${QEMU_DAT}
 sleep 10
-killall qemu-system-x86_64 2> /dev/null
+killall -9 qemu-system-x86_64 2> /dev/null
 rm -f *.log
 ./util_gen_cdf.py ${QEMU_DAT} ${QEMU_CDF}
 
