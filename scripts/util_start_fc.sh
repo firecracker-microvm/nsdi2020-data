@@ -80,4 +80,4 @@ else
     echo "$us_time" "$fc_time" >> "$TIMEFILE"
 fi
 
-rm "$SOCK"
+rm -f "$SOCK"
