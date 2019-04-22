@@ -1,0 +1,62 @@
+Machine (P#0 local=12285660KB total=12285660KB DMIProductName=MacPro4,1 DMIProductVersion=0.0 DMIProductSerial=3T9410009MD DMIProductUUID=9A5D59EB-433B-7946-8A78-CF4C41DE04D0 DMIBoardVendor="Apple Inc." DMIBoardName=Mac-F221BEC8 DMIBoardVersion= DMIBoardSerial="J591001T24MFB     " DMIBoardAssetTag=0 DMIChassisVendor="Apple Inc." DMIChassisType=7 DMIChassisVersion=Mac-F221BEC8 DMIChassisSerial=3T9410009MD DMIChassisAssetTag="Asset Tag#" DMIBIOSVendor="Apple Inc." DMIBIOSVersion="    MP41.88Z.0081.B07.0910130729" DMIBIOSDate=10/13/09 DMISysVendor="Apple Inc." Backend=Linux LinuxCgroup=/ OSName=Linux OSRelease=4.15.0-47-generic OSVersion="#50-Ubuntu SMP Wed Mar 13 10:44:52 UTC 2019" HostName=rlin01 Architecture=x86_64 hwlocVersion=1.11.9 ProcessName=lstopo-no-graphics) cpuset=0x000000ff
+  Package L#0 (P#0 CPUVendor=GenuineIntel CPUFamilyNumber=6 CPUModelNumber=26 CPUModel="Intel(R) Xeon(R) CPU           W3520  @ 2.67GHz" CPUStepping=5) cpuset=0x000000ff
+    L3Cache L#0 (size=8192KB linesize=64 ways=16 Inclusive=1) cpuset=0x000000ff
+      L2Cache L#0 (size=256KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000011
+        L1dCache L#0 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000011
+          L1iCache L#0 (size=32KB linesize=64 ways=4 Inclusive=0) cpuset=0x00000011
+            Core L#0 (P#0) cpuset=0x00000011
+              PU L#0 (P#0) cpuset=0x00000001
+              PU L#1 (P#4) cpuset=0x00000010
+      L2Cache L#1 (size=256KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000022
+        L1dCache L#1 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000022
+          L1iCache L#1 (size=32KB linesize=64 ways=4 Inclusive=0) cpuset=0x00000022
+            Core L#1 (P#1) cpuset=0x00000022
+              PU L#2 (P#1) cpuset=0x00000002
+              PU L#3 (P#5) cpuset=0x00000020
+      L2Cache L#2 (size=256KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000044
+        L1dCache L#2 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000044
+          L1iCache L#2 (size=32KB linesize=64 ways=4 Inclusive=0) cpuset=0x00000044
+            Core L#2 (P#2) cpuset=0x00000044
+              PU L#4 (P#2) cpuset=0x00000004
+              PU L#5 (P#6) cpuset=0x00000040
+      L2Cache L#3 (size=256KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000088
+        L1dCache L#3 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000088
+          L1iCache L#3 (size=32KB linesize=64 ways=4 Inclusive=0) cpuset=0x00000088
+            Core L#3 (P#3) cpuset=0x00000088
+              PU L#6 (P#3) cpuset=0x00000008
+              PU L#7 (P#7) cpuset=0x00000080
+  Bridge Host->PCI L#0 (P#0 buses=0000:[00-0e])
+    Bridge PCI->PCI (P#48 busid=0000:00:03.0 id=8086:340a class=0604(PCI_B) link=2.00GB/s buses=0000:[05-05] PCIVendor="Intel Corporation" PCIDevice="5520/5500/X58 I/O Hub PCI Express Root Port 3") "Intel Corporation 5520/5500/X58 I/O Hub PCI Express Root Port 3"
+      PCI 10de:1381 (P#20480 busid=0000:05:00.0 class=0300(VGA) link=2.00GB/s PCIVendor="NVIDIA Corporation" PCIDevice="GM107 [GeForce GTX 750]" PCISlot=1) "NVIDIA Corporation GM107 [GeForce GTX 750]"
+        GPU L#0 "renderD128"
+        GPU L#1 "controlD64"
+        GPU L#2 "card0"
+    Bridge PCI->PCI (P#112 busid=0000:00:07.0 id=8086:340e class=0604(PCI_B) link=4.00GB/s buses=0000:[06-06] PCIVendor="Intel Corporation" PCIDevice="5520/5500/X58 I/O Hub PCI Express Root Port 7") "Intel Corporation 5520/5500/X58 I/O Hub PCI Express Root Port 7"
+      PCI 10de:0640 (P#24576 busid=0000:06:00.0 class=0300(VGA) link=4.00GB/s PCIVendor="NVIDIA Corporation" PCIDevice="G96 [GeForce 9500 GT]" PCISlot=2) "NVIDIA Corporation G96 [GeForce 9500 GT]"
+        GPU L#3 "card1"
+        GPU L#4 "renderD129"
+        GPU L#5 "controlD65"
+    Bridge PCI->PCI (P#450 busid=0000:00:1c.2 id=8086:3a44 class=0604(PCI_B) link=0.25GB/s buses=0000:[09-09] PCIVendor="Intel Corporation" PCIDevice="82801JI (ICH10 Family) PCI Express Root Port 3") "Intel Corporation 82801JI (ICH10 Family) PCI Express Root Port 3"
+      PCI 8086:10f6 (P#36864 busid=0000:09:00.0 class=0200(Ether) link=0.25GB/s PCIVendor="Intel Corporation" PCIDevice="82574L Gigabit Network Connection") "Intel Corporation 82574L Gigabit Network Connection"
+        Network L#6 (Address=00:25:00:ee:23:42) "enp9s0"
+    Bridge PCI->PCI (P#451 busid=0000:00:1c.3 id=8086:3a46 class=0604(PCI_B) link=0.25GB/s buses=0000:[0a-0a] PCIVendor="Intel Corporation" PCIDevice="82801JI (ICH10 Family) PCI Express Root Port 4") "Intel Corporation 82801JI (ICH10 Family) PCI Express Root Port 4"
+      PCI 8086:10f6 (P#40960 busid=0000:0a:00.0 class=0200(Ether) link=0.25GB/s PCIVendor="Intel Corporation" PCIDevice="82574L Gigabit Network Connection") "Intel Corporation 82574L Gigabit Network Connection"
+        Network L#7 (Address=00:25:00:ed:d3:2f) "enp10s0"
+    Bridge PCI->PCI (P#453 busid=0000:00:1c.5 id=8086:3a4a class=0604(PCI_B) link=0.25GB/s buses=0000:[0d-0d] PCIVendor="Intel Corporation" PCIDevice="82801JI (ICH10 Family) PCI Express Root Port 6") "Intel Corporation 82801JI (ICH10 Family) PCI Express Root Port 6"
+      PCI 14e4:432b (P#53248 busid=0000:0d:00.0 class=0280(Net) link=0.25GB/s PCIVendor="Broadcom Inc. and subsidiaries" PCIDevice="BCM4322 802.11a/b/g/n Wireless LAN Controller" PCISlot=5) "Broadcom Inc. and subsidiaries BCM4322 802.11a/b/g/n Wireless LAN Controller"
+    PCI 8086:3a22 (P#498 busid=0000:00:1f.2 class=0106(SATA) PCIVendor="Intel Corporation" PCIDevice="82801JI (ICH10 Family) SATA AHCI Controller") "Intel Corporation 82801JI (ICH10 Family) SATA AHCI Controller"
+      Block(Removable Media Device) L#8 (LinuxDeviceID=11:0 Model=HL-DT-ST_DVD-RW_GH41N Revision=PQ05 SerialNumber=6D7F5B0185FE Type="Removable Media Device") "sr0"
+      Block(Disk) L#9 (LinuxDeviceID=8:32 Vendor="Western Digital" Model=WDC_WD20EZRX-00D8PB0 Revision=80.00A80 SerialNumber=WD-WMC4M1391535 Type=Disk) "sdc"
+      Block(Disk) L#10 (LinuxDeviceID=8:0 Model=OCZ-VERTEX2 Revision=1.33 SerialNumber=OCZ-B487L3H64C93A4EG Type=Disk) "sda"
+      Block(Disk) L#11 (LinuxDeviceID=8:16 Vendor=Samsung Model=Samsung_SSD_840_EVO_750GB Revision=EXT0AB0Q SerialNumber=S1DMNEAD804335K Type=Disk) "sdb"
+depth 0:	1 Machine (type #1)
+ depth 1:	1 Package (type #3)
+  depth 2:	1 L3Cache (type #4)
+   depth 3:	4 L2Cache (type #4)
+    depth 4:	4 L1dCache (type #4)
+     depth 5:	4 L1iCache (type #4)
+      depth 6:	4 Core (type #5)
+       depth 7:	8 PU (type #6)
+Special depth -3:	6 Bridge (type #9)
+Special depth -4:	6 PCI Device (type #10)
+Special depth -5:	12 OS Device (type #11)
