@@ -103,7 +103,7 @@ fi
 if [ "x$DISK" != "x" ]; then
     QEMU="$QEMU \
         -device virtio-blk-pci,drive=d1 \
-        -drive if=none,id=d1,format=raw,readonly=on,file=$DISK \
+        -drive if=none,id=d1,format=raw,file=$DISK \
         "
 fi
 
