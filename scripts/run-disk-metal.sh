@@ -1,0 +1,26 @@
+#! /bin/sh
+
+DIR=../data/
+
+while [ $# -gt 0 ]; do
+    case $1 in
+        -d) shift; DIR=$1
+            ;;
+    esac
+    shift
+done
+
+TESTS="rand-read-4k rand-read-4k-qd1"
+TESTS="$TESTS rand-write-4k rand-write-4k-qd1"
+TESTS="$TESTS rand-read-128k rand-read-128k-qd1"
+TESTS="$TESTS rand-write-128k rand-write-128k-qd1"
+
+RAW=${DIR}/raw
+mkdir -p ${RAW}
+
+PRE=${RAW}/fio-metal
+
+for TEST in $TESTS; do
+    echo "Running $TEST"
+    fio --output-format=json --output=$PRE-$TEST.json --section=$TEST ../etc/fio-metal.cfg
+done
