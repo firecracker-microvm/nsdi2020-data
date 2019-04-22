@@ -1,4 +1,4 @@
-#! /bin/bash -e
+#! /bin/bash
 
 set -x
 
@@ -23,12 +23,11 @@ fi
 ##
 modprobe kvm_intel
 sysctl -w net.ipv4.conf.all.forwarding=1
-if [ -e /proc/sys/net/ipv4/netfilter/ip_conntrack_max ]; then
-    sysctl -w net.ipv4.netfilter.ip_conntrack_max=99999999
-else
-    sysctl -w net.nf_conntrack_max=99999999
-    sysctl -w net.netfilter.nf_conntrack_max=99999999
-fi
+
+sysctl -w net.ipv4.netfilter.ip_conntrack_max=99999999
+sysctl -w net.nf_conntrack_max=99999999
+sysctl -w net.netfilter.nf_conntrack_max=99999999
+
 sysctl -w net.ipv4.neigh.default.gc_thresh1=1024
 sysctl -w net.ipv4.neigh.default.gc_thresh2=2048
 sysctl -w net.ipv4.neigh.default.gc_thresh3=4096
