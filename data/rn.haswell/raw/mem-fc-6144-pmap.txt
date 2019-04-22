@@ -1,0 +1,46 @@
+17241:   ../bin/firecracker --api-sock /tmp/fc-0.sock
+Address           Kbytes     RSS   Dirty Mode  Mapping
+0000000000400000    2020    1856       0 r-x-- firecracker
+0000000000400000       0       0       0 r-x-- firecracker
+00000000007f8000      60      60       4 rw--- firecracker
+00000000007f8000       0       0       0 rw--- firecracker
+0000000000807000       8       8       8 rw---   [ anon ]
+0000000000807000       0       0       0 rw---   [ anon ]
+0000000002344000     308     216     216 rw---   [ anon ]
+0000000002344000       0       0       0 rw---   [ anon ]
+00007fe698c1b000       8       0       0 rw---   [ anon ]
+00007fe698c1b000       0       0       0 rw---   [ anon ]
+00007fe698c1d000       4       0       0 -----   [ anon ]
+00007fe698c1d000       0       0       0 -----   [ anon ]
+00007fe698c1e000    2052     264     264 rw---   [ anon ]
+00007fe698c1e000       0       0       0 rw---   [ anon ]
+00007fe698e1f000      12       4       4 rw-s-   [ anon ]
+00007fe698e1f000       0       0       0 rw-s-   [ anon ]
+00007fe698e22000       4       4       4 rw-s- zero (deleted)
+00007fe698e22000       0       0       0 rw-s- zero (deleted)
+00007fe698e23000       4       4       4 rw-s- zero (deleted)
+00007fe698e23000       0       0       0 rw-s- zero (deleted)
+00007fe698e24000       4       4       0 r--s- GB
+00007fe698e24000       0       0       0 r--s- GB
+00007fe698e25000      12      12      12 rw-s- zero (deleted)
+00007fe698e25000       0       0       0 rw-s- zero (deleted)
+00007fe698e28000 2883584  267300  267300 rw-s- zero (deleted)
+00007fe698e28000       0       0       0 rw-s- zero (deleted)
+00007fe748e28000 3407872   83080   82824 rw-s- zero (deleted)
+00007fe748e28000       0       0       0 rw-s- zero (deleted)
+00007fe818e28000       8       0       0 rw---   [ anon ]
+00007fe818e28000       0       0       0 rw---   [ anon ]
+00007fe818e2a000       4       0       0 -----   [ anon ]
+00007fe818e2a000       0       0       0 -----   [ anon ]
+00007fe818e2b000    2064      32      32 rw---   [ anon ]
+00007fe818e2b000       0       0       0 rw---   [ anon ]
+00007ffe8186c000     132      20      20 rw---   [ stack ]
+00007ffe8186c000       0       0       0 rw---   [ stack ]
+00007ffe818e2000      12       0       0 r----   [ anon ]
+00007ffe818e2000       0       0       0 r----   [ anon ]
+00007ffe818e5000       8       4       0 r-x--   [ anon ]
+00007ffe818e5000       0       0       0 r-x--   [ anon ]
+ffffffffff600000       4       0       0 r-x--   [ anon ]
+ffffffffff600000       0       0       0 r-x--   [ anon ]
+---------------- ------- ------- ------- 
+total kB         6298184  352868  350692

@@ -1,0 +1,44 @@
+17032:   ../bin/firecracker --api-sock /tmp/fc-0.sock
+Address           Kbytes     RSS   Dirty Mode  Mapping
+0000000000400000    2020    1856       0 r-x-- firecracker
+0000000000400000       0       0       0 r-x-- firecracker
+00000000007f8000      60      60       4 rw--- firecracker
+00000000007f8000       0       0       0 rw--- firecracker
+0000000000807000       8       8       8 rw---   [ anon ]
+0000000000807000       0       0       0 rw---   [ anon ]
+0000000000cba000     324     216     216 rw---   [ anon ]
+0000000000cba000       0       0       0 rw---   [ anon ]
+00007f50bf31e000       8       0       0 rw---   [ anon ]
+00007f50bf31e000       0       0       0 rw---   [ anon ]
+00007f50bf320000       4       0       0 -----   [ anon ]
+00007f50bf320000       0       0       0 -----   [ anon ]
+00007f50bf321000    2052     264     264 rw---   [ anon ]
+00007f50bf321000       0       0       0 rw---   [ anon ]
+00007f50bf522000      12       4       4 rw-s-   [ anon ]
+00007f50bf522000       0       0       0 rw-s-   [ anon ]
+00007f50bf525000       4       4       4 rw-s- zero (deleted)
+00007f50bf525000       0       0       0 rw-s- zero (deleted)
+00007f50bf526000       4       4       4 rw-s- zero (deleted)
+00007f50bf526000       0       0       0 rw-s- zero (deleted)
+00007f50bf527000       4       4       0 r--s- GB
+00007f50bf527000       0       0       0 r--s- GB
+00007f50bf528000      12      12      12 rw-s- zero (deleted)
+00007f50bf528000       0       0       0 rw-s- zero (deleted)
+00007f50bf52b000 1572864  196536  196280 rw-s- zero (deleted)
+00007f50bf52b000       0       0       0 rw-s- zero (deleted)
+00007f511f52b000       8       0       0 rw---   [ anon ]
+00007f511f52b000       0       0       0 rw---   [ anon ]
+00007f511f52d000       4       0       0 -----   [ anon ]
+00007f511f52d000       0       0       0 -----   [ anon ]
+00007f511f52e000    2064      32      32 rw---   [ anon ]
+00007f511f52e000       0       0       0 rw---   [ anon ]
+00007ffe9ef3b000     132      16      16 rw---   [ stack ]
+00007ffe9ef3b000       0       0       0 rw---   [ stack ]
+00007ffe9efcb000      12       0       0 r----   [ anon ]
+00007ffe9efcb000       0       0       0 r----   [ anon ]
+00007ffe9efce000       8       4       0 r-x--   [ anon ]
+00007ffe9efce000       0       0       0 r-x--   [ anon ]
+ffffffffff600000       4       0       0 r-x--   [ anon ]
+ffffffffff600000       0       0       0 r-x--   [ anon ]
+---------------- ------- ------- ------- 
+total kB         1579608  199020  196844

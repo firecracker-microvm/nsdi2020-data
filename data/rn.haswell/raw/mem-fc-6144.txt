@@ -1,0 +1,2 @@
+  PID    VSZ   RSS COMMAND
+17241 6298180 350700 ../bin/firecracker --api-sock /tmp/fc-0.sock

@@ -1,0 +1,48 @@
+Machine (P#0 local=16339636KB total=16339636KB DMIProductName="PRIMERGY TX1310 M1" DMIProductVersion= DMIProductSerial=YLTQ030733 DMIProductUUID=5862C37C-7D04-D543-8C27-B1591B5DBB46 DMIBoardVendor=FUJITSU DMIBoardName=D3219-A1 DMIBoardVersion="S26361-D3219-A1            " DMIBoardSerial=47933540 DMIBoardAssetTag= DMIChassisVendor=FUJITSU DMIChassisType=6 DMIChassisVersion=TX1310M1 DMIChassisSerial=YLTQ030733 DMIChassisAssetTag= DMIBIOSVendor="FUJITSU // American Megatrends Inc." DMIBIOSVersion="V4.6.5.4 R1.4.0 for D3219-A1x" DMIBIOSDate=09/25/2014 DMISysVendor=FUJITSU Backend=Linux LinuxCgroup=/ OSName=Linux OSRelease=4.15.0-47-generic OSVersion="#50-Ubuntu SMP Wed Mar 13 10:44:52 UTC 2019" HostName=rlin02 Architecture=x86_64 hwlocVersion=1.11.9 ProcessName=lstopo-no-graphics) cpuset=0x0000000f
+  Package L#0 (P#0 CPUVendor=GenuineIntel CPUFamilyNumber=6 CPUModelNumber=60 CPUModel="Intel(R) Xeon(R) CPU E3-1226 v3 @ 3.30GHz" CPUStepping=3) cpuset=0x0000000f
+    L3Cache L#0 (size=8192KB linesize=64 ways=16 Inclusive=1) cpuset=0x0000000f
+      L2Cache L#0 (size=256KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000001
+        L1dCache L#0 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000001
+          L1iCache L#0 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000001
+            Core L#0 (P#0) cpuset=0x00000001
+              PU L#0 (P#0) cpuset=0x00000001
+      L2Cache L#1 (size=256KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000002
+        L1dCache L#1 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000002
+          L1iCache L#1 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000002
+            Core L#1 (P#1) cpuset=0x00000002
+              PU L#1 (P#1) cpuset=0x00000002
+      L2Cache L#2 (size=256KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000004
+        L1dCache L#2 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000004
+          L1iCache L#2 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000004
+            Core L#2 (P#2) cpuset=0x00000004
+              PU L#2 (P#2) cpuset=0x00000004
+      L2Cache L#3 (size=256KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000008
+        L1dCache L#3 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000008
+          L1iCache L#3 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000008
+            Core L#3 (P#3) cpuset=0x00000008
+              PU L#3 (P#3) cpuset=0x00000008
+  Bridge Host->PCI L#0 (P#0 buses=0000:[00-02])
+    PCI 8086:041a (P#32 busid=0000:00:02.0 class=0300(VGA) PCIVendor="Intel Corporation" PCIDevice="Xeon E3-1200 v3 Processor Integrated Graphics Controller") "Intel Corporation Xeon E3-1200 v3 Processor Integrated Graphics Controller"
+      GPU L#0 "renderD128"
+      GPU L#1 "controlD64"
+      GPU L#2 "card0"
+    PCI 8086:153a (P#400 busid=0000:00:19.0 class=0200(Ether) PCIVendor="Intel Corporation" PCIDevice="Ethernet Connection I217-LM") "Intel Corporation Ethernet Connection I217-LM"
+      Network L#3 (Address=90:1b:0e:66:cd:77) "eth0"
+    Bridge PCI->PCI (P#450 busid=0000:00:1c.2 id=8086:8c14 class=0604(PCI_B) link=0.25GB/s buses=0000:[02-02] PCIVendor="Intel Corporation" PCIDevice="8 Series/C220 Series Chipset Family PCI Express Root Port #3") "Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #3"
+      PCI 8086:1533 (P#8192 busid=0000:02:00.0 class=0200(Ether) link=0.25GB/s PCIVendor="Intel Corporation" PCIDevice="I210 Gigabit Network Connection") "Intel Corporation I210 Gigabit Network Connection"
+        Network L#4 (Address=90:1b:0e:62:c9:65) "p2p1"
+    PCI 8086:8c02 (P#498 busid=0000:00:1f.2 class=0106(SATA) PCIVendor="Intel Corporation" PCIDevice="8 Series/C220 Series Chipset Family 6-port SATA Controller 1 [AHCI mode]") "Intel Corporation 8 Series/C220 Series Chipset Family 6-port SATA Controller 1 [AHCI mode]"
+      Block(Disk) L#5 (LinuxDeviceID=8:0 Vendor=Seagate Model=ST1000NM0033-9ZM173 Revision=SND3 SerialNumber=Z1W47QS6 Type=Disk) "sda"
+      Block(Disk) L#6 (LinuxDeviceID=8:16 Vendor=Seagate Model=ST1000NM0033-9ZM173 Revision=SND3 SerialNumber=Z1W47P4P Type=Disk) "sdb"
+      Block(Removable Media Device) L#7 (LinuxDeviceID=11:0 Model=HL-DT-ST_DVDRAM_GHC0N Revision=VF01 SerialNumber=506HD002062 Type="Removable Media Device") "sr0"
+depth 0:	1 Machine (type #1)
+ depth 1:	1 Package (type #3)
+  depth 2:	1 L3Cache (type #4)
+   depth 3:	4 L2Cache (type #4)
+    depth 4:	4 L1dCache (type #4)
+     depth 5:	4 L1iCache (type #4)
+      depth 6:	4 Core (type #5)
+       depth 7:	4 PU (type #6)
+Special depth -3:	2 Bridge (type #9)
+Special depth -4:	4 PCI Device (type #10)
+Special depth -5:	8 OS Device (type #11)

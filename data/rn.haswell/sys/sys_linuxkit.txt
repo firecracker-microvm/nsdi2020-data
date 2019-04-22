@@ -1,0 +1,2 @@
+linuxkit version v0.7
+commit: 4f4f7feae125e1b2796806fff708fd3ac9c20657
