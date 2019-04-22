@@ -27,6 +27,6 @@ set mytics 4
 set grid ytics mytics xtics mxtics
 
 plot \
-     fc_dat          index 1 using 1:2         w l lw 2 t 'AnonVMM-prep', \
+     fc_dat          index 1 using 1:2         w l lw 2 t 'AnonVMM-pre', \
      fc_dat          index 0 using ($1/1000):2 w l lw 2 t 'AnonVMM', \
      qboot_dat       index 0 using ($1/1000):2 w l lw 2 t 'Qemu', \

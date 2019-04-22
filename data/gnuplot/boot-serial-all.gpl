@@ -33,13 +33,13 @@ set mytics 4
 set grid ytics mytics xtics mxtics
 
 plot \
-     fc_dat          index 1 using 1:2         w l lw 2 t 'Firecracker-prep', \
+     fc_dat          index 1 using 1:2         w l lw 2 t 'Firecracker-pre', \
      fc_dat          index 0 using ($1/1000):2 w l lw 2 t 'Firecracker', \
-     fc_pci_dat      index 1 using 1:2         w l lw 2 t 'Firecracker-prep (w/ PCI kernel)', \
-     fc_net_dat      index 1 using 1:2         w l lw 2 t 'Firecracker+Network-prep', \
+     fc_pci_dat      index 1 using 1:2         w l lw 2 t 'Firecracker-pre (w/ PCI kernel)', \
+     fc_net_dat      index 1 using 1:2         w l lw 2 t 'Firecracker+Network-pre', \
      fc_net_dat      index 0 using ($1/1000):2 w l lw 2 t 'Firecracker+Network', \
      qemu_dat        index 0 using ($1/1000):2 w l lw 2 t 'Qemu', \
      qboot_dat       index 0 using ($1/1000):2 w l lw 2 t 'Qemu qboot', \
      qboot_net_dat   index 0 using ($1/1000):2 w l lw 2 t 'Qemu qboot+Network', \
 
-#     fc_lk_dat       index 1 using 1:2         w l lw 2 t 'Firecracker-prep (w/ LK kernel)', \
+#     fc_lk_dat       index 1 using 1:2         w l lw 2 t 'Firecracker-pre (w/ LK kernel)', \
