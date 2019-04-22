@@ -1,0 +1,45 @@
+# Plot all serial boot data.
+# This graph is not for publication, just a quick sanity check to see all data in one graph
+#
+# invoke with:
+# gnuplot -e "base='<dir>'" boot-serial-all.gpl
+# where <dir> is the platform directory
+
+
+fc_dat =        sprintf("%s/boot-serial-fc-cdf.dat", base)
+fc_pci_dat =    sprintf("%s/boot-serial-fc-pci-cdf.dat", base)
+#fc_lk_dat =     sprintf("%s/boot-serial-fc-linuxkit-cdf.dat", base)
+fc_net_dat =    sprintf("%s/boot-serial-fc-net-cdf.dat", base)
+qemu_dat =      sprintf("%s/boot-serial-qemu-cdf.dat", base)
+qboot_dat =     sprintf("%s/boot-serial-qboot-cdf.dat", base)
+qboot_net_dat = sprintf("%s/boot-serial-qboot-net-cdf.dat", base)
+
+out_file = sprintf("%s/boot-serial-all.pdf", base)
+
+
+set terminal pdf color solid enhanced
+set output out_file
+
+set xlabel 'Boot time (ms)'
+set ylabel 'CDF'
+
+set xrange [0:]
+set yrange [0:1.05]
+set offsets graph 0, 0, 0.01, 0.01
+
+set key top left
+
+set mytics 4
+set grid ytics mytics xtics mxtics
+
+plot \
+     fc_dat          index 1 using 1:2         w l lw 2 t 'Firecracker-prep', \
+     fc_dat          index 0 using ($1/1000):2 w l lw 2 t 'Firecracker', \
+     fc_pci_dat      index 1 using 1:2         w l lw 2 t 'Firecracker-prep (w/ PCI kernel)', \
+     fc_net_dat      index 1 using 1:2         w l lw 2 t 'Firecracker+Network-prep', \
+     fc_net_dat      index 0 using ($1/1000):2 w l lw 2 t 'Firecracker+Network', \
+     qemu_dat        index 0 using ($1/1000):2 w l lw 2 t 'Qemu', \
+     qboot_dat       index 0 using ($1/1000):2 w l lw 2 t 'Qemu qboot', \
+     qboot_net_dat   index 0 using ($1/1000):2 w l lw 2 t 'Qemu qboot+Network', \
+
+#     fc_lk_dat       index 1 using 1:2         w l lw 2 t 'Firecracker-prep (w/ LK kernel)', \
