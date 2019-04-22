@@ -28,6 +28,6 @@ lspci -vvv -nn           > ${SYS}/sys_lspci.txt
 dmidecode                > ${SYS}/sys_dmidecode.txt
 dmesg                    > ${SYS}/sys_dmesg.txt
 
-../bin/qemu-system-x86_64 --version > ${DIR}/sys_qemu.txt
-../bin/firecracker --version        > ${DIR}/sys_firecracker.txt
-../bin/linuxkit version             > ${DIR}/sys_linuxkit.txt
+../bin/qemu-system-x86_64 --version > ${SYS}/sys_qemu.txt
+../bin/firecracker --version        > ${SYS}/sys_firecracker.txt
+../bin/linuxkit version             > ${SYS}/sys_linuxkit.txt
