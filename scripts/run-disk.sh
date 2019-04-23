@@ -57,7 +57,7 @@ for TEST in $TESTS; do
 done
 killall -9 firecracker 2> /dev/null
 
-sleep 5
+sleep 10
 ./util_start_qemu.sh \
     -b ../bin/qemu-system-x86_64 \
     -k ../img/bench-ssh-vmlinuz \
