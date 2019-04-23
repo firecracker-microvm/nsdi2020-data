@@ -45,7 +45,7 @@ with open(infn, 'r') as f:
             executable += sz
         elif mode.startswith("rw"):
             data += sz
-        elif mode == "r----":
+        elif mode.startswith("r--"):
             ro_data += sz
         elif mode == "-----":
             continue
