@@ -1,0 +1,284 @@
+Machine (P#0 total=395916404KB DMIProductName=m5d.metal DMIProductVersion=1.0 DMIProductSerial=ec224a4e-b7c1-80b5-9f5e-cf0dde05fcb2 DMIProductUUID=EC224A4E-B7C1-80B5-9F5E-CF0DDE05FCB2 DMIBoardVendor="Amazon EC2" DMIBoardName="Not Specified" DMIBoardVersion="Not Specified" DMIBoardSerial="Not Specified" DMIBoardAssetTag=i-0a1375bc8fe4f289e DMIChassisVendor="Amazon EC2" DMIChassisType=23 DMIChassisVersion="Not Specified" DMIChassisSerial="Not Specified" DMIChassisAssetTag="Amazon EC2" DMIBIOSVendor="Amazon EC2" DMIBIOSVersion=1.0 DMIBIOSDate=10/16/2017 DMISysVendor="Amazon EC2" Backend=Linux LinuxCgroup=/ OSName=Linux OSRelease=4.15.0-1035-aws OSVersion="#37-Ubuntu SMP Mon Mar 18 16:15:14 UTC 2019" HostName=ip-172-30-0-103 Architecture=x86_64 hwlocVersion=1.11.9 ProcessName=lstopo-no-graphics) cpuset=0x0000ffff,0xffffffff
+  NUMANode L#0 (P#0 local=197767268KB total=197767268KB) cpuset=0x00ffffff
+    Package L#0 (P#0 CPUVendor=GenuineIntel CPUFamilyNumber=6 CPUModelNumber=85 CPUModel="Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz" CPUStepping=4) cpuset=0x00ffffff
+      L3Cache L#0 (size=33792KB linesize=64 ways=11 Inclusive=0) cpuset=0x00ffffff
+        L2Cache L#0 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000001
+          L1dCache L#0 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000001
+            L1iCache L#0 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000001
+              Core L#0 (P#0) cpuset=0x00000001
+                PU L#0 (P#0) cpuset=0x00000001
+        L2Cache L#1 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000002
+          L1dCache L#1 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000002
+            L1iCache L#1 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000002
+              Core L#1 (P#1) cpuset=0x00000002
+                PU L#1 (P#1) cpuset=0x00000002
+        L2Cache L#2 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000004
+          L1dCache L#2 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000004
+            L1iCache L#2 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000004
+              Core L#2 (P#2) cpuset=0x00000004
+                PU L#2 (P#2) cpuset=0x00000004
+        L2Cache L#3 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000008
+          L1dCache L#3 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000008
+            L1iCache L#3 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000008
+              Core L#3 (P#3) cpuset=0x00000008
+                PU L#3 (P#3) cpuset=0x00000008
+        L2Cache L#4 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000010
+          L1dCache L#4 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000010
+            L1iCache L#4 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000010
+              Core L#4 (P#4) cpuset=0x00000010
+                PU L#4 (P#4) cpuset=0x00000010
+        L2Cache L#5 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000020
+          L1dCache L#5 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000020
+            L1iCache L#5 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000020
+              Core L#5 (P#5) cpuset=0x00000020
+                PU L#5 (P#5) cpuset=0x00000020
+        L2Cache L#6 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000040
+          L1dCache L#6 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000040
+            L1iCache L#6 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000040
+              Core L#6 (P#8) cpuset=0x00000040
+                PU L#6 (P#6) cpuset=0x00000040
+        L2Cache L#7 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000080
+          L1dCache L#7 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000080
+            L1iCache L#7 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000080
+              Core L#7 (P#9) cpuset=0x00000080
+                PU L#7 (P#7) cpuset=0x00000080
+        L2Cache L#8 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000100
+          L1dCache L#8 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000100
+            L1iCache L#8 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000100
+              Core L#8 (P#10) cpuset=0x00000100
+                PU L#8 (P#8) cpuset=0x00000100
+        L2Cache L#9 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000200
+          L1dCache L#9 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000200
+            L1iCache L#9 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000200
+              Core L#9 (P#11) cpuset=0x00000200
+                PU L#9 (P#9) cpuset=0x00000200
+        L2Cache L#10 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000400
+          L1dCache L#10 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000400
+            L1iCache L#10 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000400
+              Core L#10 (P#12) cpuset=0x00000400
+                PU L#10 (P#10) cpuset=0x00000400
+        L2Cache L#11 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000800
+          L1dCache L#11 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000800
+            L1iCache L#11 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000800
+              Core L#11 (P#13) cpuset=0x00000800
+                PU L#11 (P#11) cpuset=0x00000800
+        L2Cache L#12 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00001000
+          L1dCache L#12 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00001000
+            L1iCache L#12 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00001000
+              Core L#12 (P#16) cpuset=0x00001000
+                PU L#12 (P#12) cpuset=0x00001000
+        L2Cache L#13 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00002000
+          L1dCache L#13 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00002000
+            L1iCache L#13 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00002000
+              Core L#13 (P#17) cpuset=0x00002000
+                PU L#13 (P#13) cpuset=0x00002000
+        L2Cache L#14 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00004000
+          L1dCache L#14 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00004000
+            L1iCache L#14 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00004000
+              Core L#14 (P#18) cpuset=0x00004000
+                PU L#14 (P#14) cpuset=0x00004000
+        L2Cache L#15 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00008000
+          L1dCache L#15 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00008000
+            L1iCache L#15 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00008000
+              Core L#15 (P#19) cpuset=0x00008000
+                PU L#15 (P#15) cpuset=0x00008000
+        L2Cache L#16 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00010000
+          L1dCache L#16 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00010000
+            L1iCache L#16 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00010000
+              Core L#16 (P#20) cpuset=0x00010000
+                PU L#16 (P#16) cpuset=0x00010000
+        L2Cache L#17 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00020000
+          L1dCache L#17 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00020000
+            L1iCache L#17 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00020000
+              Core L#17 (P#21) cpuset=0x00020000
+                PU L#17 (P#17) cpuset=0x00020000
+        L2Cache L#18 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00040000
+          L1dCache L#18 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00040000
+            L1iCache L#18 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00040000
+              Core L#18 (P#24) cpuset=0x00040000
+                PU L#18 (P#18) cpuset=0x00040000
+        L2Cache L#19 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00080000
+          L1dCache L#19 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00080000
+            L1iCache L#19 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00080000
+              Core L#19 (P#25) cpuset=0x00080000
+                PU L#19 (P#19) cpuset=0x00080000
+        L2Cache L#20 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00100000
+          L1dCache L#20 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00100000
+            L1iCache L#20 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00100000
+              Core L#20 (P#26) cpuset=0x00100000
+                PU L#20 (P#20) cpuset=0x00100000
+        L2Cache L#21 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00200000
+          L1dCache L#21 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00200000
+            L1iCache L#21 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00200000
+              Core L#21 (P#27) cpuset=0x00200000
+                PU L#21 (P#21) cpuset=0x00200000
+        L2Cache L#22 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00400000
+          L1dCache L#22 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00400000
+            L1iCache L#22 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00400000
+              Core L#22 (P#28) cpuset=0x00400000
+                PU L#22 (P#22) cpuset=0x00400000
+        L2Cache L#23 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00800000
+          L1dCache L#23 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00800000
+            L1iCache L#23 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00800000
+              Core L#23 (P#29) cpuset=0x00800000
+                PU L#23 (P#23) cpuset=0x00800000
+    Bridge Host->PCI L#0 (P#0 buses=0000:[00-00])
+      PCI 8086:a1d2 (P#277 busid=0000:00:11.5 class=0106(SATA) PCIVendor="Intel Corporation" PCIDevice="C620 Series Chipset Family SSATA Controller [AHCI mode]") "Intel Corporation C620 Series Chipset Family SSATA Controller [AHCI mode]"
+      PCI 8086:a182 (P#368 busid=0000:00:17.0 class=0106(SATA) PCIVendor="Intel Corporation" PCIDevice="C620 Series Chipset Family SATA Controller [AHCI mode]") "Intel Corporation C620 Series Chipset Family SATA Controller [AHCI mode]"
+    Bridge Host->PCI L#1 (P#1 buses=0000:[17-18])
+      Bridge PCI->PCI (P#94208 busid=0000:17:00.0 id=8086:2030 class=0604(PCI_B) link=7.88GB/s buses=0000:[18-18] PCIVendor="Intel Corporation" PCIDevice="Sky Lake-E PCI Express Root Port A" PCISlot=1) "Intel Corporation Sky Lake-E PCI Express Root Port A"
+        2 x { PCI 1d0f:cd00 (P#[collapsed] busid=[collapsed] class=0108(NVMExp) link=7.88GB/s PCIVendor="Amazon.com, Inc.") "Amazon.com, Inc." }
+    Bridge Host->PCI L#3 (P#3 buses=0000:[7a-ae])
+      Bridge PCI->PCI (P#499712 busid=0000:7a:00.0 id=8086:2030 class=0604(PCI_B) link=7.88GB/s buses=0000:[7b-8c] PCIVendor="Intel Corporation" PCIDevice="Sky Lake-E PCI Express Root Port A" PCISlot=6) "Intel Corporation Sky Lake-E PCI Express Root Port A"
+        Bridge PCI->PCI (P#503808 busid=0000:7b:00.0 id=1d0f:bec2 class=0604(PCI_B) link=7.88GB/s buses=0000:[7c-8c] PCIVendor="Amazon.com, Inc." PCISlot=0) "Amazon.com, Inc."
+          Bridge PCI->PCI (P#507904 busid=0000:7c:00.0 id=1d0f:bec2 class=0604(PCI_B) link=7.88GB/s buses=0000:[7d-7d] PCIVendor="Amazon.com, Inc.") "Amazon.com, Inc."
+            PCI 1d0f:ec20 (P#512000 busid=0000:7d:00.0 class=0200(Ether) link=7.88GB/s PCIVendor="Amazon.com, Inc." PCIDevice="Elastic Network Adapter (ENA)" PCISlot=0-2) "Amazon.com, Inc. Elastic Network Adapter (ENA)"
+              Network L#0 (Address=0a:32:b1:23:b1:c4) "enp125s0"
+      Bridge PCI->PCI (P#499744 busid=0000:7a:02.0 id=8086:2032 class=0604(PCI_B) link=7.88GB/s buses=0000:[8d-ae] PCIVendor="Intel Corporation" PCIDevice="Sky Lake-E PCI Express Root Port C" PCISlot=6-1) "Intel Corporation Sky Lake-E PCI Express Root Port C"
+        Bridge PCI->PCI (P#577536 busid=0000:8d:00.0 id=1d0f:bec2 class=0604(PCI_B) link=7.88GB/s buses=0000:[8e-ae] PCIVendor="Amazon.com, Inc." PCISlot=0-1) "Amazon.com, Inc."
+          Bridge PCI->PCI (P#581648 busid=0000:8e:01.0 id=1d0f:bec2 class=0604(PCI_B) link=7.88GB/s buses=0000:[90-90] PCIVendor="Amazon.com, Inc.") "Amazon.com, Inc."
+            PCI 1d0f:0061 (P#589824 busid=0000:90:00.0 class=0108(NVMExp) link=7.88GB/s PCIVendor="Amazon.com, Inc." PCISlot=1-2) "Amazon.com, Inc."
+  NUMANode L#1 (P#1 local=198149136KB total=198149136KB) cpuset=0x0000ffff,0xff000000
+    Package L#1 (P#1 CPUVendor=GenuineIntel CPUFamilyNumber=6 CPUModelNumber=85 CPUModel="Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz" CPUStepping=4) cpuset=0x0000ffff,0xff000000
+      L3Cache L#1 (size=33792KB linesize=64 ways=11 Inclusive=0) cpuset=0x0000ffff,0xff000000
+        L2Cache L#24 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x01000000
+          L1dCache L#24 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x01000000
+            L1iCache L#24 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x01000000
+              Core L#24 (P#0) cpuset=0x01000000
+                PU L#24 (P#24) cpuset=0x01000000
+        L2Cache L#25 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x02000000
+          L1dCache L#25 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x02000000
+            L1iCache L#25 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x02000000
+              Core L#25 (P#1) cpuset=0x02000000
+                PU L#25 (P#25) cpuset=0x02000000
+        L2Cache L#26 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x04000000
+          L1dCache L#26 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x04000000
+            L1iCache L#26 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x04000000
+              Core L#26 (P#2) cpuset=0x04000000
+                PU L#26 (P#26) cpuset=0x04000000
+        L2Cache L#27 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x08000000
+          L1dCache L#27 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x08000000
+            L1iCache L#27 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x08000000
+              Core L#27 (P#3) cpuset=0x08000000
+                PU L#27 (P#27) cpuset=0x08000000
+        L2Cache L#28 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x10000000
+          L1dCache L#28 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x10000000
+            L1iCache L#28 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x10000000
+              Core L#28 (P#4) cpuset=0x10000000
+                PU L#28 (P#28) cpuset=0x10000000
+        L2Cache L#29 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x20000000
+          L1dCache L#29 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x20000000
+            L1iCache L#29 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x20000000
+              Core L#29 (P#5) cpuset=0x20000000
+                PU L#29 (P#29) cpuset=0x20000000
+        L2Cache L#30 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x40000000
+          L1dCache L#30 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x40000000
+            L1iCache L#30 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x40000000
+              Core L#30 (P#8) cpuset=0x40000000
+                PU L#30 (P#30) cpuset=0x40000000
+        L2Cache L#31 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x80000000
+          L1dCache L#31 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x80000000
+            L1iCache L#31 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x80000000
+              Core L#31 (P#9) cpuset=0x80000000
+                PU L#31 (P#31) cpuset=0x80000000
+        L2Cache L#32 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000001,0x0
+          L1dCache L#32 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000001,0x0
+            L1iCache L#32 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000001,0x0
+              Core L#32 (P#10) cpuset=0x00000001,0x0
+                PU L#32 (P#32) cpuset=0x00000001,0x0
+        L2Cache L#33 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000002,0x0
+          L1dCache L#33 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000002,0x0
+            L1iCache L#33 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000002,0x0
+              Core L#33 (P#11) cpuset=0x00000002,0x0
+                PU L#33 (P#33) cpuset=0x00000002,0x0
+        L2Cache L#34 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000004,0x0
+          L1dCache L#34 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000004,0x0
+            L1iCache L#34 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000004,0x0
+              Core L#34 (P#12) cpuset=0x00000004,0x0
+                PU L#34 (P#34) cpuset=0x00000004,0x0
+        L2Cache L#35 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000008,0x0
+          L1dCache L#35 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000008,0x0
+            L1iCache L#35 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000008,0x0
+              Core L#35 (P#13) cpuset=0x00000008,0x0
+                PU L#35 (P#35) cpuset=0x00000008,0x0
+        L2Cache L#36 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000010,0x0
+          L1dCache L#36 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000010,0x0
+            L1iCache L#36 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000010,0x0
+              Core L#36 (P#16) cpuset=0x00000010,0x0
+                PU L#36 (P#36) cpuset=0x00000010,0x0
+        L2Cache L#37 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000020,0x0
+          L1dCache L#37 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000020,0x0
+            L1iCache L#37 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000020,0x0
+              Core L#37 (P#17) cpuset=0x00000020,0x0
+                PU L#37 (P#37) cpuset=0x00000020,0x0
+        L2Cache L#38 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000040,0x0
+          L1dCache L#38 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000040,0x0
+            L1iCache L#38 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000040,0x0
+              Core L#38 (P#18) cpuset=0x00000040,0x0
+                PU L#38 (P#38) cpuset=0x00000040,0x0
+        L2Cache L#39 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000080,0x0
+          L1dCache L#39 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000080,0x0
+            L1iCache L#39 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000080,0x0
+              Core L#39 (P#19) cpuset=0x00000080,0x0
+                PU L#39 (P#39) cpuset=0x00000080,0x0
+        L2Cache L#40 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000100,0x0
+          L1dCache L#40 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000100,0x0
+            L1iCache L#40 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000100,0x0
+              Core L#40 (P#20) cpuset=0x00000100,0x0
+                PU L#40 (P#40) cpuset=0x00000100,0x0
+        L2Cache L#41 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000200,0x0
+          L1dCache L#41 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000200,0x0
+            L1iCache L#41 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000200,0x0
+              Core L#41 (P#21) cpuset=0x00000200,0x0
+                PU L#41 (P#41) cpuset=0x00000200,0x0
+        L2Cache L#42 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000400,0x0
+          L1dCache L#42 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000400,0x0
+            L1iCache L#42 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000400,0x0
+              Core L#42 (P#24) cpuset=0x00000400,0x0
+                PU L#42 (P#42) cpuset=0x00000400,0x0
+        L2Cache L#43 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000800,0x0
+          L1dCache L#43 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000800,0x0
+            L1iCache L#43 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000800,0x0
+              Core L#43 (P#25) cpuset=0x00000800,0x0
+                PU L#43 (P#43) cpuset=0x00000800,0x0
+        L2Cache L#44 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00001000,0x0
+          L1dCache L#44 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00001000,0x0
+            L1iCache L#44 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00001000,0x0
+              Core L#44 (P#26) cpuset=0x00001000,0x0
+                PU L#44 (P#44) cpuset=0x00001000,0x0
+        L2Cache L#45 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00002000,0x0
+          L1dCache L#45 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00002000,0x0
+            L1iCache L#45 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00002000,0x0
+              Core L#45 (P#27) cpuset=0x00002000,0x0
+                PU L#45 (P#45) cpuset=0x00002000,0x0
+        L2Cache L#46 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00004000,0x0
+          L1dCache L#46 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00004000,0x0
+            L1iCache L#46 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00004000,0x0
+              Core L#46 (P#28) cpuset=0x00004000,0x0
+                PU L#46 (P#46) cpuset=0x00004000,0x0
+        L2Cache L#47 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00008000,0x0
+          L1dCache L#47 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00008000,0x0
+            L1iCache L#47 (size=32KB linesize=64 ways=8 Inclusive=0) cpuset=0x00008000,0x0
+              Core L#47 (P#29) cpuset=0x00008000,0x0
+                PU L#47 (P#47) cpuset=0x00008000,0x0
+    Bridge Host->PCI L#10 (P#6 buses=0000:[e6-e7])
+      Bridge PCI->PCI (P#942080 busid=0000:e6:00.0 id=8086:2030 class=0604(PCI_B) link=7.88GB/s buses=0000:[e7-e7] PCIVendor="Intel Corporation" PCIDevice="Sky Lake-E PCI Express Root Port A" PCISlot=9) "Intel Corporation Sky Lake-E PCI Express Root Port A"
+        2 x { PCI 1d0f:cd00 (P#[collapsed] busid=[collapsed] class=0108(NVMExp) link=7.88GB/s PCIVendor="Amazon.com, Inc.") "Amazon.com, Inc." }
+depth 0:	1 Machine (type #1)
+ depth 1:	2 NUMANode (type #2)
+  depth 2:	2 Package (type #3)
+   depth 3:	2 L3Cache (type #4)
+    depth 4:	48 L2Cache (type #4)
+     depth 5:	48 L1dCache (type #4)
+      depth 6:	48 L1iCache (type #4)
+       depth 7:	48 Core (type #5)
+        depth 8:	48 PU (type #6)
+Special depth -3:	12 Bridge (type #9)
+Special depth -4:	8 PCI Device (type #10)
+Special depth -5:	1 OS Device (type #11)
+relative latency matrix between NUMANodes (depth 1) by logical indexes:
+  index     0     1
+      0 1.000 2.100
+      1 2.100 1.000
+48 processors not represented in topology: 0xffffffff,0xffff0000,0x0
+48 processors offline: 0xffffffff,0xffff0000,0x0
