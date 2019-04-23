@@ -16,6 +16,8 @@ while [ $# -gt 0 ]; do
             ;;
         -d) shift; DIR=$1
             ;;
+        -p) shift; PARALLEL=$1
+            ;;
     esac
     shift
 done
