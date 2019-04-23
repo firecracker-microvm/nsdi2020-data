@@ -11,7 +11,7 @@ qboot_dat =     sprintf("%s/boot-times-parallel-100-qemu-cdf.dat", base)
 out_file = sprintf("%s/boot-parallel.pdf", base)
 
 
-set terminal pdf color solid enhanced
+set terminal pdf color solid enhanced font ',16' size 5,2.4
 set output out_file
 
 set xlabel 'Boot time (ms)'
