@@ -33,7 +33,8 @@ calc() {
     mem=$1
     inf=$2
     vm_inf=$3
-    outf=$4
+    pmap_inf=$4
+    outf=$5
 
     l=$(tail -1 ${inf})
     mem_kb=$(echo "$mem * 1024" | bc)
@@ -43,11 +44,13 @@ calc() {
     vm_total=$(grep MemTotal:      $vm_inf | awk '{print $2}')
     vm_free=$(grep MemFree:        $vm_inf | awk '{print $2}')
     vm_avail=$(grep MemAvailable:  $vm_inf | awk '{print $2}')
+
+    pmap_data=$(./util_parse_pmap.py $pmap_inf)
     
-    echo "$mem_kb $vss $rss $vm_total $vm_free $vm_avail" >> $outf
+    echo "$mem_kb $vss $rss $vm_total $vm_free $vm_avail $pmap_data" >> $outf
 }
 
-echo "# VMSZ VSS RSS VM_TOTAL VM_FREE VM_AVAIL (sizes in KB)" > ${FC_RES}
+echo "# VMSZ VSS RSS VM_TOTAL VM_FREE VM_AVAIL PMAP_EXEC PMAP_DATA (sizes in KB)" > ${FC_RES}
 for MEM in $MEMSZS; do
     echo "Firecracker+net: $MEM MB"
     ./util_start_fc.sh \
@@ -68,13 +71,13 @@ for MEM in $MEMSZS; do
         ${SSH} "cat /proc/meminfo" > ${FC_PRE}-$MEM-vm.txt
         killall -9 firecracker 2> /dev/null
 
-        calc $MEM ${FC_PRE}-$MEM.txt ${FC_PRE}-$MEM-vm.txt ${FC_RES}
+        calc $MEM ${FC_PRE}-$MEM.txt ${FC_PRE}-$MEM-vm.txt ${FC_PRE}-$MEM-pmap.txt ${FC_RES}
         sleep 5
 done
 
 set -x
 
-echo "# VMSZ VSS RSS VM_TOTAL VM_FREE VM_AVAIL (sizes in KB)" > ${QEMU_RES}
+echo "# VMSZ VSS RSS VM_TOTAL VM_FREE VM_AVAIL PMAP_EXEC PMAP_DATA (sizes in KB)" > ${QEMU_RES}
 for MEM in $MEMSZS; do
     echo "qemu+net: $MEM MB"
     ./util_start_qemu.sh \
@@ -97,6 +100,6 @@ for MEM in $MEMSZS; do
         ${SSH} "cat /proc/meminfo" > ${QEMU_PRE}-$MEM-vm.txt
         killall -9 qemu-system-x86_64 2> /dev/null
 
-        calc $MEM ${QEMU_PRE}-$MEM.txt ${QEMU_PRE}-$MEM-vm.txt ${QEMU_RES}
+        calc $MEM ${QEMU_PRE}-$MEM.txt ${QEMU_PRE}-$MEM-vm.txt ${QEMU_PRE}-$MEM-pmap.txt ${QEMU_RES}
         sleep 5
 done
