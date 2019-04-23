@@ -1,0 +1,46 @@
+23623:   ../bin/firecracker --api-sock /tmp/fc-0.sock
+Address           Kbytes     RSS   Dirty Mode  Mapping
+0000000000400000    2020    1856       0 r-x-- firecracker
+0000000000400000       0       0       0 r-x-- firecracker
+00000000007f8000      60      60       4 rw--- firecracker
+00000000007f8000       0       0       0 rw--- firecracker
+0000000000807000       8       8       8 rw---   [ anon ]
+0000000000807000       0       0       0 rw---   [ anon ]
+000000000093b000     316     212     212 rw---   [ anon ]
+000000000093b000       0       0       0 rw---   [ anon ]
+00007fcc74060000       8       0       0 rw---   [ anon ]
+00007fcc74060000       0       0       0 rw---   [ anon ]
+00007fcc74062000       4       0       0 -----   [ anon ]
+00007fcc74062000       0       0       0 -----   [ anon ]
+00007fcc74063000    2052     264     264 rw---   [ anon ]
+00007fcc74063000       0       0       0 rw---   [ anon ]
+00007fcc74264000      12       4       4 rw-s-   [ anon ]
+00007fcc74264000       0       0       0 rw-s-   [ anon ]
+00007fcc74267000       4       4       4 rw-s- zero (deleted)
+00007fcc74267000       0       0       0 rw-s- zero (deleted)
+00007fcc74268000       4       4       4 rw-s- zero (deleted)
+00007fcc74268000       0       0       0 rw-s- zero (deleted)
+00007fcc74269000       4       4       0 r--s- GB
+00007fcc74269000       0       0       0 r--s- GB
+00007fcc7426a000      12      12      12 rw-s- zero (deleted)
+00007fcc7426a000       0       0       0 rw-s- zero (deleted)
+00007fcc7426d000  786432  233844  233844 rw-s- zero (deleted)
+00007fcc7426d000       0       0       0 rw-s- zero (deleted)
+00007fcca426d000 3407872   83080   82824 rw-s- zero (deleted)
+00007fcca426d000       0       0       0 rw-s- zero (deleted)
+00007fcd7426d000       8       0       0 rw---   [ anon ]
+00007fcd7426d000       0       0       0 rw---   [ anon ]
+00007fcd7426f000       4       0       0 -----   [ anon ]
+00007fcd7426f000       0       0       0 -----   [ anon ]
+00007fcd74270000    2064      32      32 rw---   [ anon ]
+00007fcd74270000       0       0       0 rw---   [ anon ]
+00007ffe00ce7000     132      20      20 rw---   [ stack ]
+00007ffe00ce7000       0       0       0 rw---   [ stack ]
+00007ffe00df0000      12       0       0 r----   [ anon ]
+00007ffe00df0000       0       0       0 r----   [ anon ]
+00007ffe00df3000       8       4       0 r-x--   [ anon ]
+00007ffe00df3000       0       0       0 r-x--   [ anon ]
+ffffffffff600000       4       0       0 r-x--   [ anon ]
+ffffffffff600000       0       0       0 r-x--   [ anon ]
+---------------- ------- ------- ------- 
+total kB         4201040  319408  317232
