@@ -8,11 +8,12 @@ RUN apt update && \
         libpixman-1-dev \
         libglib2.0-dev \
         pkg-config \
-        python
+        python \
+        libc6-dev-i386
 
 RUN git clone git://git.qemu.org/qemu.git && \
     cd qemu && \
-    git checkout v3.1.0
+    git checkout v4.0.0
 
 WORKDIR /qemu
 
@@ -84,7 +85,6 @@ RUN mkdir -p /res/bios && \
     cp pc-bios/efi-virtio.rom /res/bios
 
 RUN cd / && \
-    apt install -y libc6-dev-i386 && \
     git clone https://github.com/bonzini/qboot && \
     cd qboot && \
        git checkout 295dd902155035151caae3e4db3f41c8deebba34
