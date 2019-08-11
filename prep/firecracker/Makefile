@@ -1,14 +1,14 @@
 # Quick hacky makefile to build firecracker with docker
-FC_COMMIT := v0.15.2
+FC_COMMIT := v0.17.0
 
 .PHONY: build
 build: ../../bin/jailer ../../bin/firecracker
 
-../../bin/jailer: firecracker/build/release/jailer
+../../bin/jailer: firecracker/build/release-musl/jailer
 	mkdir -p $(@D)
 	cp $< $(@D)
 
-../../bin/firecracker: firecracker/build/release/firecracker
+../../bin/firecracker: firecracker/build/release-musl/firecracker
 	mkdir -p $(@D)
 	cp $< $(@D)
 
