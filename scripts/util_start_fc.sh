@@ -71,7 +71,7 @@ done
 wait $FC_PID || true
 us_end=$(($(date +%s%N)/1000))
 
-fc_time=$(grep -oE '[0-9]+ ms' "$LOGFILE" | grep -oE '[0-9]+')
+#fc_time=$(grep -oE '[0-9]+ ms' "$LOGFILE" | grep -oE '[0-9]+')
 us_time=$(expr $us_end - $us_start)
 
 if [ "x$TIMEFILE" = "x" ]; then
