@@ -1,4 +1,4 @@
-From c655a99ee1eaccaab6c5272b628c9f26bddc5225 Mon Sep 17 00:00:00 2001
+From 05cd9854ad29fc1d32f5cf811c9bc9ae15c6a8ac Mon Sep 17 00:00:00 2001
 From: Rolf Neugebauer <rn@rneugeba.io>
 Date: Sun, 11 Aug 2019 11:31:38 +0100
 Subject: [PATCH] vmm: Add a magic debug port similar to qemu
@@ -14,17 +14,17 @@ Signed-off-by: Rolf Neugebauer <rn@rneugeba.io>
  1 file changed, 6 insertions(+)
 
 diff --git a/vmm/src/vstate.rs b/vmm/src/vstate.rs
-index 52062e6..d35a620 100644
+index 52062e6..ecd8d12 100644
 --- a/vmm/src/vstate.rs
 +++ b/vmm/src/vstate.rs
-@@ -6,6 +6,7 @@
+@@ -5,6 +5,7 @@
+ // Use of this source code is governed by a BSD-style license that can be
  // found in the THIRD-PARTY file.
  
++use libc;
  use std::io;
-+use std::process;
  use std::result;
  use std::sync::{Arc, Barrier};
- 
 @@ -27,6 +28,7 @@ const KVM_MEM_LOG_DIRTY_PAGES: u32 = 0x1;
  
  #[cfg(target_arch = "x86_64")]
@@ -39,7 +39,7 @@ index 52062e6..d35a620 100644
      fn check_boot_complete_signal(&self, addr: u64, data: &[u8]) {
 +        if addr == MAGIC_IOPORT_DEBUG_EXIT
 +        {
-+            process::exit(0);
++            unsafe {libc::_exit(0); };
 +        }
          if addr == MAGIC_IOPORT_SIGNAL_GUEST_BOOT_COMPLETE
              && data[0] == MAGIC_VALUE_SIGNAL_GUEST_BOOT_COMPLETE
