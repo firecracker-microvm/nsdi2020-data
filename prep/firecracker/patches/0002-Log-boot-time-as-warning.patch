@@ -1,0 +1,29 @@
+From 408be4589eeed860f95f73d8f172f73343c93eaf Mon Sep 17 00:00:00 2001
+From: Rolf Neugebauer <rn@rneugeba.io>
+Date: Sat, 17 Aug 2019 15:02:26 +0100
+Subject: [PATCH 2/2] Log boot time as warning
+
+this way it gets printed out on stdout without
+having to mess with logger configs.
+
+Signed-off-by: Rolf Neugebauer <rn@rneugeba.io>
+---
+ vmm/src/lib.rs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/vmm/src/lib.rs b/vmm/src/lib.rs
+index 41350c2..70e3c26 100644
+--- a/vmm/src/lib.rs
++++ b/vmm/src/lib.rs
+@@ -2020,7 +2020,7 @@ impl Vmm {
+ 
+         let boot_time_us = now_us - t0_ts.time_us;
+         let boot_time_cpu_us = now_cpu_us - t0_ts.cputime_us;
+-        info!(
++        warn!(
+             "Guest-boot-time = {:>6} us {} ms, {:>6} CPU us {} CPU ms",
+             boot_time_us,
+             boot_time_us / 1000,
+-- 
+2.17.1
+

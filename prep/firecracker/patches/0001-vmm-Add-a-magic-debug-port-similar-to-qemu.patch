@@ -1,7 +1,7 @@
 From 05cd9854ad29fc1d32f5cf811c9bc9ae15c6a8ac Mon Sep 17 00:00:00 2001
 From: Rolf Neugebauer <rn@rneugeba.io>
 Date: Sun, 11 Aug 2019 11:31:38 +0100
-Subject: [PATCH] vmm: Add a magic debug port similar to qemu
+Subject: [PATCH 1/2] vmm: Add a magic debug port similar to qemu
 
 qemu has an optional debug port, defaulting to 0xf4 to
 cause an immidiate exit from the VMM. Add this to firecracker
