@@ -1,0 +1,39 @@
+From 3d2074757401ad8e183370bbdb4f530e2fc25fde Mon Sep 17 00:00:00 2001
+From: Rolf Neugebauer <rn@rneugeba.io>
+Date: Sat, 17 Aug 2019 16:53:38 +0100
+Subject: [PATCH] Add Magic port to exit
+
+DO NOT MERGE
+
+Signed-off-by: Rolf Neugebauer <rn@rneugeba.io>
+---
+ vmm/src/vm.rs | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/vmm/src/vm.rs b/vmm/src/vm.rs
+index cc6c6d1..7db3941 100755
+--- a/vmm/src/vm.rs
++++ b/vmm/src/vm.rs
+@@ -76,6 +76,9 @@ const KERNEL_64BIT_ENTRY_OFFSET: u64 = 0x200;
+ const IOAPIC_RANGE_ADDR: u64 = 0xfec0_0000;
+ const IOAPIC_RANGE_SIZE: u64 = 0x20;
+ 
++// Hack
++const MAGIC_IOPORT_DEBUG_EXIT: u16 = 0x00f4;
++
+ // Debug I/O port
+ #[cfg(target_arch = "x86_64")]
+ const DEBUG_IOPORT: u16 = 0x80;
+@@ -467,6 +470,9 @@ impl Vcpu {
+                     Ok(())
+                 }
+                 VcpuExit::IoOut(addr, data) => {
++                    if addr == MAGIC_IOPORT_DEBUG_EXIT {
++                        unsafe {libc::_exit(0); };
++                    }
+                     if addr == DEBUG_IOPORT && data.len() == 1 {
+                         self.log_debug_ioport(data[0]);
+                     }
+-- 
+2.17.1
+
