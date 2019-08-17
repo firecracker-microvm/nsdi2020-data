@@ -24,6 +24,12 @@ FC_CDF=${DIR}/boot-serial-fc-cdf.dat
 FC_NET_DAT=${RAW}/boot-serial-fc-net.dat
 FC_NET_CDF=${DIR}/boot-serial-fc-net-cdf.dat
 
+CHV_DAT=${RAW}/boot-serial-chv.dat
+CHV_CDF=${DIR}/boot-serial-chv-cdf.dat
+
+CHV_BZ_DAT=${RAW}/boot-serial-chv-bz.dat
+CHV_BZ_CDF=${DIR}/boot-serial-chv-bz-cdf.dat
+
 QEMU_DAT=${RAW}/boot-serial-qemu.dat
 QEMU_CDF=${DIR}/boot-serial-qemu-cdf.dat
 
@@ -37,6 +43,8 @@ CSV=${DIR}/boot-serial.csv
 
 rm -f ${FC_DAT} ${QEMU_DAT} ${QEMU_QBOOT_DAT} ${CSV}
 rm -f ${FC_CDF} ${QEMU_CDF} ${QEMU_QBOOT_CDF}
+
+rm -f ${CHV_DAT} ${CHV_CDF} ${CHV_BZ_DAT} ${CHV_BZ_CDF}
 
 rm -f ${FC_NET_DAT} ${QEMU_QBOOT_NET_DAT}
 rm -f ${FC_NET_CDF} ${QEMU_QBOOT_NET_CDF}
@@ -74,6 +82,38 @@ for i in $(seq ${ITER}); do
 done
 rm -f *.log
 ./util_gen_cdf.py ${FC_NET_DAT} ${FC_NET_CDF}
+
+# Cloud Hypervisor base
+killall -9 cloud-hypervisor 2> /dev/null
+for i in $(seq ${ITER}); do
+    echo "Cloud Hypervisor: $i"
+    ./util_start_fc.sh -b ../bin/cloud-hypervisor \
+                  -k ../img/boot-time-vmlinux \
+                  -r ../img/boot-time-disk.img \
+                  -c $CORES \
+                  -m $MEM \
+                  -t ${CHV_DAT}
+    sleep 1
+    killall -9 cloud-hypervisor 2> /dev/null
+done
+rm -f *.log
+./util_gen_cdf.py ${CHV_DAT} ${CHV_CDF}
+
+# Cloud Hypervisor bzImage
+killall -9 cloud-hypervisor 2> /dev/null
+for i in $(seq ${ITER}); do
+    echo "Cloud Hypervisor(bz): $i"
+    ./util_start_fc.sh -b ../bin/cloud-hypervisor \
+                  -k ../img/boot-time-vmlinuz \
+                  -r ../img/boot-time-disk.img \
+                  -c $CORES \
+                  -m $MEM \
+                  -t ${CHV_BZ_DAT}
+    sleep 1
+    killall -9 cloud-hypervisor 2> /dev/null
+done
+rm -f *.log
+./util_gen_cdf.py ${CHV_BZ_DAT} ${CHV_BZ_CDF}
 
 # Qemu base
 killall -9 qemu-system-x86_64 2> /dev/null
