@@ -37,6 +37,13 @@ type Drive struct {
 	IsReadOnly   bool   `json:"is_read_only"`
 }
 
+// Logger is the minimal information needed to add a logger
+type Logger struct {
+	LogFifo     string `json:"log_fifo,omitempty"`
+	MetricsFifo string `json:"metrics_fifo,omitempty"`
+	Level       string `json:"level,omitempty"`
+}
+
 // NetDev is the minimal information needed to attach a network device to a VM
 type NetDev struct {
 	InterfaceID string `json:"iface_id,omitempty"`
@@ -89,6 +96,7 @@ func main() {
 	memOpt := flag.Int("m", 256, "Amount of memory in MB")
 	diskOpt := flag.String("disk", "", "Path to additional disk")
 	netOpt := flag.String("n", "", "Network configuration 'tap,tap ip,mac,vm ip,mask'")
+	logOpt := flag.String("l", "", "Logger and Metric fifos. comma separated")
 
 	debugOpt := flag.Bool("d", false, "Enable debug output")
 
@@ -169,6 +177,24 @@ func main() {
 		diskJSON = string(b)
 	}
 
+	var loggerJSON string
+	if *logOpt != "" {
+		logCfg := strings.SplitN(*logOpt, ",", 2)
+		if len(logCfg) != 2 {
+			panic("Logger config")
+		}
+		logger := Logger{
+			LogFifo:     logCfg[0],
+			MetricsFifo: logCfg[1],
+			Level:       "Info",
+		}
+		b, err = json.Marshal(logger)
+		if err != nil {
+			panic(err)
+		}
+		loggerJSON = string(b)
+	}
+
 	client := newClient(*socketOpt)
 	if err := fcAPI(client, "machine-config", machineJSON); err != nil {
 		panic(err)
@@ -178,6 +204,11 @@ func main() {
 	}
 	if err := fcAPI(client, "boot-source", kernelJSON); err != nil {
 		panic(err)
+	}
+	if loggerJSON != "" {
+		if err := fcAPI(client, "logger", loggerJSON); err != nil {
+			panic(err)
+		}
 	}
 	if diskJSON != "" {
 		if err := fcAPI(client, "drives/2", diskJSON); err != nil {
