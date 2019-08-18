@@ -87,7 +87,7 @@ rm -f *.log
 killall -9 cloud-hypervisor 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Cloud Hypervisor: $i"
-    ./util_start_fc.sh -b ../bin/cloud-hypervisor \
+    ./util_start_cloudhv.sh -b ../bin/cloud-hypervisor \
                   -k ../img/boot-time-vmlinux \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
@@ -103,7 +103,7 @@ rm -f *.log
 killall -9 cloud-hypervisor 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Cloud Hypervisor(bz): $i"
-    ./util_start_fc.sh -b ../bin/cloud-hypervisor \
+    ./util_start_cloudhv.sh -b ../bin/cloud-hypervisor \
                   -k ../img/boot-time-vmlinuz \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
