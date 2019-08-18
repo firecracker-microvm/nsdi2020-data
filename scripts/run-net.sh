@@ -23,6 +23,9 @@ mkdir -p ${RAW}
 FC_PRE=${RAW}/net-fc
 FC_RES=${DIR}/net-fc.txt
 
+CHV_PRE=${RAW}/net-chv
+CHV_RES=${DIR}/net-chv.txt
+
 QEMU_PRE=${RAW}/net-qemu
 QEMU_RES=${DIR}/net-qemu.txt
 
@@ -139,6 +142,24 @@ echo "Firecracker: Starting..."
 sleep 10
 run_remote ${FC_PRE} ${FC_RES}
 killall -9 firecracker 2> /dev/null
+
+sleep 5
+killall -9 cloud-hypervisor 2> /dev/null
+echo "cloud-hypervisor: Starting..."
+./util_start_cloudhv.sh \
+    -b ../bin/cloud-hypervisor \
+    -k ../img/bench-ssh-vmlinuz \
+    -r ../img/bench-ssh-disk.img \
+    -c $CORES \
+    -m $MEM \
+    -i $ID \
+    -n \
+    &
+
+# 10 seconds should be enough
+sleep 10
+run_remote ${CHV_PRE} ${CHV_RES}
+killall -9 cloud-hypervisor 2> /dev/null
 
 sleep 5
 killall -9 qemu-system-x86_64 2> /dev/null
