@@ -6,10 +6,10 @@
 
 
 fc_dat =        sprintf("%s/boot-times-parallel-100-fc-cdf.dat", base)
+chv_dat =       sprintf("%s/boot-times-parallel-100-chv-cdf.dat", base)
 qboot_dat =     sprintf("%s/boot-times-parallel-100-qemu-cdf.dat", base)
 
 out_file = sprintf("%s/boot-parallel.pdf", base)
-
 
 set terminal pdf color solid enhanced font ',16' size 5,2.4
 set output out_file
@@ -21,12 +21,13 @@ set xrange [0:]
 set yrange [0:1.05]
 set offsets graph 0, 0, 0.01, 0.01
 
-set key top left
+set key bottom right
 
 set mytics 4
 set grid ytics mytics xtics mxtics
 
 plot \
-     fc_dat          index 1 using 1:2         w l lw 2 t 'AnonVMM-pre', \
-     fc_dat          index 0 using ($1/1000):2 w l lw 2 t 'AnonVMM', \
-     qboot_dat       index 0 using ($1/1000):2 w l lw 2 t 'Qemu', \
+     fc_dat      index 1 using 1:2         w l lw 2 t 'FC-pre', \
+     fc_dat      index 0 using ($1/1000):2 w l lw 2 t 'FC', \
+     chv_dat     index 0 using ($1/1000):2 w l lw 2 t 'CloudHV', \
+     qboot_dat   index 0 using ($1/1000):2 w l lw 2 t 'Qemu', \

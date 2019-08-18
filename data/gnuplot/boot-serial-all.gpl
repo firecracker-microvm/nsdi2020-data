@@ -8,14 +8,14 @@
 
 fc_dat =        sprintf("%s/boot-serial-fc-cdf.dat", base)
 fc_pci_dat =    sprintf("%s/boot-serial-fc-pci-cdf.dat", base)
-#fc_lk_dat =     sprintf("%s/boot-serial-fc-linuxkit-cdf.dat", base)
 fc_net_dat =    sprintf("%s/boot-serial-fc-net-cdf.dat", base)
+chv_dat =       sprintf("%s/boot-serial-chv-cdf.dat", base)
+chv_bz_dat =    sprintf("%s/boot-serial-chv-bz-cdf.dat", base)
 qemu_dat =      sprintf("%s/boot-serial-qemu-cdf.dat", base)
 qboot_dat =     sprintf("%s/boot-serial-qboot-cdf.dat", base)
 qboot_net_dat = sprintf("%s/boot-serial-qboot-net-cdf.dat", base)
 
 out_file = sprintf("%s/boot-serial-all.pdf", base)
-
 
 set terminal pdf color solid enhanced
 set output out_file
@@ -33,13 +33,15 @@ set mytics 4
 set grid ytics mytics xtics mxtics
 
 plot \
-     fc_dat          index 1 using 1:2         w l lw 2 t 'Firecracker-pre', \
-     fc_dat          index 0 using ($1/1000):2 w l lw 2 t 'Firecracker', \
-     fc_pci_dat      index 1 using 1:2         w l lw 2 t 'Firecracker-pre (w/ PCI kernel)', \
-     fc_net_dat      index 1 using 1:2         w l lw 2 t 'Firecracker+Network-pre', \
-     fc_net_dat      index 0 using ($1/1000):2 w l lw 2 t 'Firecracker+Network', \
+     fc_dat          index 1 using 1:2         w l lw 2 t 'FC-pre', \
+     fc_dat          index 0 using ($1/1000):2 w l lw 2 t 'FC', \
+     fc_pci_dat      index 1 using 1:2         w l lw 2 t 'FC-pre (w/ PCI kernel)', \
+     fc_net_dat      index 1 using 1:2         w l lw 2 t 'FC+Network-pre', \
+     fc_net_dat      index 0 using ($1/1000):2 w l lw 2 t 'FC+Network', \
+     chv_dat         index 0 using ($1/1000):2 w l lw 2 t 'CloudHV', \
+     chv_bz_dat      index 0 using ($1/1000):2 w l lw 2 t 'CloudHV (bzImage)', \
      qemu_dat        index 0 using ($1/1000):2 w l lw 2 t 'Qemu', \
      qboot_dat       index 0 using ($1/1000):2 w l lw 2 t 'Qemu qboot', \
      qboot_net_dat   index 0 using ($1/1000):2 w l lw 2 t 'Qemu qboot+Network', \
 
-#     fc_lk_dat       index 1 using 1:2         w l lw 2 t 'Firecracker-pre (w/ LK kernel)', \
+#     fc_lk_dat       index 1 using 1:2         w l lw 2 t 'FC-pre (w/ LK kernel)', \
