@@ -30,6 +30,9 @@ CHV_CDF=${DIR}/boot-serial-chv-cdf.dat
 CHV_BZ_DAT=${RAW}/boot-serial-chv-bz.dat
 CHV_BZ_CDF=${DIR}/boot-serial-chv-bz-cdf.dat
 
+CHV_NET_DAT=${RAW}/boot-serial-chv-net.dat
+CHV_NET_CDF=${DIR}/boot-serial-chv-net-cdf.dat
+
 QEMU_DAT=${RAW}/boot-serial-qemu.dat
 QEMU_CDF=${DIR}/boot-serial-qemu-cdf.dat
 
@@ -45,6 +48,7 @@ rm -f ${FC_DAT} ${QEMU_DAT} ${QEMU_QBOOT_DAT} ${CSV}
 rm -f ${FC_CDF} ${QEMU_CDF} ${QEMU_QBOOT_CDF}
 
 rm -f ${CHV_DAT} ${CHV_CDF} ${CHV_BZ_DAT} ${CHV_BZ_CDF}
+rm -f ${CHV_NET_DAT} ${CHV_NET_CDF}
 
 rm -f ${FC_NET_DAT} ${QEMU_QBOOT_NET_DAT}
 rm -f ${FC_NET_CDF} ${QEMU_QBOOT_NET_CDF}
@@ -114,6 +118,23 @@ for i in $(seq ${ITER}); do
 done
 rm -f *.log
 ./util_gen_cdf.py ${CHV_BZ_DAT} ${CHV_BZ_CDF}
+
+# Cloud Hypervisor net
+killall -9 cloud-hypervisor 2> /dev/null
+for i in $(seq ${ITER}); do
+    echo "Cloud Hypervisor+net: $i"
+    ./util_start_cloudhv.sh -b ../bin/cloud-hypervisor \
+                  -k ../img/boot-time-vmlinux \
+                  -r ../img/boot-time-disk.img \
+                  -c $CORES \
+                  -m $MEM \
+                  -n \
+                  -t ${CHV_NET_DAT}
+    sleep 1
+    killall -9 cloud-hypervisor 2> /dev/null
+done
+rm -f *.log
+./util_gen_cdf.py ${CHV_NET_DAT} ${CHV_NET_CDF}
 
 # Qemu base
 killall -9 qemu-system-x86_64 2> /dev/null
