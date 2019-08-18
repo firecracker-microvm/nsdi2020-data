@@ -32,6 +32,8 @@ while [ $# -gt 0 ]; do
     shift
 done
 
+[ "x$DEBUG" != "x" ] && set -x
+
 
 # Common CLOUDHV command line options
 CLOUDHV="$CLOUDHV --cpus $CORES --memory size=${MEM}M "
@@ -58,9 +60,7 @@ if [ "x$NET" != "x" ]; then
     VM_MASK=$(./util_ipam.sh -m $ID)
 
     KERNEL_ARGS="$KERNEL_ARGS ip=$VM_IP::$TAP_IP:VM_MASK::eth0:off"
-
-    # TODO
-    exit -1
+    CLOUDHV="$CLOUDHV --net tap=$TAP_DEV,MAC=$VM_MAC "
 fi
 
 us_start=$(($(date +%s%N)/1000))
