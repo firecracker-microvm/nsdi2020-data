@@ -1,2 +1,2 @@
-QEMU emulator version 3.1.0 (v3.1.0-dirty)
-Copyright (c) 2003-2018 Fabrice Bellard and the QEMU Project developers
+QEMU emulator version 4.0.0 (v4.0.0-dirty)
+Copyright (c) 2003-2019 Fabrice Bellard and the QEMU Project developers

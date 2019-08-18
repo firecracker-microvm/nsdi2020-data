@@ -247,7 +247,7 @@ Processor Information
 	Voltage: 1.2 V
 	External Clock: 132 MHz
 	Max Speed: 2659 MHz
-	Current Speed: 2664 MHz
+	Current Speed: 2666 MHz
 	Status: Populated, Enabled
 	Upgrade: ZIF Socket
 	L1 Cache Handle: 0x0013
@@ -477,7 +477,7 @@ Processor Information
 	Voltage: 1.2 V
 	External Clock: 132 MHz
 	Max Speed: 2659 MHz
-	Current Speed: 2668 MHz
+	Current Speed: 2672 MHz
 	Status: Populated, Enabled
 	Upgrade: ZIF Socket
 	L1 Cache Handle: 0x001D
@@ -707,7 +707,7 @@ Processor Information
 	Voltage: 1.2 V
 	External Clock: 132 MHz
 	Max Speed: 2659 MHz
-	Current Speed: 2675 MHz
+	Current Speed: 2673 MHz
 	Status: Populated, Enabled
 	Upgrade: ZIF Socket
 	L1 Cache Handle: 0x0027
@@ -937,7 +937,7 @@ Processor Information
 	Voltage: 1.2 V
 	External Clock: 132 MHz
 	Max Speed: 2659 MHz
-	Current Speed: 2667 MHz
+	Current Speed: 2671 MHz
 	Status: Populated, Enabled
 	Upgrade: ZIF Socket
 	L1 Cache Handle: 0x0031

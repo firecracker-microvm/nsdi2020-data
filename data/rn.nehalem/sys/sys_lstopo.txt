@@ -1,4 +1,4 @@
-Machine (P#0 local=12285660KB total=12285660KB DMIProductName=MacPro4,1 DMIProductVersion=0.0 DMIProductSerial=3T9410009MD DMIProductUUID=9A5D59EB-433B-7946-8A78-CF4C41DE04D0 DMIBoardVendor="Apple Inc." DMIBoardName=Mac-F221BEC8 DMIBoardVersion= DMIBoardSerial="J591001T24MFB     " DMIBoardAssetTag=0 DMIChassisVendor="Apple Inc." DMIChassisType=7 DMIChassisVersion=Mac-F221BEC8 DMIChassisSerial=3T9410009MD DMIChassisAssetTag="Asset Tag#" DMIBIOSVendor="Apple Inc." DMIBIOSVersion="    MP41.88Z.0081.B07.0910130729" DMIBIOSDate=10/13/09 DMISysVendor="Apple Inc." Backend=Linux LinuxCgroup=/ OSName=Linux OSRelease=4.15.0-47-generic OSVersion="#50-Ubuntu SMP Wed Mar 13 10:44:52 UTC 2019" HostName=rlin01 Architecture=x86_64 hwlocVersion=1.11.9 ProcessName=lstopo-no-graphics) cpuset=0x000000ff
+Machine (P#0 local=12285652KB total=12285652KB DMIProductName=MacPro4,1 DMIProductVersion=0.0 DMIProductSerial=3T9410009MD DMIProductUUID=9A5D59EB-433B-7946-8A78-CF4C41DE04D0 DMIBoardVendor="Apple Inc." DMIBoardName=Mac-F221BEC8 DMIBoardVersion= DMIBoardSerial="J591001T24MFB     " DMIBoardAssetTag=0 DMIChassisVendor="Apple Inc." DMIChassisType=7 DMIChassisVersion=Mac-F221BEC8 DMIChassisSerial=3T9410009MD DMIChassisAssetTag="Asset Tag#" DMIBIOSVendor="Apple Inc." DMIBIOSVersion="    MP41.88Z.0081.B07.0910130729" DMIBIOSDate=10/13/09 DMISysVendor="Apple Inc." Backend=Linux LinuxCgroup=/ OSName=Linux OSRelease=4.15.0-55-generic OSVersion="#60-Ubuntu SMP Tue Jul 2 18:22:20 UTC 2019" HostName=rlin01 Architecture=x86_64 hwlocVersion=1.11.9 ProcessName=lstopo-no-graphics) cpuset=0x000000ff
   Package L#0 (P#0 CPUVendor=GenuineIntel CPUFamilyNumber=6 CPUModelNumber=26 CPUModel="Intel(R) Xeon(R) CPU           W3520  @ 2.67GHz" CPUStepping=5) cpuset=0x000000ff
     L3Cache L#0 (size=8192KB linesize=64 ways=16 Inclusive=1) cpuset=0x000000ff
       L2Cache L#0 (size=256KB linesize=64 ways=8 Inclusive=0) cpuset=0x00000011
@@ -26,8 +26,8 @@ Machine (P#0 local=12285660KB total=12285660KB DMIProductName=MacPro4,1 DMIProdu
               PU L#6 (P#3) cpuset=0x00000008
               PU L#7 (P#7) cpuset=0x00000080
   Bridge Host->PCI L#0 (P#0 buses=0000:[00-0e])
-    Bridge PCI->PCI (P#48 busid=0000:00:03.0 id=8086:340a class=0604(PCI_B) link=2.00GB/s buses=0000:[05-05] PCIVendor="Intel Corporation" PCIDevice="5520/5500/X58 I/O Hub PCI Express Root Port 3") "Intel Corporation 5520/5500/X58 I/O Hub PCI Express Root Port 3"
-      PCI 10de:1381 (P#20480 busid=0000:05:00.0 class=0300(VGA) link=2.00GB/s PCIVendor="NVIDIA Corporation" PCIDevice="GM107 [GeForce GTX 750]" PCISlot=1) "NVIDIA Corporation GM107 [GeForce GTX 750]"
+    Bridge PCI->PCI (P#48 busid=0000:00:03.0 id=8086:340a class=0604(PCI_B) link=4.00GB/s buses=0000:[05-05] PCIVendor="Intel Corporation" PCIDevice="5520/5500/X58 I/O Hub PCI Express Root Port 3") "Intel Corporation 5520/5500/X58 I/O Hub PCI Express Root Port 3"
+      PCI 10de:1381 (P#20480 busid=0000:05:00.0 class=0300(VGA) link=4.00GB/s PCIVendor="NVIDIA Corporation" PCIDevice="GM107 [GeForce GTX 750]" PCISlot=1) "NVIDIA Corporation GM107 [GeForce GTX 750]"
         GPU L#0 "renderD128"
         GPU L#1 "controlD64"
         GPU L#2 "card0"
