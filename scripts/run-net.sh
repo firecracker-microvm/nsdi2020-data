@@ -90,35 +90,97 @@ run_remote() {
     printf "${RX01G}\t${TX01G}\t${RX10G}\t${TX10G}\n" >> ${res}
 }
 
+
+run_loopback() {
+    echo "Loopback..."
+    echo "Starting iperf3"
+    iperf3 -s -D
+    echo "Starting iperf (1 stream)"
+    iperf3 -t ${TIME} -J -c ${TAP_IP} > ${LOCAL_PRE}-rx-01.json
+    RX01=$(cat ${LOCAL_PRE}-rx-01.json | jq '.end.sum_sent.bits_per_second')
+    RX01G=$(echo "scale = 2; ${RX01} / (1000 * 1000 * 1000)" | bc)
+    sleep 2
+
+    echo "Starting iperf (10 streams)"
+    iperf3 -t ${TIME} -J -P 10 -c ${TAP_IP} > ${LOCAL_PRE}-rx-10.json
+    RX10=$(cat ${LOCAL_PRE}-rx-10.json | jq '.end.sum_sent.bits_per_second')
+    RX10G=$(echo "scale = 2; ${RX10} / (1000 * 1000 * 1000)" | bc)
+
+    killall -9 iperf3 2> /dev/null
+
+    echo "Ping test"
+    ping -n -c 20 ${TAP_IP} > ${LOCAL_PRE}-ping.txt
+
+    # Print result summary
+    printf "1-stream\t10-streams\n"                    > ${LOCAL_RES}
+    printf "RX\tTX\tRX\tTX\n"                         >> ${LOCAL_RES}
+    printf "${RX01G}\t${RX01G}\t${RX10G}\t${RX10G}\n" >> ${LOCAL_RES}
+}
+
+run_firecracker() {
+    killall -9 firecracker 2> /dev/null
+    echo "Firecracker: Starting..."
+    ./util_start_fc.sh \
+        -b ../bin/firecracker \
+        -k ../img/bench-ssh-vmlinux \
+        -r ../img/bench-ssh-disk.img \
+        -c $CORES \
+        -m $MEM \
+        -i $ID \
+        -n \
+        &
+
+        # 10 seconds should be enough
+        sleep 10
+        run_remote ${FC_PRE} ${FC_RES}
+        killall -9 firecracker 2> /dev/null
+}
+
+run_cloudhv() {
+    killall -9 cloud-hypervisor 2> /dev/null
+    echo "cloud-hypervisor: Starting..."
+    ./util_start_cloudhv.sh \
+        -b ../bin/cloud-hypervisor \
+        -k ../img/bench-ssh-vmlinux \
+        -r ../img/bench-ssh-disk.img \
+        -c $CORES \
+        -m $MEM \
+        -i $ID \
+        -n \
+        &
+
+        # 10 seconds should be enough
+        sleep 10
+        run_remote ${CHV_PRE} ${CHV_RES}
+        killall -9 cloud-hypervisor 2> /dev/null
+}
+
+run_qemu() {
+    killall -9 qemu-system-x86_64 2> /dev/null
+    echo "qemu: Starting..."
+    ./util_start_qemu.sh \
+        -b ../bin/qemu-system-x86_64 \
+        -k ../img/bench-ssh-vmlinuz \
+        -r ../img/bench-ssh-disk.img \
+        -c $CORES \
+        -m $MEM \
+        -i $ID \
+        -n \
+        &
+
+        # 10 seconds should be enough
+        sleep 10
+        run_remote ${QEMU_PRE} ${QEMU_RES}
+        killall -9 qemu-system-x86_64 2> /dev/null
+}
+
+
 killall -9 firecracker 2> /dev/null
 killall -9 qemu-system-x86_64 2> /dev/null
 killall -9 iperf3 2> /dev/null
 
 sleep 5
-
-echo "Loopback..."
-echo "Starting iperf3"
-iperf3 -s -D
-echo "Starting iperf (1 stream)"
-iperf3 -t ${TIME} -J -c ${TAP_IP} > ${LOCAL_PRE}-rx-01.json
-RX01=$(cat ${LOCAL_PRE}-rx-01.json | jq '.end.sum_sent.bits_per_second')
-RX01G=$(echo "scale = 2; ${RX01} / (1000 * 1000 * 1000)" | bc)
-sleep 2
-
-echo "Starting iperf (10 streams)"
-iperf3 -t ${TIME} -J -P 10 -c ${TAP_IP} > ${LOCAL_PRE}-rx-10.json
-RX10=$(cat ${LOCAL_PRE}-rx-10.json | jq '.end.sum_sent.bits_per_second')
-RX10G=$(echo "scale = 2; ${RX10} / (1000 * 1000 * 1000)" | bc)
-
-killall -9 iperf3 2> /dev/null
-
-echo "Ping test"
-ping -n -c 20 ${TAP_IP} > ${LOCAL_PRE}-ping.txt
-
-# Print result summary
-printf "1-stream\t10-streams\n"                    > ${LOCAL_RES}
-printf "RX\tTX\tRX\tTX\n"                         >> ${LOCAL_RES}
-printf "${RX01G}\t${RX01G}\t${RX10G}\t${RX10G}\n" >> ${LOCAL_RES}
+run_loopback
 
 if [ $(grep -c rdrand /proc/cpuinfo) -eq 0 ]; then
     echo "benchmark rootfs needs CPU rdrand support"
@@ -126,55 +188,8 @@ if [ $(grep -c rdrand /proc/cpuinfo) -eq 0 ]; then
 fi
 
 sleep 5
-killall -9 firecracker 2> /dev/null
-echo "Firecracker: Starting..."
-./util_start_fc.sh \
-    -b ../bin/firecracker \
-    -k ../img/bench-ssh-vmlinux \
-    -r ../img/bench-ssh-disk.img \
-    -c $CORES \
-    -m $MEM \
-    -i $ID \
-    -n \
-    &
-
-# 10 seconds should be enough
-sleep 10
-run_remote ${FC_PRE} ${FC_RES}
-killall -9 firecracker 2> /dev/null
-
+run_firecracker
 sleep 5
-killall -9 cloud-hypervisor 2> /dev/null
-echo "cloud-hypervisor: Starting..."
-./util_start_cloudhv.sh \
-    -b ../bin/cloud-hypervisor \
-    -k ../img/bench-ssh-vmlinuz \
-    -r ../img/bench-ssh-disk.img \
-    -c $CORES \
-    -m $MEM \
-    -i $ID \
-    -n \
-    &
-
-# 10 seconds should be enough
-sleep 10
-run_remote ${CHV_PRE} ${CHV_RES}
-killall -9 cloud-hypervisor 2> /dev/null
-
+run_cloudhv
 sleep 5
-killall -9 qemu-system-x86_64 2> /dev/null
-echo "qemu: Starting..."
-./util_start_qemu.sh \
-    -b ../bin/qemu-system-x86_64 \
-    -k ../img/bench-ssh-vmlinuz \
-    -r ../img/bench-ssh-disk.img \
-    -c $CORES \
-    -m $MEM \
-    -i $ID \
-    -n \
-    &
-
-# 10 seconds should be enough
-sleep 10
-run_remote ${QEMU_PRE} ${QEMU_RES}
-killall -9 qemu-system-x86_64 2> /dev/null
+run_qemu
