@@ -92,7 +92,7 @@ killall -9 cloud-hypervisor 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Cloud Hypervisor: $i"
     ./util_start_cloudhv.sh -b ../bin/cloud-hypervisor \
-                  -k ../img/boot-time-vmlinux \
+                  -k ../img/boot-time-pci-vmlinux \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
                   -m $MEM \
@@ -108,7 +108,7 @@ killall -9 cloud-hypervisor 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Cloud Hypervisor(bz): $i"
     ./util_start_cloudhv.sh -b ../bin/cloud-hypervisor \
-                  -k ../img/boot-time-vmlinuz \
+                  -k ../img/boot-time-pci-vmlinuz \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
                   -m $MEM \
@@ -124,10 +124,11 @@ killall -9 cloud-hypervisor 2> /dev/null
 for i in $(seq ${ITER}); do
     echo "Cloud Hypervisor+net: $i"
     ./util_start_cloudhv.sh -b ../bin/cloud-hypervisor \
-                  -k ../img/boot-time-vmlinux \
+                  -k ../img/boot-time-pci-vmlinux \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
                   -m $MEM \
+                  -i 0 \
                   -n \
                   -t ${CHV_NET_DAT}
     sleep 1

@@ -89,7 +89,7 @@ if [ "x$NET" != "x" ]; then
     VM_IP=$(./util_ipam.sh -v $ID)
     VM_MASK=$(./util_ipam.sh -m $ID)
 
-    KERNEL_ARGS="$KERNEL_ARGS ip=$VM_IP::$TAP_IP:VM_MASK::eth0:off"
+    KERNEL_ARGS="$KERNEL_ARGS ip=$VM_IP::$TAP_IP:$VM_MASK::eth0:off"
 
     QEMU="$QEMU \
         -device virtio-net-pci,mac=$VM_MAC,netdev=n0 \

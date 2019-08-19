@@ -53,7 +53,7 @@ rm -f *.log
 
 killall -9 cloud-hypervisor 2> /dev/null
 seq 1 $ITER | xargs -L1 -P$PARALLEL ./util_start_cloudhv.sh -b ../bin/cloud-hypervisor \
-                  -k ../img/boot-time-vmlinux \
+                  -k ../img/boot-time-pci-vmlinux \
                   -r ../img/boot-time-disk.img \
                   -c $CORES \
                   -m $MEM \
