@@ -10,6 +10,7 @@ fc_dat =        sprintf("%s/boot-serial-fc-cdf.dat", base)
 fc_nopci_dat =  sprintf("%s/boot-serial-fc-nopci-cdf.dat", base)
 fc_net_dat =    sprintf("%s/boot-serial-fc-net-cdf.dat", base)
 chv_dat =       sprintf("%s/boot-serial-chv-cdf.dat", base)
+chv_net_dat =   sprintf("%s/boot-serial-chv-net-cdf.dat", base)
 chv_bz_dat =    sprintf("%s/boot-serial-chv-bz-cdf.dat", base)
 qemu_dat =      sprintf("%s/boot-serial-qemu-cdf.dat", base)
 qboot_dat =     sprintf("%s/boot-serial-qboot-cdf.dat", base)
@@ -39,6 +40,7 @@ plot \
      fc_net_dat      index 1 using 1:2         w l lw 2 t 'FC+Network-pre', \
      fc_net_dat      index 0 using ($1/1000):2 w l lw 2 t 'FC+Network', \
      chv_dat         index 0 using ($1/1000):2 w l lw 2 t 'CloudHV', \
+     chv_net_dat     index 0 using ($1/1000):2 w l lw 2 t 'CloudHV+Network', \
      chv_bz_dat      index 0 using ($1/1000):2 w l lw 2 t 'CloudHV (bzImage)', \
      qemu_dat        index 0 using ($1/1000):2 w l lw 2 t 'Qemu', \
      qboot_dat       index 0 using ($1/1000):2 w l lw 2 t 'Qemu qboot', \
