@@ -33,7 +33,7 @@ run_firecracker() {
     
     killall -9 firecracker 2> /dev/null
     for i in $(seq ${ITER}); do
-        echo "Firecracker+PCI kernel: $i"
+        echo "Firecracker ${KERNEL}: $i"
         ./util_start_fc.sh -b ../bin/firecracker \
                            -k ../img/${KERNEL} \
                            -r ../img/boot-time-disk.img \
@@ -69,5 +69,5 @@ run_cloudhv() {
 }
 
 run_firecracker ../img/boot-time-vmlinux          boot-serial-fc-nopci
-run_firecracker ../img/boot-time-linuxkit-vmlinux boot-serial-fc-linuxkit
+#run_firecracker ../img/boot-time-linuxkit-vmlinux boot-serial-fc-linuxkit
 run_cloudhv
