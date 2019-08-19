@@ -25,15 +25,9 @@ done
 RAW=${DIR}/raw
 mkdir -p ${RAW}
 
-
-
-CSV=${DIR}/boot-times-parallel-${PARALLEL}.csv
-
-rm -f ${FC_DAT} ${QEMU_DAT} ${CHV_DAT} ${CSV}
-
 run_firecracker() {
-    FC_DAT=${RAW}/boot-times-parallel-${PARALLEL}-fc.dat
-    FC_CDF=${DIR}/boot-times-parallel-${PARALLEL}-fc-cdf.dat
+    FC_DAT=${RAW}/boot-parallel-${PARALLEL}-fc.dat
+    FC_CDF=${DIR}/boot-parallel-${PARALLEL}-fc-cdf.dat
 
     rm -f ${FC_DAT} ${FC_CDF}
 
@@ -51,8 +45,8 @@ run_firecracker() {
 }
 
 run_cloudhv() {
-    CHV_DAT=${RAW}/boot-times-parallel-${PARALLEL}-chv.dat
-    CHV_CDF=${DIR}/boot-times-parallel-${PARALLEL}-chv-cdf.dat
+    CHV_DAT=${RAW}/boot-parallel-${PARALLEL}-chv.dat
+    CHV_CDF=${DIR}/boot-parallel-${PARALLEL}-chv-cdf.dat
 
     rm -f ${CHV_DAT} ${CHV_CDF}
 
@@ -70,8 +64,8 @@ run_cloudhv() {
 }
 
 run_qemu() {
-    QEMU_DAT=${RAW}/boot-times-parallel-${PARALLEL}-qemu.dat
-    QEMU_CDF=${DIR}/boot-times-parallel-${PARALLEL}-qemu-cdf.dat
+    QEMU_DAT=${RAW}/boot-parallel-${PARALLEL}-qemu.dat
+    QEMU_CDF=${DIR}/boot-parallel-${PARALLEL}-qemu-cdf.dat
 
     rm -f ${QEMU_DAT} ${QEMU_CDF}
 
