@@ -7,7 +7,7 @@
 
 
 fc_dat =        sprintf("%s/boot-serial-fc-cdf.dat", base)
-fc_pci_dat =    sprintf("%s/boot-serial-fc-pci-cdf.dat", base)
+fc_nopci_dat =  sprintf("%s/boot-serial-fc-nopci-cdf.dat", base)
 fc_net_dat =    sprintf("%s/boot-serial-fc-net-cdf.dat", base)
 chv_dat =       sprintf("%s/boot-serial-chv-cdf.dat", base)
 chv_bz_dat =    sprintf("%s/boot-serial-chv-bz-cdf.dat", base)
@@ -35,7 +35,7 @@ set grid ytics mytics xtics mxtics
 plot \
      fc_dat          index 1 using 1:2         w l lw 2 t 'FC-pre', \
      fc_dat          index 0 using ($1/1000):2 w l lw 2 t 'FC', \
-     fc_pci_dat      index 1 using 1:2         w l lw 2 t 'FC-pre (w/ PCI kernel)', \
+     fc_nopci_dat    index 1 using 1:2         w l lw 2 t 'FC-pre (noPCI kernel)', \
      fc_net_dat      index 1 using 1:2         w l lw 2 t 'FC+Network-pre', \
      fc_net_dat      index 0 using ($1/1000):2 w l lw 2 t 'FC+Network', \
      chv_dat         index 0 using ($1/1000):2 w l lw 2 t 'CloudHV', \

@@ -5,9 +5,9 @@
 # where <dir> is the platform directory
 
 
-fc_dat =        sprintf("%s/boot-times-parallel-100-fc-cdf.dat", base)
-chv_dat =       sprintf("%s/boot-times-parallel-100-chv-cdf.dat", base)
-qboot_dat =     sprintf("%s/boot-times-parallel-100-qemu-cdf.dat", base)
+fc_dat =        sprintf("%s/boot-parallel-100-fc-cdf.dat", base)
+chv_dat =       sprintf("%s/boot-parallel-100-chv-cdf.dat", base)
+qboot_dat =     sprintf("%s/boot-parallel-100-qemu-cdf.dat", base)
 
 out_file = sprintf("%s/boot-parallel.pdf", base)
 
