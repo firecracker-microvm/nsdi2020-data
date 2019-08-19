@@ -1,6 +1,6 @@
 #! /bin/sh
 
-ITER=500
+ITER=200
 DIR=../data/
 CORES=1
 MEM=256
@@ -18,21 +18,31 @@ done
 RAW=${DIR}/raw
 mkdir -p ${RAW}
 
+FC_NET_DAT=${RAW}/boot-serial-fc-net.dat
+FC_NET_CDF=${DIR}/boot-serial-fc-net-cdf.dat
+
+CHV_NET_DAT=${RAW}/boot-serial-chv-net.dat
+CHV_NET_CDF=${DIR}/boot-serial-chv-net-cdf.dat
+
+
+
 run_firecracker() {
-    local DAT=${RAW}/boot-serial-fc.dat
-    local CDF=${DIR}/boot-serial-fc-cdf.dat
+    local DAT=${RAW}/boot-serial-fc-net.dat
+    local CDF=${DIR}/boot-serial-fc-net-cdf.dat
 
     rm -f ${DAT} ${CDF}
 
-    # Firecracker base
+    # Firecracker base + Network
     killall -9 firecracker 2> /dev/null
     for i in $(seq ${ITER}); do
-        echo "Firecracker: $i"
+        echo "Firecracker+Net: $i"
         ./util_start_fc.sh -b ../bin/firecracker \
-                           -k ../img/boot-time-pci-vmlinux \
+                           -k ../img/boot-time-vmlinux \
                            -r ../img/boot-time-disk.img \
                            -c $CORES \
                            -m $MEM \
+                           -i 0 \
+                           -n \
                            -t ${DAT}
         sleep 1
         killall -9 firecracker 2> /dev/null
@@ -42,20 +52,22 @@ run_firecracker() {
 }
 
 run_cloudhv() {
-    local DAT=${RAW}/boot-serial-chv.dat
-    local CDF=${DIR}/boot-serial-chv-cdf.dat
+    local DAT=${RAW}/boot-serial-chv-net.dat
+    local CDF=${DIR}/boot-serial-chv-net-cdf.dat
 
-    rm ${DAT} ${CDF}
+    rm -f ${DAT} ${CDF}
 
-    # Cloud Hypervisor base
+    # Cloud Hypervisor net
     killall -9 cloud-hypervisor 2> /dev/null
     for i in $(seq ${ITER}); do
-        echo "Cloud Hypervisor: $i"
+        echo "Cloud Hypervisor+net: $i"
         ./util_start_cloudhv.sh -b ../bin/cloud-hypervisor \
                                 -k ../img/boot-time-pci-vmlinux \
                                 -r ../img/boot-time-disk.img \
                                 -c $CORES \
                                 -m $MEM \
+                                -i 0 \
+                                -n \
                                 -t ${DAT}
         sleep 1
         killall -9 cloud-hypervisor 2> /dev/null
@@ -65,42 +77,23 @@ run_cloudhv() {
 }
 
 run_qemu() {
-    local DAT=${RAW}/boot-serial-qemu.dat
-    local CDF=${DIR}/boot-serial-qemu-cdf.dat
+    local DAT=${RAW}/boot-serial-qboot-net.dat
+    local CDF=${DIR}/boot-serial-qboot-net-cdf.dat
 
     rm -f ${DAT} ${CDF}
     
+    # Qemu with qboot + Network
     killall -9 qemu-system-x86_64 2> /dev/null
     for i in $(seq ${ITER}); do
-        echo "Qemu: $i"
-        ./util_start_qemu.sh -b ../bin/qemu-system-x86_64 \
-                             -k ../img/boot-time-pci-vmlinuz \
-                             -r ../img/boot-time-disk.img \
-                             -c $CORES \
-                             -m $MEM \
-                             -t ${DAT}
-        sleep 1
-        killall -9 qemu-system-x86_64 2> /dev/null
-    done
-    rm -f *.log
-    ./util_gen_cdf.py ${DAT} ${CDF}
-}
-
-run_qemu_qboot() {
-    local DAT=${RAW}/boot-serial-qboot.dat
-    local CDF=${DIR}/boot-serial-qboot-cdf.dat
-
-    rm -f ${DAT} ${CDF}
-
-    killall -9 qemu-system-x86_64 2> /dev/null
-    for i in $(seq ${ITER}); do
-        echo "Qemu+qboot: $i"
+        echo "Qemu+qboot+Net: $i"
         ./util_start_qemu.sh -b ../bin/qemu-system-x86_64 \
                              -k ../img/boot-time-pci-vmlinuz \
                              -r ../img/boot-time-disk.img \
                              -w qboot.bin \
                              -c $CORES \
                              -m $MEM \
+                             -i 0 \
+                             -n \
                              -t ${DAT}
         sleep 1
         killall -9 qemu-system-x86_64 2> /dev/null
@@ -112,4 +105,3 @@ run_qemu_qboot() {
 run_firecracker
 run_cloudhv
 run_qemu
-run_qemu_qboot
