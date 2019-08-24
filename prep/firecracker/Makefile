@@ -12,8 +12,8 @@ build: ../../bin/jailer ../../bin/firecracker
 	mkdir -p $(@D)
 	cp $< $(@D)
 
-firecracker/build/release/jailer: firecracker/build/release/firecracker
-firecracker/build/release/firecracker: firecracker
+firecracker/build/release-musl/jailer: firecracker/build/release-musl/firecracker
+firecracker/build/release-musl/firecracker: firecracker
 	cd $< && git checkout $(FC_COMMIT)
 	cd $< && git am ../patches/*
 	cd $< && tools/devtool -y build --release
