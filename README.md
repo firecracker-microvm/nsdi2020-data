@@ -14,12 +14,7 @@ firecracker and builds a new, statically linked binary for qemu.
 The following should build everything:
 ```
 cd ./prep
-make -C firecracker
-make -C qemu
-make -C config-fc
-make -C linuxkit
-make -C pkg
-make -C img
+make
 ```
 
 Binaries (and BIOS) are placed into `./bin` and kernel and root
