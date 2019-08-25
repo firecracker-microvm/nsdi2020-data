@@ -3,6 +3,7 @@
 DIR=../data/
 CORES=2
 MEM=512
+FILE=../img/disk-bench.img
 
 while [ $# -gt 0 ]; do
     case $1 in
@@ -24,6 +25,9 @@ mkdir -p ${RAW}
 
 FC_PRE=fio-fc
 QEMU_PRE=fio-qemu
+
+# Create a file if it does not exist
+[ -e $FILE ] || fallocate -l 10G $FILE
 
 killall -9 firecracker 2> /dev/null
 killall -9 qemu-system-x86_64 2> /dev/null
