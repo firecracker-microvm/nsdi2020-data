@@ -51,6 +51,9 @@ if [ "x$ROOTFS" != "x" ]; then
     CLOUDHV="$CLOUDHV --disk $ROOTFS "
     ROOT="root=/dev/vda"
 fi
+if [ "x$DISK" != "x" ]; then    
+    CLOUDHV="$CLOUDHV $DISK "
+fi
 
 if [ "x$NET" != "x" ]; then
     TAP_DEV=$(./util_ipam.sh -t $ID)
