@@ -1,25 +1,25 @@
 PING 169.254.0.1 (169.254.0.1) 56(84) bytes of data.
-64 bytes from 169.254.0.1: icmp_seq=1 ttl=64 time=0.115 ms
-64 bytes from 169.254.0.1: icmp_seq=2 ttl=64 time=0.204 ms
-64 bytes from 169.254.0.1: icmp_seq=3 ttl=64 time=0.204 ms
-64 bytes from 169.254.0.1: icmp_seq=4 ttl=64 time=0.204 ms
-64 bytes from 169.254.0.1: icmp_seq=5 ttl=64 time=0.228 ms
-64 bytes from 169.254.0.1: icmp_seq=6 ttl=64 time=0.206 ms
-64 bytes from 169.254.0.1: icmp_seq=7 ttl=64 time=0.228 ms
-64 bytes from 169.254.0.1: icmp_seq=8 ttl=64 time=0.225 ms
-64 bytes from 169.254.0.1: icmp_seq=9 ttl=64 time=0.213 ms
-64 bytes from 169.254.0.1: icmp_seq=10 ttl=64 time=0.199 ms
-64 bytes from 169.254.0.1: icmp_seq=11 ttl=64 time=0.199 ms
-64 bytes from 169.254.0.1: icmp_seq=12 ttl=64 time=0.221 ms
-64 bytes from 169.254.0.1: icmp_seq=13 ttl=64 time=0.228 ms
-64 bytes from 169.254.0.1: icmp_seq=14 ttl=64 time=0.201 ms
-64 bytes from 169.254.0.1: icmp_seq=15 ttl=64 time=0.224 ms
-64 bytes from 169.254.0.1: icmp_seq=16 ttl=64 time=0.203 ms
-64 bytes from 169.254.0.1: icmp_seq=17 ttl=64 time=0.210 ms
-64 bytes from 169.254.0.1: icmp_seq=18 ttl=64 time=0.205 ms
-64 bytes from 169.254.0.1: icmp_seq=19 ttl=64 time=0.204 ms
-64 bytes from 169.254.0.1: icmp_seq=20 ttl=64 time=0.247 ms
+64 bytes from 169.254.0.1: icmp_seq=1 ttl=64 time=0.113 ms
+64 bytes from 169.254.0.1: icmp_seq=2 ttl=64 time=0.169 ms
+64 bytes from 169.254.0.1: icmp_seq=3 ttl=64 time=0.213 ms
+64 bytes from 169.254.0.1: icmp_seq=4 ttl=64 time=0.232 ms
+64 bytes from 169.254.0.1: icmp_seq=5 ttl=64 time=0.205 ms
+64 bytes from 169.254.0.1: icmp_seq=6 ttl=64 time=0.235 ms
+64 bytes from 169.254.0.1: icmp_seq=7 ttl=64 time=0.209 ms
+64 bytes from 169.254.0.1: icmp_seq=8 ttl=64 time=0.220 ms
+64 bytes from 169.254.0.1: icmp_seq=9 ttl=64 time=0.230 ms
+64 bytes from 169.254.0.1: icmp_seq=10 ttl=64 time=0.213 ms
+64 bytes from 169.254.0.1: icmp_seq=11 ttl=64 time=0.235 ms
+64 bytes from 169.254.0.1: icmp_seq=12 ttl=64 time=0.251 ms
+64 bytes from 169.254.0.1: icmp_seq=13 ttl=64 time=0.209 ms
+64 bytes from 169.254.0.1: icmp_seq=14 ttl=64 time=0.230 ms
+64 bytes from 169.254.0.1: icmp_seq=15 ttl=64 time=0.210 ms
+64 bytes from 169.254.0.1: icmp_seq=16 ttl=64 time=0.224 ms
+64 bytes from 169.254.0.1: icmp_seq=17 ttl=64 time=0.208 ms
+64 bytes from 169.254.0.1: icmp_seq=18 ttl=64 time=0.224 ms
+64 bytes from 169.254.0.1: icmp_seq=19 ttl=64 time=0.211 ms
+64 bytes from 169.254.0.1: icmp_seq=20 ttl=64 time=0.206 ms
 
 --- 169.254.0.1 ping statistics ---
-20 packets transmitted, 20 received, 0% packet loss, time 19451ms
-rtt min/avg/max/mdev = 0.115/0.208/0.247/0.028 ms
+20 packets transmitted, 20 received, 0% packet loss, time 19456ms
+rtt min/avg/max/mdev = 0.113/0.212/0.251/0.030 ms
