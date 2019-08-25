@@ -2,6 +2,11 @@
 
 DIR=$1
 
+if [ -z $DIR ];
+   echo "Please specify a directory for the data"
+   exit 1
+then
+
 sudo ./00_setup_host.sh
 
 sudo ./run-system.sh -d $DIR
