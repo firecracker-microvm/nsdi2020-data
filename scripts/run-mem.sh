@@ -11,7 +11,7 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-MEMSZS="128 256 512 1024 1536 2048 3072 4096 6144 8192 10240"
+MEMSZS="128 256 512 1024 1536 2048 3072 4096 6144 8192"
 
 RAW=${DIR}/raw
 mkdir -p ${RAW}
@@ -21,6 +21,9 @@ FC_RES=${DIR}/mem-fc.dat
 
 CHV_PRE=${RAW}/mem-chv
 CHV_RES=${DIR}/mem-chv.dat
+
+CHV_BZ_PRE=${RAW}/mem-chv-bz
+CHV_BZ_RES=${DIR}/mem-chv-bz.dat
 
 QEMU_PRE=${RAW}/mem-qemu
 QEMU_RES=${DIR}/mem-qemu.dat
@@ -106,6 +109,32 @@ for MEM in $MEMSZS; do
         killall -9 cloud-hypervisor 2> /dev/null
 
         calc $MEM ${CHV_PRE}-$MEM.txt ${CHV_PRE}-$MEM-vm.txt ${CHV_PRE}-$MEM-pmap.txt ${CHV_RES}
+        sleep 5
+done
+
+echo "# VMSZ VSS RSS VM_TOTAL VM_FREE VM_AVAIL PMAP_EXEC PMAP_DATA (sizes in KB)" > ${CHV_BZ_RES}
+for MEM in $MEMSZS; do
+    echo "Cloud Hypervisor+net (bzImage): $MEM MB"
+    ./util_start_cloudhv.sh \
+        -b ../bin/cloud-hypervisor \
+        -k ../img/bench-ssh-vmlinuz \
+        -r ../img/bench-ssh-disk.img \
+        -c $CORES \
+        -m $MEM \
+        -i $ID \
+        -n \
+        &
+
+        # 10 seconds should be enough
+        sleep 10
+
+        # there is no r missing below. comm is limited to 16 chars
+        ps -o pid,vsz,rss,command -C cloud-hyperviso > ${CHV_BZ_PRE}-$MEM.txt
+        pmap -x $(pgrep cloud-hyperviso) > ${CHV_BZ_PRE}-$MEM-pmap.txt
+        ${SSH} "cat /proc/meminfo" > ${CHV_BZ_PRE}-$MEM-vm.txt
+        killall -9 cloud-hypervisor 2> /dev/null
+
+        calc $MEM ${CHV_BZ_PRE}-$MEM.txt ${CHV_BZ_PRE}-$MEM-vm.txt ${CHV_BZ_PRE}-$MEM-pmap.txt ${CHV_BZ_RES}
         sleep 5
 done
 
