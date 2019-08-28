@@ -1,2 +1,2 @@
   PID    VSZ   RSS COMMAND
-10977 8395312 391152 ../bin/firecracker --api-sock /tmp/fc-0.sock
+12113 8395304 391416 ../bin/firecracker --api-sock /tmp/fc-0.sock
