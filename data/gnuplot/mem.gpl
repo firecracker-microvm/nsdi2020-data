@@ -5,9 +5,10 @@
 # where <dir> is the platform directory
 
 
-fc_dat =    sprintf("%s/mem-fc.dat", base)
-chv_dat =   sprintf("%s/mem-chv.dat", base)
-qboot_dat = sprintf("%s/mem-qemu.dat", base)
+fc_dat =     sprintf("%s/mem-fc.dat", base)
+chv_dat =    sprintf("%s/mem-chv.dat", base)
+chv_bz_dat = sprintf("%s/mem-chv-bz.dat", base)
+qboot_dat =  sprintf("%s/mem-qemu.dat", base)
 
 out_file = sprintf("%s/mem-percent.pdf", base)
 
@@ -32,6 +33,8 @@ plot \
      chv_dat    using ($1/1024):(($8 * 100 / $1) - 100) w lp lw 2 t 'CloudHV', \
      qboot_dat  using ($1/1024):(($8 * 100 / $1) - 100) w lp lw 2 t 'Qemu', \
 
+
+reset
 out_file = sprintf("%s/mem-abs.pdf", base)
 
 set terminal pdf color solid enhanced font ',16' size 5,2.4
@@ -56,3 +59,30 @@ plot \
      fc_dat     using ($1/1048576):(($8 - $1)/1024) w lp lw 2 t 'FC', \
      chv_dat    using ($1/1048576):(($8 - $1)/1024) w lp lw 2 t 'CloudHV', \
      qboot_dat  using ($1/1048576):(($8 - $1)/1024) w lp lw 2 t 'Qemu', \
+
+reset
+out_file = sprintf("%s/mem-in-vm.pdf", base)
+
+set terminal pdf color solid enhanced font ',16' size 5,2.4
+set output out_file
+
+set xlabel 'VM memory (GB)'
+set ylabel 'Overhead (MB)'
+
+
+set xrange [*:*]
+set offsets graph 0, 0, 0.01, 0.01
+
+set key top right
+
+set xtics 1
+set mxtics 4
+set ytics 32
+set mytics 4
+set grid ytics mytics xtics mxtics
+
+plot \
+     fc_dat     using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'FC', \
+     chv_dat    using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'CloudHV', \
+     chv_bz_dat using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'CloudHV (bzImage)', \
+     qboot_dat  using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'Qemu', \
