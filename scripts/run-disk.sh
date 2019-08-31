@@ -34,8 +34,24 @@ ID=0
 VM_IP=$(./util_ipam.sh -v $ID)
 SSH="ssh -i ../etc/ssh-bench.key -F ../etc/ssh-config root@${VM_IP}"
 
+process() {
+    local bm=$1
+    local in=$2
+    local out=$3
+
+    local r_iops=$(cat $in | jq '.jobs[0].read.iops')
+    local r_bw=$(cat $in | jq '.jobs[0].read.bw')
+    local w_iops=$(cat $in | jq '.jobs[0].write.iops')
+    local w_bw=$(cat $in | jq '.jobs[0].write.bw')
+
+    echo "$bm $r_iops $r_bw $w_iops $w_bw" >> $out
+}
+
 run_firecracker() {
     local PRE=fio-fc
+    local OUT=${DIR}/${PRE}.dat
+    echo "# Benchmark rd_iops rd_bw wr_iops wr_bw" > $OUT
+
     echo "Firecracker: Starting"
     ./util_start_fc.sh -b ../bin/firecracker \
         -k ../img/bench-ssh-vmlinux -r ../img/bench-ssh-disk.img \
@@ -52,6 +68,7 @@ run_firecracker() {
         echo "Running $TEST"
         ${SSH} "fio --output-format=json --output=$PRE-$TEST.json --section=$TEST fio-vm.cfg"
         ${SSH} "cat $PRE-$TEST.json" > ${RAW}/${PRE}-${TEST}.json
+        process $TEST ${RAW}/${PRE}-${TEST}.json $OUT
     done
 
     killall -9 firecracker 2> /dev/null
@@ -59,6 +76,9 @@ run_firecracker() {
 
 run_cloudhv() {
     local PRE=fio-chv
+    local OUT=${DIR}/${PRE}.dat
+    echo "# Benchmark rd_iops rd_bw wr_iops wr_bw" > $OUT
+
     echo "Cloud Hypervisor: Starting"
     ./util_start_cloudhv.sh -b ../bin/cloud-hypervisor \
         -k ../img/bench-ssh-vmlinux -r ../img/bench-ssh-disk.img \
@@ -75,6 +95,7 @@ run_cloudhv() {
         echo "Running $TEST"
         ${SSH} "fio --output-format=json --output=$PRE-$TEST.json --section=$TEST fio-vm.cfg"
         ${SSH} "cat $PRE-$TEST.json" > ${RAW}/${PRE}-${TEST}.json
+        process $TEST ${RAW}/${PRE}-${TEST}.json $OUT
     done
 
     killall -9 cloud-hypervisor 2> /dev/null
@@ -82,6 +103,9 @@ run_cloudhv() {
 
 run_qemu() {
     local PRE=fio-qemu
+    local OUT=${DIR}/${PRE}.dat
+    echo "# Benchmark rd_iops rd_bw wr_iops wr_bw" > $OUT
+
     echo "qemu: Starting"
     ./util_start_qemu.sh -b ../bin/qemu-system-x86_64 \
     -k ../img/bench-ssh-vmlinuz -r ../img/bench-ssh-disk.img -w qboot.bin \
@@ -98,12 +122,13 @@ run_qemu() {
         echo "Running $TEST"
         ${SSH} "fio --output-format=json --output=$PRE-$TEST.json --section=$TEST fio-vm.cfg"
         ${SSH} "cat $PRE-$TEST.json" > ${RAW}/${PRE}-${TEST}.json
+        process $TEST ${RAW}/${PRE}-${TEST}.json $OUT
     done
     killall -9 qemu-system-x86_64 2> /dev/null
 }
 
 run_firecracker
 sleep 5
-run_cloudhv
-sleep 5
 run_qemu
+sleep 5
+run_cloudhv
