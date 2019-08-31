@@ -1,0 +1,9 @@
+# Benchmark rd_iops rd_bw wr_iops wr_bw
+rand-read-4k 303.274877 1213 0 0
+rand-read-4k-qd1 266.786631 1067 0 0
+rand-write-4k 0 0 26631.115851 106524
+rand-write-4k-qd1 0 0 7385.328134 29541
+rand-read-128k 105.576233 13513 0 0
+rand-read-128k-qd1 101.383103 12977 0 0
+rand-write-128k 0 0 399.587093 51147
+rand-write-128k-qd1 0 0 311.023753 39811
