@@ -35,11 +35,11 @@ Handle 0x0001, DMI type 1, 27 bytes
 System Information
 	Manufacturer: Amazon EC2
 	Product Name: m5d.metal
-	Version: 1.0
-	Serial Number: ec224a4e-b7c1-80b5-9f5e-cf0dde05fcb2
-	UUID: EC224A4E-B7C1-80B5-9F5E-CF0DDE05FCB2
+	Version: 00001
+	Serial Number: ec2a4150-f903-e28e-970e-f3bdd9f9ebcd
+	UUID: EC2A4150-F903-E28E-970E-F3BDD9F9EBCD
 	Wake-up Type: Power Switch
-	SKU Number: SS-AMZ01359-001F
+	SKU Number: Not Specified
 	Family: Default string
 
 Handle 0x0002, DMI type 2, 15 bytes
@@ -48,7 +48,7 @@ Base Board Information
 	Product Name: Not Specified
 	Version: Not Specified
 	Serial Number: Not Specified
-	Asset Tag: i-0a1375bc8fe4f289e
+	Asset Tag: i-0fd97f3524503413c
 	Features:
 		Board is a hosting board
 		Board is replaceable
@@ -73,7 +73,7 @@ Chassis Information
 	Height: Unspecified
 	Number Of Power Cords: 1
 	Contained Elements: 0
-	SKU Number: SS-AMZ01359-001F
+	SKU Number: Not Specified
 
 Handle 0x0004, DMI type 8, 9 bytes
 Port Connector Information
@@ -651,10 +651,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23C45
+	Manufacturer: Samsung
+	Serial Number: 23D1C219
 	Asset Tag: CPU1_DIMM_A1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Part Number: M393A4K40CB2-CTD    
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -710,10 +710,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23C5F
+	Manufacturer: Samsung
+	Serial Number: 23D1C43F
 	Asset Tag: CPU1_DIMM_B1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Part Number: M393A4K40CB2-CTD    
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -769,10 +769,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23C72
+	Manufacturer: Samsung
+	Serial Number: 23D1BD1D
 	Asset Tag: CPU1_DIMM_C1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Part Number: M393A4K40CB2-CTD    
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -845,10 +845,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23A4C
+	Manufacturer: Samsung
+	Serial Number: 23D1C468
 	Asset Tag: CPU1_DIMM_D1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Part Number: M393A4K40CB2-CTD    
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -904,10 +904,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23A34
+	Manufacturer: Samsung
+	Serial Number: 23D1C6AA
 	Asset Tag: CPU1_DIMM_E1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Part Number: M393A4K40CB2-CTD    
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -963,10 +963,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23A31
+	Manufacturer: Samsung
+	Serial Number: 23D1C6A9
 	Asset Tag: CPU1_DIMM_F1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Part Number: M393A4K40CB2-CTD    
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -1039,10 +1039,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23A6E
-	Asset Tag: CPU2_DIMM_A1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Manufacturer: <BAD INDEX>
+	Serial Number: <BAD INDEX>
+	Asset Tag: <BAD INDEX>
+	Part Number: <BAD INDEX>
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -1098,10 +1098,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23A48
-	Asset Tag: CPU2_DIMM_B1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Manufacturer: <BAD INDEX>
+	Serial Number: <BAD INDEX>
+	Asset Tag: <BAD INDEX>
+	Part Number: <BAD INDEX>
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -1157,10 +1157,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23A4B
-	Asset Tag: CPU2_DIMM_C1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Manufacturer: <BAD INDEX>
+	Serial Number: <BAD INDEX>
+	Asset Tag: <BAD INDEX>
+	Part Number: <BAD INDEX>
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -1233,10 +1233,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23A4E
-	Asset Tag: CPU2_DIMM_D1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Manufacturer: <BAD INDEX>
+	Serial Number: <BAD INDEX>
+	Asset Tag: <BAD INDEX>
+	Part Number: <BAD INDEX>
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -1292,10 +1292,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23F8B
+	Manufacturer: Samsung
+	Serial Number: 23D1CF63
 	Asset Tag: CPU2_DIMM_E1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Part Number: M393A4K40CB2-CTD    
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -1351,10 +1351,10 @@ Memory Device
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1CD23C3D
+	Manufacturer: Samsung
+	Serial Number: 23D1C142
 	Asset Tag: CPU2_DIMM_F1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
+	Part Number: M393A4K40CB2-CTD    
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
 	Minimum Voltage: 1.2 V
@@ -1621,6 +1621,6 @@ BIOS Language Information
 		en|US|iso8859-1
 	Currently Installed Language: en|US|iso8859-1
 
-Handle 0x009A, DMI type 127, 4 bytes
+Handle 0x009C, DMI type 127, 4 bytes
 End Of Table
 

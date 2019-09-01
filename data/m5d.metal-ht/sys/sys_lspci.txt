@@ -415,7 +415,7 @@
 	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
 	Status: Cap+ 66MHz+ UDF- FastB2B+ ParErr- DEVSEL=medium >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0
-	Interrupt: pin A routed to IRQ 383
+	Interrupt: pin A routed to IRQ 350
 	NUMA node: 0
 	Region 0: Memory at d6f04000 (32-bit, non-prefetchable) [size=8K]
 	Region 1: Memory at d6f08000 (32-bit, non-prefetchable) [size=256]
@@ -1014,6 +1014,9 @@
 	Capabilities: [100 v1] Alternative Routing-ID Interpretation (ARI)
 		ARICap:	MFVC- ACS-, Next Function: 1
 		ARICtl:	MFVC- ACS-, Function Group: 0
+	Capabilities: [110 v1] Access Control Services
+		ACSCap:	SrcValid- TransBlk- ReqRedir+ CmpltRedir+ UpstreamFwd- EgressCtrl- DirectTrans-
+		ACSCtl:	SrcValid- TransBlk- ReqRedir- CmpltRedir- UpstreamFwd- EgressCtrl- DirectTrans-
 	Capabilities: [150 v1] #19
 	Capabilities: [178 v1] Transaction Processing Hints
 		Device specific mode supported
@@ -1060,6 +1063,9 @@
 	Capabilities: [100 v1] Alternative Routing-ID Interpretation (ARI)
 		ARICap:	MFVC- ACS-, Next Function: 0
 		ARICtl:	MFVC- ACS-, Function Group: 0
+	Capabilities: [110 v1] Access Control Services
+		ACSCap:	SrcValid- TransBlk- ReqRedir+ CmpltRedir+ UpstreamFwd- EgressCtrl- DirectTrans-
+		ACSCtl:	SrcValid- TransBlk- ReqRedir- CmpltRedir- UpstreamFwd- EgressCtrl- DirectTrans-
 	Capabilities: [178 v1] Transaction Processing Hints
 		Device specific mode supported
 		No steering table available
@@ -1817,12 +1823,12 @@
 
 7b:00.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
 	Physical Slot: 0
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx-
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx-
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	NUMA node: 0
 	Bus: primary=7b, secondary=7c, subordinate=8c, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e9e00000-ebdfffff
 	Prefetchable memory behind bridge: 00003bfff0000000-00003bffffffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -1859,13 +1865,13 @@
 	Kernel driver in use: pcieport
 
 7c:00.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 29
 	NUMA node: 0
 	Bus: primary=7c, secondary=7d, subordinate=7d, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: ebc00000-ebdfffff
 	Prefetchable memory behind bridge: 00003bffff000000-00003bffffffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -1908,13 +1914,13 @@
 	Kernel driver in use: pcieport
 
 7c:01.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 30
 	NUMA node: 0
 	Bus: primary=7c, secondary=7e, subordinate=7e, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: eba00000-ebbfffff
 	Prefetchable memory behind bridge: 00003bfffe000000-00003bfffeffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -1934,7 +1940,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #1, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -1957,13 +1963,13 @@
 	Kernel driver in use: pcieport
 
 7c:02.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 31
 	NUMA node: 0
 	Bus: primary=7c, secondary=7f, subordinate=7f, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: eb800000-eb9fffff
 	Prefetchable memory behind bridge: 00003bfffd000000-00003bfffdffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -1983,7 +1989,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #2, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2006,13 +2012,13 @@
 	Kernel driver in use: pcieport
 
 7c:03.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 32
 	NUMA node: 0
 	Bus: primary=7c, secondary=80, subordinate=80, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: eb600000-eb7fffff
 	Prefetchable memory behind bridge: 00003bfffc000000-00003bfffcffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2032,7 +2038,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #3, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2055,13 +2061,13 @@
 	Kernel driver in use: pcieport
 
 7c:04.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 33
 	NUMA node: 0
 	Bus: primary=7c, secondary=81, subordinate=81, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: eb400000-eb5fffff
 	Prefetchable memory behind bridge: 00003bfffb000000-00003bfffbffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2081,7 +2087,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #4, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2104,13 +2110,13 @@
 	Kernel driver in use: pcieport
 
 7c:05.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 34
 	NUMA node: 0
 	Bus: primary=7c, secondary=82, subordinate=82, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: eb200000-eb3fffff
 	Prefetchable memory behind bridge: 00003bfffa000000-00003bfffaffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2130,7 +2136,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #5, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2153,13 +2159,13 @@
 	Kernel driver in use: pcieport
 
 7c:06.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 35
 	NUMA node: 0
 	Bus: primary=7c, secondary=83, subordinate=83, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: eb000000-eb1fffff
 	Prefetchable memory behind bridge: 00003bfff9000000-00003bfff9ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2179,7 +2185,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #6, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2202,13 +2208,13 @@
 	Kernel driver in use: pcieport
 
 7c:07.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 36
 	NUMA node: 0
 	Bus: primary=7c, secondary=84, subordinate=84, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: eae00000-eaffffff
 	Prefetchable memory behind bridge: 00003bfff8000000-00003bfff8ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2228,7 +2234,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #7, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2251,13 +2257,13 @@
 	Kernel driver in use: pcieport
 
 7c:08.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 37
 	NUMA node: 0
 	Bus: primary=7c, secondary=85, subordinate=85, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: eac00000-eadfffff
 	Prefetchable memory behind bridge: 00003bfff7000000-00003bfff7ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2277,7 +2283,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #8, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2300,13 +2306,13 @@
 	Kernel driver in use: pcieport
 
 7c:09.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 38
 	NUMA node: 0
 	Bus: primary=7c, secondary=86, subordinate=86, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: eaa00000-eabfffff
 	Prefetchable memory behind bridge: 00003bfff6000000-00003bfff6ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2326,7 +2332,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #9, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2349,13 +2355,13 @@
 	Kernel driver in use: pcieport
 
 7c:0a.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 39
 	NUMA node: 0
 	Bus: primary=7c, secondary=87, subordinate=87, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: ea800000-ea9fffff
 	Prefetchable memory behind bridge: 00003bfff5000000-00003bfff5ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2375,7 +2381,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #10, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2398,13 +2404,13 @@
 	Kernel driver in use: pcieport
 
 7c:0b.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 40
 	NUMA node: 0
 	Bus: primary=7c, secondary=88, subordinate=88, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: ea600000-ea7fffff
 	Prefetchable memory behind bridge: 00003bfff4000000-00003bfff4ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2424,7 +2430,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #11, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2447,13 +2453,13 @@
 	Kernel driver in use: pcieport
 
 7c:0c.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 41
 	NUMA node: 0
 	Bus: primary=7c, secondary=89, subordinate=89, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: ea400000-ea5fffff
 	Prefetchable memory behind bridge: 00003bfff3000000-00003bfff3ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2473,7 +2479,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #12, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2496,13 +2502,13 @@
 	Kernel driver in use: pcieport
 
 7c:0d.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 42
 	NUMA node: 0
 	Bus: primary=7c, secondary=8a, subordinate=8a, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: ea200000-ea3fffff
 	Prefetchable memory behind bridge: 00003bfff2000000-00003bfff2ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2522,7 +2528,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #13, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2545,13 +2551,13 @@
 	Kernel driver in use: pcieport
 
 7c:0e.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 43
 	NUMA node: 0
 	Bus: primary=7c, secondary=8b, subordinate=8b, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: ea000000-ea1fffff
 	Prefetchable memory behind bridge: 00003bfff1000000-00003bfff1ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2571,7 +2577,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #14, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2594,13 +2600,13 @@
 	Kernel driver in use: pcieport
 
 7c:0f.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 44
 	NUMA node: 0
 	Bus: primary=7c, secondary=8c, subordinate=8c, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e9e00000-e9ffffff
 	Prefetchable memory behind bridge: 00003bfff0000000-00003bfff0ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2620,7 +2626,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #15, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2685,12 +2691,12 @@
 
 8d:00.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
 	Physical Slot: 0-1
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx-
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx-
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	NUMA node: 0
 	Bus: primary=8d, secondary=8e, subordinate=ae, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e5e00000-e9dfffff
 	Prefetchable memory behind bridge: 00003bffd0000000-00003bffefffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2724,13 +2730,13 @@
 	Kernel driver in use: pcieport
 
 8e:00.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 45
 	NUMA node: 0
 	Bus: primary=8e, secondary=8f, subordinate=8f, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e9c00000-e9dfffff
 	Prefetchable memory behind bridge: 00003bffef000000-00003bffefffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2773,13 +2779,13 @@
 	Kernel driver in use: pcieport
 
 8e:01.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 46
 	NUMA node: 0
 	Bus: primary=8e, secondary=90, subordinate=90, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e9a00000-e9bfffff
 	Prefetchable memory behind bridge: 00003bffee000000-00003bffeeffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2822,13 +2828,13 @@
 	Kernel driver in use: pcieport
 
 8e:02.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 47
 	NUMA node: 0
 	Bus: primary=8e, secondary=91, subordinate=91, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e9800000-e99fffff
 	Prefetchable memory behind bridge: 00003bffed000000-00003bffedffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2848,7 +2854,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #2, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2871,13 +2877,13 @@
 	Kernel driver in use: pcieport
 
 8e:03.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 48
 	NUMA node: 0
 	Bus: primary=8e, secondary=92, subordinate=92, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e9600000-e97fffff
 	Prefetchable memory behind bridge: 00003bffec000000-00003bffecffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2897,7 +2903,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #3, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2920,13 +2926,13 @@
 	Kernel driver in use: pcieport
 
 8e:04.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 49
 	NUMA node: 0
 	Bus: primary=8e, secondary=93, subordinate=93, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e9400000-e95fffff
 	Prefetchable memory behind bridge: 00003bffeb000000-00003bffebffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2946,7 +2952,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #4, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -2969,13 +2975,13 @@
 	Kernel driver in use: pcieport
 
 8e:05.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 50
 	NUMA node: 0
 	Bus: primary=8e, secondary=94, subordinate=94, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e9200000-e93fffff
 	Prefetchable memory behind bridge: 00003bffea000000-00003bffeaffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -2995,7 +3001,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #5, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3018,13 +3024,13 @@
 	Kernel driver in use: pcieport
 
 8e:06.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 51
 	NUMA node: 0
 	Bus: primary=8e, secondary=95, subordinate=95, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e9000000-e91fffff
 	Prefetchable memory behind bridge: 00003bffe9000000-00003bffe9ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3044,7 +3050,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #6, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3067,13 +3073,13 @@
 	Kernel driver in use: pcieport
 
 8e:07.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 52
 	NUMA node: 0
 	Bus: primary=8e, secondary=96, subordinate=96, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e8e00000-e8ffffff
 	Prefetchable memory behind bridge: 00003bffe8000000-00003bffe8ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3093,7 +3099,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #7, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3116,13 +3122,13 @@
 	Kernel driver in use: pcieport
 
 8e:08.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 53
 	NUMA node: 0
 	Bus: primary=8e, secondary=97, subordinate=97, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e8c00000-e8dfffff
 	Prefetchable memory behind bridge: 00003bffe7000000-00003bffe7ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3142,7 +3148,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #8, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3165,13 +3171,13 @@
 	Kernel driver in use: pcieport
 
 8e:09.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 54
 	NUMA node: 0
 	Bus: primary=8e, secondary=98, subordinate=98, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e8a00000-e8bfffff
 	Prefetchable memory behind bridge: 00003bffe6000000-00003bffe6ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3191,7 +3197,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #9, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3214,13 +3220,13 @@
 	Kernel driver in use: pcieport
 
 8e:0a.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 55
 	NUMA node: 0
 	Bus: primary=8e, secondary=99, subordinate=99, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e8800000-e89fffff
 	Prefetchable memory behind bridge: 00003bffe5000000-00003bffe5ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3240,7 +3246,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #10, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3263,13 +3269,13 @@
 	Kernel driver in use: pcieport
 
 8e:0b.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 56
 	NUMA node: 0
 	Bus: primary=8e, secondary=9a, subordinate=9a, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e8600000-e87fffff
 	Prefetchable memory behind bridge: 00003bffe4000000-00003bffe4ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3289,7 +3295,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #11, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3312,13 +3318,13 @@
 	Kernel driver in use: pcieport
 
 8e:0c.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 57
 	NUMA node: 0
 	Bus: primary=8e, secondary=9b, subordinate=9b, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e8400000-e85fffff
 	Prefetchable memory behind bridge: 00003bffe3000000-00003bffe3ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3338,7 +3344,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #12, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3361,13 +3367,13 @@
 	Kernel driver in use: pcieport
 
 8e:0d.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 58
 	NUMA node: 0
 	Bus: primary=8e, secondary=9c, subordinate=9c, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e8200000-e83fffff
 	Prefetchable memory behind bridge: 00003bffe2000000-00003bffe2ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3387,7 +3393,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #13, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3410,13 +3416,13 @@
 	Kernel driver in use: pcieport
 
 8e:0e.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 59
 	NUMA node: 0
 	Bus: primary=8e, secondary=9d, subordinate=9d, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e8000000-e81fffff
 	Prefetchable memory behind bridge: 00003bffe1000000-00003bffe1ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3436,7 +3442,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #14, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3459,13 +3465,13 @@
 	Kernel driver in use: pcieport
 
 8e:0f.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 60
 	NUMA node: 0
 	Bus: primary=8e, secondary=9e, subordinate=9e, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e7e00000-e7ffffff
 	Prefetchable memory behind bridge: 00003bffe0000000-00003bffe0ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3485,7 +3491,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #15, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3508,13 +3514,13 @@
 	Kernel driver in use: pcieport
 
 8e:10.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 61
 	NUMA node: 0
 	Bus: primary=8e, secondary=9f, subordinate=9f, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e7c00000-e7dfffff
 	Prefetchable memory behind bridge: 00003bffdf000000-00003bffdfffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3534,7 +3540,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #16, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3557,13 +3563,13 @@
 	Kernel driver in use: pcieport
 
 8e:11.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 62
 	NUMA node: 0
 	Bus: primary=8e, secondary=a0, subordinate=a0, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e7a00000-e7bfffff
 	Prefetchable memory behind bridge: 00003bffde000000-00003bffdeffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3583,7 +3589,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #17, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3606,13 +3612,13 @@
 	Kernel driver in use: pcieport
 
 8e:12.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 63
 	NUMA node: 0
 	Bus: primary=8e, secondary=a1, subordinate=a1, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e7800000-e79fffff
 	Prefetchable memory behind bridge: 00003bffdd000000-00003bffddffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3632,7 +3638,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #18, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3655,13 +3661,13 @@
 	Kernel driver in use: pcieport
 
 8e:13.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 64
 	NUMA node: 0
 	Bus: primary=8e, secondary=a2, subordinate=a2, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e7600000-e77fffff
 	Prefetchable memory behind bridge: 00003bffdc000000-00003bffdcffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3681,7 +3687,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #19, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3704,13 +3710,13 @@
 	Kernel driver in use: pcieport
 
 8e:14.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 65
 	NUMA node: 0
 	Bus: primary=8e, secondary=a3, subordinate=a3, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e7400000-e75fffff
 	Prefetchable memory behind bridge: 00003bffdb000000-00003bffdbffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3730,7 +3736,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #20, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3753,13 +3759,13 @@
 	Kernel driver in use: pcieport
 
 8e:15.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 66
 	NUMA node: 0
 	Bus: primary=8e, secondary=a4, subordinate=a4, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e7200000-e73fffff
 	Prefetchable memory behind bridge: 00003bffda000000-00003bffdaffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3779,7 +3785,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #21, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3802,13 +3808,13 @@
 	Kernel driver in use: pcieport
 
 8e:16.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 67
 	NUMA node: 0
 	Bus: primary=8e, secondary=a5, subordinate=a5, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e7000000-e71fffff
 	Prefetchable memory behind bridge: 00003bffd9000000-00003bffd9ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3828,7 +3834,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #22, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3851,13 +3857,13 @@
 	Kernel driver in use: pcieport
 
 8e:17.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 68
 	NUMA node: 0
 	Bus: primary=8e, secondary=a6, subordinate=a6, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e6e00000-e6ffffff
 	Prefetchable memory behind bridge: 00003bffd8000000-00003bffd8ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3877,7 +3883,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #23, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3900,13 +3906,13 @@
 	Kernel driver in use: pcieport
 
 8e:18.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 69
 	NUMA node: 0
 	Bus: primary=8e, secondary=a7, subordinate=a7, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e6c00000-e6dfffff
 	Prefetchable memory behind bridge: 00003bffd7000000-00003bffd7ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3926,7 +3932,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #24, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3949,13 +3955,13 @@
 	Kernel driver in use: pcieport
 
 8e:19.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 70
 	NUMA node: 0
 	Bus: primary=8e, secondary=a8, subordinate=a8, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e6a00000-e6bfffff
 	Prefetchable memory behind bridge: 00003bffd6000000-00003bffd6ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -3975,7 +3981,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #25, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -3998,13 +4004,13 @@
 	Kernel driver in use: pcieport
 
 8e:1a.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 71
 	NUMA node: 0
 	Bus: primary=8e, secondary=a9, subordinate=a9, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e6800000-e69fffff
 	Prefetchable memory behind bridge: 00003bffd5000000-00003bffd5ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -4024,7 +4030,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #26, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -4047,13 +4053,13 @@
 	Kernel driver in use: pcieport
 
 8e:1b.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 72
 	NUMA node: 0
 	Bus: primary=8e, secondary=aa, subordinate=aa, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e6600000-e67fffff
 	Prefetchable memory behind bridge: 00003bffd4000000-00003bffd4ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -4073,7 +4079,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #27, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -4096,13 +4102,13 @@
 	Kernel driver in use: pcieport
 
 8e:1c.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 73
 	NUMA node: 0
 	Bus: primary=8e, secondary=ab, subordinate=ab, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e6400000-e65fffff
 	Prefetchable memory behind bridge: 00003bffd3000000-00003bffd3ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -4122,7 +4128,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #28, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -4145,13 +4151,13 @@
 	Kernel driver in use: pcieport
 
 8e:1d.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 74
 	NUMA node: 0
 	Bus: primary=8e, secondary=ac, subordinate=ac, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e6200000-e63fffff
 	Prefetchable memory behind bridge: 00003bffd2000000-00003bffd2ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -4171,7 +4177,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #29, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -4194,13 +4200,13 @@
 	Kernel driver in use: pcieport
 
 8e:1e.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 75
 	NUMA node: 0
 	Bus: primary=8e, secondary=ad, subordinate=ad, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e6000000-e61fffff
 	Prefetchable memory behind bridge: 00003bffd1000000-00003bffd1ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -4220,7 +4226,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #30, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -4243,13 +4249,13 @@
 	Kernel driver in use: pcieport
 
 8e:1f.0 PCI bridge [0604]: Amazon.com, Inc. Device [1d0f:bec2] (prog-if 00 [Normal decode])
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx+
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	Latency: 0, Cache Line Size: 32 bytes
 	Interrupt: pin ? routed to IRQ 76
 	NUMA node: 0
 	Bus: primary=8e, secondary=ae, subordinate=ae, sec-latency=0
-	I/O behind bridge: 0000f000-00000fff
+	I/O behind bridge: 00000000-00000fff
 	Memory behind bridge: e5e00000-e5ffffff
 	Prefetchable memory behind bridge: 00003bffd0000000-00003bffd0ffffff
 	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- <SERR- <PERR-
@@ -4269,7 +4275,7 @@
 			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
 		LnkCtl:	ASPM Disabled; Disabled- CommClk-
 			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed unknown, Width x8, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
+		LnkSta:	Speed unknown, Width x0, TrErr- Train- SlotClk- DLActive- BWMgmt- ABWMgmt-
 		SltCap:	AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+
 			Slot #31, PowerLimit 25.000W; Interlock- NoCompl+
 		SltCtl:	Enable: AttnBtn+ PwrFlt- MRL- PresDet- CmdCplt- HPIrq+ LinkChg+
@@ -5585,6 +5591,9 @@ e7:00.0 Non-Volatile memory controller [0108]: Amazon.com, Inc. Device [1d0f:cd0
 	Capabilities: [100 v1] Alternative Routing-ID Interpretation (ARI)
 		ARICap:	MFVC- ACS-, Next Function: 1
 		ARICtl:	MFVC- ACS-, Function Group: 0
+	Capabilities: [110 v1] Access Control Services
+		ACSCap:	SrcValid- TransBlk- ReqRedir+ CmpltRedir+ UpstreamFwd- EgressCtrl- DirectTrans-
+		ACSCtl:	SrcValid- TransBlk- ReqRedir- CmpltRedir- UpstreamFwd- EgressCtrl- DirectTrans-
 	Capabilities: [150 v1] #19
 	Capabilities: [178 v1] Transaction Processing Hints
 		Device specific mode supported
@@ -5631,6 +5640,9 @@ e7:00.1 Non-Volatile memory controller [0108]: Amazon.com, Inc. Device [1d0f:cd0
 	Capabilities: [100 v1] Alternative Routing-ID Interpretation (ARI)
 		ARICap:	MFVC- ACS-, Next Function: 0
 		ARICtl:	MFVC- ACS-, Function Group: 0
+	Capabilities: [110 v1] Access Control Services
+		ACSCap:	SrcValid- TransBlk- ReqRedir+ CmpltRedir+ UpstreamFwd- EgressCtrl- DirectTrans-
+		ACSCtl:	SrcValid- TransBlk- ReqRedir- CmpltRedir- UpstreamFwd- EgressCtrl- DirectTrans-
 	Capabilities: [178 v1] Transaction Processing Hints
 		Device specific mode supported
 		No steering table available

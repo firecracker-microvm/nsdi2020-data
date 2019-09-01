@@ -1,5 +1,5 @@
-Machine (P#0 total=395916404KB DMIProductName=m5d.metal DMIProductVersion=1.0 DMIProductSerial=ec224a4e-b7c1-80b5-9f5e-cf0dde05fcb2 DMIProductUUID=EC224A4E-B7C1-80B5-9F5E-CF0DDE05FCB2 DMIBoardVendor="Amazon EC2" DMIBoardName="Not Specified" DMIBoardVersion="Not Specified" DMIBoardSerial="Not Specified" DMIBoardAssetTag=i-0a1375bc8fe4f289e DMIChassisVendor="Amazon EC2" DMIChassisType=23 DMIChassisVersion="Not Specified" DMIChassisSerial="Not Specified" DMIChassisAssetTag="Amazon EC2" DMIBIOSVendor="Amazon EC2" DMIBIOSVersion=1.0 DMIBIOSDate=10/16/2017 DMISysVendor="Amazon EC2" Backend=Linux LinuxCgroup=/ OSName=Linux OSRelease=4.15.0-1035-aws OSVersion="#37-Ubuntu SMP Mon Mar 18 16:15:14 UTC 2019" HostName=ip-172-30-0-103 Architecture=x86_64 hwlocVersion=1.11.9 ProcessName=lstopo-no-graphics) cpuset=0xffffffff,0xffffffff,0xffffffff
-  NUMANode L#0 (P#0 local=197746116KB total=197746116KB) cpuset=0x000000ff,0xffff0000,0x00ffffff
+Machine (P#0 total=395916396KB DMIProductName=m5d.metal DMIProductVersion=00001 DMIProductSerial=ec2a4150-f903-e28e-970e-f3bdd9f9ebcd DMIProductUUID=EC2A4150-F903-E28E-970E-F3BDD9F9EBCD DMIBoardVendor="Amazon EC2" DMIBoardName="Not Specified" DMIBoardVersion="Not Specified" DMIBoardSerial="Not Specified" DMIBoardAssetTag=i-0fd97f3524503413c DMIChassisVendor="Amazon EC2" DMIChassisType=23 DMIChassisVersion="Not Specified" DMIChassisSerial="Not Specified" DMIChassisAssetTag="Amazon EC2" DMIBIOSVendor="Amazon EC2" DMIBIOSVersion=1.0 DMIBIOSDate=10/16/2017 DMISysVendor="Amazon EC2" Backend=Linux LinuxCgroup=/ OSName=Linux OSRelease=4.15.0-1044-aws OSVersion="#46-Ubuntu SMP Thu Jul 4 13:38:28 UTC 2019" HostName=ip-10-0-5-62 Architecture=x86_64 hwlocVersion=1.11.9 ProcessName=lstopo-no-graphics) cpuset=0xffffffff,0xffffffff,0xffffffff
+  NUMANode L#0 (P#0 local=197767268KB total=197767268KB) cpuset=0x000000ff,0xffff0000,0x00ffffff
     Package L#0 (P#0 CPUVendor=GenuineIntel CPUFamilyNumber=6 CPUModelNumber=85 CPUModel="Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz" CPUStepping=4) cpuset=0x000000ff,0xffff0000,0x00ffffff
       L3Cache L#0 (size=33792KB linesize=64 ways=11 Inclusive=0) cpuset=0x000000ff,0xffff0000,0x00ffffff
         L2Cache L#0 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00010000,0x00000001
@@ -157,12 +157,12 @@ Machine (P#0 total=395916404KB DMIProductName=m5d.metal DMIProductVersion=1.0 DM
         Bridge PCI->PCI (P#503808 busid=0000:7b:00.0 id=1d0f:bec2 class=0604(PCI_B) link=7.88GB/s buses=0000:[7c-8c] PCIVendor="Amazon.com, Inc." PCISlot=0) "Amazon.com, Inc."
           Bridge PCI->PCI (P#507904 busid=0000:7c:00.0 id=1d0f:bec2 class=0604(PCI_B) link=7.88GB/s buses=0000:[7d-7d] PCIVendor="Amazon.com, Inc.") "Amazon.com, Inc."
             PCI 1d0f:ec20 (P#512000 busid=0000:7d:00.0 class=0200(Ether) link=7.88GB/s PCIVendor="Amazon.com, Inc." PCIDevice="Elastic Network Adapter (ENA)" PCISlot=0-2) "Amazon.com, Inc. Elastic Network Adapter (ENA)"
-              Network L#0 (Address=0a:32:b1:23:b1:c4) "enp125s0"
+              Network L#0 (Address=0a:b7:3b:06:7b:c8) "enp125s0"
       Bridge PCI->PCI (P#499744 busid=0000:7a:02.0 id=8086:2032 class=0604(PCI_B) link=7.88GB/s buses=0000:[8d-ae] PCIVendor="Intel Corporation" PCIDevice="Sky Lake-E PCI Express Root Port C" PCISlot=6-1) "Intel Corporation Sky Lake-E PCI Express Root Port C"
         Bridge PCI->PCI (P#577536 busid=0000:8d:00.0 id=1d0f:bec2 class=0604(PCI_B) link=7.88GB/s buses=0000:[8e-ae] PCIVendor="Amazon.com, Inc." PCISlot=0-1) "Amazon.com, Inc."
           Bridge PCI->PCI (P#581648 busid=0000:8e:01.0 id=1d0f:bec2 class=0604(PCI_B) link=7.88GB/s buses=0000:[90-90] PCIVendor="Amazon.com, Inc.") "Amazon.com, Inc."
             PCI 1d0f:0061 (P#589824 busid=0000:90:00.0 class=0108(NVMExp) link=7.88GB/s PCIVendor="Amazon.com, Inc." PCISlot=1-2) "Amazon.com, Inc."
-  NUMANode L#1 (P#1 local=198170288KB total=198170288KB) cpuset=0xffffff00,0x0000ffff,0xff000000
+  NUMANode L#1 (P#1 local=198149128KB total=198149128KB) cpuset=0xffffff00,0x0000ffff,0xff000000
     Package L#1 (P#1 CPUVendor=GenuineIntel CPUFamilyNumber=6 CPUModelNumber=85 CPUModel="Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz" CPUStepping=4) cpuset=0xffffff00,0x0000ffff,0xff000000
       L3Cache L#1 (size=33792KB linesize=64 ways=11 Inclusive=0) cpuset=0xffffff00,0x0000ffff,0xff000000
         L2Cache L#24 (size=1024KB linesize=64 ways=16 Inclusive=0) cpuset=0x00000100,,0x01000000
