@@ -33,11 +33,11 @@ RAW=${DIR}/raw
 mkdir -p ${RAW}
 
 PRE=${RAW}/fio-metal
-OUT=${DIR}/${PRE}.dat
+OUT=${DIR}/fio-metal.dat
 echo "# Benchmark rd_iops rd_bw wr_iops wr_bw" > $OUT
 
 for TEST in $TESTS; do
     echo "Running $TEST"
     fio --output-format=json --output=$PRE-$TEST.json --section=$TEST ../etc/fio-metal.cfg
-    process $TEST ${RAW}/${PRE}-${TEST}.json $OUT
+    process $TEST ${PRE}-${TEST}.json $OUT
 done
