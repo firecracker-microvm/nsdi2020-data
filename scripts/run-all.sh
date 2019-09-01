@@ -2,10 +2,10 @@
 
 DIR=$1
 
-if [ -z $DIR ];
+if [ -z $DIR ]; then
    echo "Please specify a directory for the data"
    exit 1
-then
+fi
 
 sudo ./00_setup_host.sh
 
