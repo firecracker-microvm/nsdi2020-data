@@ -5,7 +5,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.473
+cpu MHz		: 1200.028
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -18,7 +18,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -32,7 +32,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1206.508
+cpu MHz		: 1200.246
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -45,7 +45,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -59,7 +59,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.238
+cpu MHz		: 1200.860
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -72,7 +72,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -86,7 +86,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.308
+cpu MHz		: 1200.815
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -99,7 +99,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -113,7 +113,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.015
+cpu MHz		: 1200.818
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -126,7 +126,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -140,7 +140,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.791
+cpu MHz		: 1200.279
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -153,7 +153,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -167,7 +167,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.718
+cpu MHz		: 1200.683
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -180,7 +180,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -194,7 +194,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.373
+cpu MHz		: 1200.433
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -207,7 +207,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -221,7 +221,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.432
+cpu MHz		: 1200.081
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -234,7 +234,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -248,7 +248,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.658
+cpu MHz		: 1200.163
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -261,7 +261,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -275,7 +275,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.643
+cpu MHz		: 1200.309
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -288,7 +288,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -302,7 +302,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.513
+cpu MHz		: 1200.582
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -315,7 +315,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -329,7 +329,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.422
+cpu MHz		: 1200.304
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -342,7 +342,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -356,7 +356,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.502
+cpu MHz		: 1200.047
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -369,7 +369,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -383,7 +383,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.655
+cpu MHz		: 1200.847
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -396,7 +396,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -410,7 +410,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.807
+cpu MHz		: 1200.550
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -423,7 +423,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -437,7 +437,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.646
+cpu MHz		: 1200.424
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -450,7 +450,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -464,7 +464,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.667
+cpu MHz		: 1200.253
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -477,7 +477,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -491,7 +491,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.478
+cpu MHz		: 1200.417
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -504,7 +504,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -518,7 +518,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.475
+cpu MHz		: 1200.722
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -531,7 +531,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -545,7 +545,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.889
+cpu MHz		: 1200.348
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -558,7 +558,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -572,7 +572,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1201.046
+cpu MHz		: 1200.718
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -585,7 +585,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -599,7 +599,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.124
+cpu MHz		: 1200.315
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -612,7 +612,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -626,7 +626,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.571
+cpu MHz		: 1200.439
 cache size	: 33792 KB
 physical id	: 0
 siblings	: 24
@@ -639,7 +639,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -653,7 +653,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.227
+cpu MHz		: 1200.253
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -666,7 +666,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -680,7 +680,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.365
+cpu MHz		: 1200.188
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -693,7 +693,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -707,7 +707,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.616
+cpu MHz		: 1200.249
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -720,7 +720,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -734,7 +734,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.398
+cpu MHz		: 1200.827
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -747,7 +747,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -761,7 +761,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.437
+cpu MHz		: 1200.170
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -774,7 +774,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -788,7 +788,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.405
+cpu MHz		: 1200.155
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -801,7 +801,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -815,7 +815,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.561
+cpu MHz		: 1200.158
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -828,7 +828,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -842,7 +842,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.543
+cpu MHz		: 1200.252
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -855,7 +855,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -869,7 +869,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.840
+cpu MHz		: 1200.373
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -882,7 +882,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -896,7 +896,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.902
+cpu MHz		: 1200.380
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -909,7 +909,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -923,7 +923,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.067
+cpu MHz		: 1200.304
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -936,7 +936,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -950,7 +950,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.936
+cpu MHz		: 1200.235
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -963,7 +963,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -977,7 +977,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.684
+cpu MHz		: 1200.519
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -990,7 +990,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -1004,7 +1004,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.046
+cpu MHz		: 1201.864
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -1017,7 +1017,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -1031,7 +1031,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.734
+cpu MHz		: 1200.270
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -1044,7 +1044,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -1058,7 +1058,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.263
+cpu MHz		: 1200.221
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -1071,7 +1071,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -1085,7 +1085,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.090
+cpu MHz		: 1200.208
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -1098,7 +1098,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -1112,7 +1112,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.751
+cpu MHz		: 1200.264
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -1125,7 +1125,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -1139,7 +1139,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.197
+cpu MHz		: 1200.233
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -1152,7 +1152,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -1166,7 +1166,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.656
+cpu MHz		: 1200.355
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -1179,7 +1179,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -1193,7 +1193,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.812
+cpu MHz		: 1202.045
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -1206,7 +1206,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -1220,7 +1220,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.169
+cpu MHz		: 1200.306
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -1233,7 +1233,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -1247,7 +1247,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.487
+cpu MHz		: 1200.508
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -1260,7 +1260,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64
@@ -1274,7 +1274,7 @@ model		: 85
 model name	: Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
 stepping	: 4
 microcode	: 0x2000049
-cpu MHz		: 1200.651
+cpu MHz		: 1200.252
 cache size	: 33792 KB
 physical id	: 1
 siblings	: 24
@@ -1287,7 +1287,7 @@ fpu_exception	: yes
 cpuid level	: 22
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
 bogomips	: 5000.00
 clflush size	: 64
 cache_alignment	: 64

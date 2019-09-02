@@ -35,11 +35,11 @@ Handle 0x0001, DMI type 1, 27 bytes
 System Information
 	Manufacturer: Amazon EC2
 	Product Name: m5d.metal
-	Version: 1.0
-	Serial Number: ec224a4e-b7c1-80b5-9f5e-cf0dde05fcb2
-	UUID: EC224A4E-B7C1-80B5-9F5E-CF0DDE05FCB2
+	Version: 00001
+	Serial Number: ec21ef57-8cf3-6812-c0db-6ef03cd0ff06
+	UUID: EC21EF57-8CF3-6812-C0DB-6EF03CD0FF06
 	Wake-up Type: Power Switch
-	SKU Number: SS-AMZ01359-001F
+	SKU Number: Not Specified
 	Family: Default string
 
 Handle 0x0002, DMI type 2, 15 bytes
@@ -48,7 +48,7 @@ Base Board Information
 	Product Name: Not Specified
 	Version: Not Specified
 	Serial Number: Not Specified
-	Asset Tag: i-0a1375bc8fe4f289e
+	Asset Tag: i-02f2d01a10c0e6cb6
 	Features:
 		Board is a hosting board
 		Board is replaceable
@@ -73,7 +73,7 @@ Chassis Information
 	Height: Unspecified
 	Number Of Power Cords: 1
 	Contained Elements: 0
-	SKU Number: SS-AMZ01359-001F
+	SKU Number: Not Specified
 
 Handle 0x0004, DMI type 8, 9 bytes
 Port Connector Information
@@ -652,7 +652,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23C45
+	Serial Number: 1ECC0228
 	Asset Tag: CPU1_DIMM_A1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -711,7 +711,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23C5F
+	Serial Number: 1ECBFF62
 	Asset Tag: CPU1_DIMM_B1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -770,7 +770,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23C72
+	Serial Number: 1ECC136E
 	Asset Tag: CPU1_DIMM_C1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -846,7 +846,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23A4C
+	Serial Number: 1ECC1C89
 	Asset Tag: CPU1_DIMM_D1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -905,7 +905,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23A34
+	Serial Number: 1ECBFDEF
 	Asset Tag: CPU1_DIMM_E1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -964,7 +964,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23A31
+	Serial Number: 1ECBFF44
 	Asset Tag: CPU1_DIMM_F1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -1040,7 +1040,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23A6E
+	Serial Number: 1ECC1BDB
 	Asset Tag: CPU2_DIMM_A1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -1099,7 +1099,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23A48
+	Serial Number: 1ECC1B00
 	Asset Tag: CPU2_DIMM_B1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -1158,7 +1158,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23A4B
+	Serial Number: 1ECC1C04
 	Asset Tag: CPU2_DIMM_C1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -1234,7 +1234,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23A4E
+	Serial Number: 1ECC1AC1
 	Asset Tag: CPU2_DIMM_D1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -1293,7 +1293,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23F8B
+	Serial Number: 1ECC1AE5
 	Asset Tag: CPU2_DIMM_E1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -1352,7 +1352,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1CD23C3D
+	Serial Number: 1ECC1A5B
 	Asset Tag: CPU2_DIMM_F1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -1621,6 +1621,6 @@ BIOS Language Information
 		en|US|iso8859-1
 	Currently Installed Language: en|US|iso8859-1
 
-Handle 0x009A, DMI type 127, 4 bytes
+Handle 0x009C, DMI type 127, 4 bytes
 End Of Table
 
