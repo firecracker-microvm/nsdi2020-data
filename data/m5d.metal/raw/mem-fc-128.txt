@@ -1,2 +1,6 @@
   PID    VSZ   RSS COMMAND
+<<<<<<< HEAD
 85743 137772 131376 ../bin/firecracker --api-sock /tmp/fc-0.sock
+=======
+82000 137780 131112 ../bin/firecracker --api-sock /tmp/fc-0.sock
+>>>>>>> cd7f3d711215bc20d6143c7c004835f13e109044

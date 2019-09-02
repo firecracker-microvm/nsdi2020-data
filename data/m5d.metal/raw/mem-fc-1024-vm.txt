@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 MemTotal:        1017936 kB
 MemFree:          885236 kB
 MemAvailable:     857576 kB
@@ -42,3 +43,5 @@ HugePages_Surp:        0
 Hugepagesize:       2048 kB
 DirectMap4k:       16384 kB
 DirectMap2M:     1032192 kB
+=======
+>>>>>>> cd7f3d711215bc20d6143c7c004835f13e109044
