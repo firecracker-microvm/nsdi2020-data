@@ -2,6 +2,10 @@
 
 set -x
 
+# Make sure the key is nio world readable
+# can cause silent failures in a number of tests
+chmod 0600 ../etc/ssh-bench.key
+
 ## Sets up a system
 ## Mostly copied/adjusted from:
 ## https://github.com/firecracker-microvm/firecracker-demo
