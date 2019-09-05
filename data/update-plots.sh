@@ -7,4 +7,5 @@ for DIR in $DIRS; do
     gnuplot -e "base='$DIR'" gnuplot/boot-serial.gpl
     gnuplot -e "base='$DIR'" gnuplot/boot-parallel.gpl
     gnuplot -e "base='$DIR'" gnuplot/mem.gpl
+    gnuplot -e "base='$DIR'" gnuplot/fio.gpl
 done

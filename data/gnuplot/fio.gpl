@@ -1,0 +1,53 @@
+# Plot memory data
+#
+# invoke with:
+# gnuplot -e "base='<dir>'" mem.gpl
+# where <dir> is the platform directory
+
+
+metal_dat =  sprintf("%s/fio-metal.dat", base)
+fc_dat =     sprintf("%s/fio-fc.dat", base)
+chv_dat =    sprintf("%s/fio-chv.dat", base)
+qemu_dat =   sprintf("%s/fio-qemu.dat", base)
+
+out_file = sprintf("%s/fio-bw.pdf", base)
+
+set terminal pdf color solid enhanced font ',16' size 5,2.4
+set output out_file
+
+set style data histogram
+set style histogram cluster gap 1
+set style fill solid
+#set style fill pattern
+set boxwidth 0.9
+set xtics format ""
+set grid ytics
+set key top left
+
+set ylabel "Bandwidth (MB/s)"
+
+plot metal_dat  using ($3 / 1024):xtic(1) every 2 t "metal", \
+     fc_dat     using ($3 / 1024)         every 2 t "FC", \
+     chv_dat    using ($3 / 1024)         every 2 t "Cloud HV", \
+     qemu_dat   using ($3 / 1024)         every 2 t "Qemu"
+
+reset
+out_file = sprintf("%s/fio-lat.pdf", base)
+set terminal pdf color solid enhanced font ',16' size 5,2.4
+set output out_file
+
+set style data histogram
+set style histogram cluster gap 1
+set style fill solid
+#set style fill pattern
+set boxwidth 0.9
+set xtics format ""
+set grid ytics
+set key top left
+
+set ylabel "Latency (us)"
+
+plot metal_dat  using ($4 / 1000):xtic(1) every 2 t "metal", \
+     fc_dat     using ($4 / 1000)         every 2 t "FC", \
+     chv_dat    using ($4 / 1000)         every 2 t "Cloud HV", \
+     qemu_dat   using ($4 / 1000)         every 2 t "Qemu"
