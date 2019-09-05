@@ -28,34 +28,89 @@ process() {
     local w_bw=$(cat $in | jq '.jobs[0].write.bw')
     local w_lat99=$(cat $in | jq '.jobs[0].write.clat_ns.percentile["99.000000"]')
 
-    echo "$bm $r_iops $r_bw $r_lat99 $w_iops $w_bw $w_lat99" >> $out
+    case $bm in
+        rand-read-4k)
+            local test="read_4k"
+            local iops=$r_iops
+            local bw=$r_bw
+            local lat99=$r_lat99
+            ;;
+        rand-read-4k-qd1)
+            local test="read_4k_qd1"
+            local iops=$r_iops
+            local bw=$r_bw
+            local lat99=$r_lat99
+            ;;
+        rand-read-128k)
+            local test="read_128k"
+            local iops=$r_iops
+            local bw=$r_bw
+            local lat99=$r_lat99
+            ;;
+        rand-read-128k-qd1)
+            local test="read_128k_qd1"
+            local iops=$r_iops
+            local bw=$r_bw
+            local lat99=$r_lat99
+            ;;
+
+        rand-write-4k)
+            local test="write_4k"
+            local iops=$w_iops
+            local bw=$w_bw
+            local lat99=$w_lat99
+            ;;
+        rand-write-4k-qd1)
+            local test="write_4k_qd1"
+            local iops=$w_iops
+            local bw=$w_bw
+            local lat99=$w_lat99
+            ;;
+        rand-write-128k)
+            local test="write_128k"
+            local iops=$w_iops
+            local bw=$w_bw
+            local lat99=$w_lat99
+            ;;
+        rand-write-128k-qd1)
+            local test="write_128k_qd1"
+            local iops=$w_iops
+            local bw=$w_bw
+            local lat99=$w_lat99
+            ;;
+        *)
+            echo "Unknown benchmark"
+            exit 1
+    esac
+
+    echo "$test $iops $bw $lat99" >> $out
 }
 
 
 PRE=fio-fc
 OUT=${DIR}/${PRE}.dat
-echo "# Benchmark rd_iops rd_bw rd_lat99 wr_iops wr_bw wr_lat99" > $OUT
+echo "# Benchmark iops bw lat99" > $OUT
 for TEST in $TESTS; do
     process $TEST ${RAW}/${PRE}-${TEST}.json $OUT
 done
 
 PRE=fio-chv
 OUT=${DIR}/${PRE}.dat
-echo "# Benchmark rd_iops rd_bw rd_lat99 wr_iops wr_bw wr_lat99" > $OUT
+echo "# Benchmark iops bw lat99" > $OUT
 for TEST in $TESTS; do
     process $TEST ${RAW}/${PRE}-${TEST}.json $OUT
 done
 
 PRE=fio-qemu
 OUT=${DIR}/${PRE}.dat
-echo "# Benchmark rd_iops rd_bw rd_lat99 wr_iops wr_bw wr_lat99" > $OUT
+echo "# Benchmark iops bw lat99" > $OUT
 for TEST in $TESTS; do
     process $TEST ${RAW}/${PRE}-${TEST}.json $OUT
 done
 
 PRE=fio-metal
 OUT=${DIR}/${PRE}.dat
-echo "# Benchmark rd_iops rd_bw rd_lat99 wr_iops wr_bw wr_lat99" > $OUT
+echo "# Benchmark iops bw lat99" > $OUT
 for TEST in $TESTS; do
     process $TEST ${RAW}/${PRE}-${TEST}.json $OUT
 done
