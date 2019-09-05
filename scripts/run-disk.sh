@@ -41,16 +41,18 @@ process() {
 
     local r_iops=$(cat $in | jq '.jobs[0].read.iops')
     local r_bw=$(cat $in | jq '.jobs[0].read.bw')
+    local r_lat99=$(cat $in | jq '.jobs[0].read.clat_ns.percentile["99.000000"]')
     local w_iops=$(cat $in | jq '.jobs[0].write.iops')
     local w_bw=$(cat $in | jq '.jobs[0].write.bw')
+    local w_lat99=$(cat $in | jq '.jobs[0].write.clat_ns.percentile["99.000000"]')
 
-    echo "$bm $r_iops $r_bw $w_iops $w_bw" >> $out
+    echo "$bm $r_iops $r_bw $r_lat99 $w_iops $w_bw $w_lat99" >> $out
 }
 
 run_firecracker() {
     local PRE=fio-fc
     local OUT=${DIR}/${PRE}.dat
-    echo "# Benchmark rd_iops rd_bw wr_iops wr_bw" > $OUT
+    echo "# Benchmark rd_iops rd_bw rd_lat99 wr_iops wr_bw wr_lat99" > $OUT
 
     echo "Firecracker: Starting"
     ./util_start_fc.sh -b ../bin/firecracker \
@@ -77,7 +79,7 @@ run_firecracker() {
 run_cloudhv() {
     local PRE=fio-chv
     local OUT=${DIR}/${PRE}.dat
-    echo "# Benchmark rd_iops rd_bw wr_iops wr_bw" > $OUT
+    echo "# Benchmark rd_iops rd_bw rd_lat99 wr_iops wr_bw wr_lat99" > $OUT
 
     echo "Cloud Hypervisor: Starting"
     ./util_start_cloudhv.sh -b ../bin/cloud-hypervisor \
@@ -104,7 +106,7 @@ run_cloudhv() {
 run_qemu() {
     local PRE=fio-qemu
     local OUT=${DIR}/${PRE}.dat
-    echo "# Benchmark rd_iops rd_bw wr_iops wr_bw" > $OUT
+    echo "# Benchmark rd_iops rd_bw rd_lat99 wr_iops wr_bw wr_lat99" > $OUT
 
     echo "qemu: Starting"
     ./util_start_qemu.sh -b ../bin/qemu-system-x86_64 \
