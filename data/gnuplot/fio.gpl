@@ -28,7 +28,7 @@ set key top left
 set ylabel "Bandwidth (MB/s)"
 
 plot metal_dat  using ($3 / 1024):xtic(1) every 2 t "metal", \
-     fc_dat     using ($3 / 1024)         every 2 t "FC", \
+     fc_dat     using ($3 / 1024)         every 2 t "anon", \
      chv_dat    using ($3 / 1024)         every 2 t "Cloud HV", \
      qemu_dat   using ($3 / 1024)         every 2 t "Qemu"
 
@@ -50,6 +50,6 @@ set key top left
 set ylabel "Latency (us)"
 
 plot metal_dat  using ($4 / 1000):xtic(1) every 2 t "metal", \
-     fc_dat     using ($4 / 1000)         every 2 t "FC", \
+     fc_dat     using ($4 / 1000)         every 2 t "anon", \
      chv_dat    using ($4 / 1000)         every 2 t "Cloud HV", \
      qemu_dat   using ($4 / 1000)         every 2 t "Qemu"

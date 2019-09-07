@@ -34,11 +34,11 @@ set mytics 4
 set grid ytics mytics xtics mxtics
 
 plot \
-     fc_dat          index 1 using 1:2         w l lw 2 t 'FC-pre', \
-     fc_dat          index 0 using ($1/1000):2 w l lw 2 t 'FC', \
-     fc_nopci_dat    index 1 using 1:2         w l lw 2 t 'FC-pre (noPCI kernel)', \
-     fc_net_dat      index 1 using 1:2         w l lw 2 t 'FC+Network-pre', \
-     fc_net_dat      index 0 using ($1/1000):2 w l lw 2 t 'FC+Network', \
+     fc_dat          index 1 using 1:2         w l lw 2 t 'anon-pre', \
+     fc_dat          index 0 using ($1/1000):2 w l lw 2 t 'anon', \
+     fc_nopci_dat    index 1 using 1:2         w l lw 2 t 'anon-pre (noPCI kernel)', \
+     fc_net_dat      index 1 using 1:2         w l lw 2 t 'anon+Network-pre', \
+     fc_net_dat      index 0 using ($1/1000):2 w l lw 2 t 'anon+Network', \
      chv_dat         index 0 using ($1/1000):2 w l lw 2 t 'CloudHV', \
      chv_net_dat     index 0 using ($1/1000):2 w l lw 2 t 'CloudHV+Network', \
      chv_bz_dat      index 0 using ($1/1000):2 w l lw 2 t 'CloudHV (bzImage)', \
@@ -46,4 +46,4 @@ plot \
      qboot_dat       index 0 using ($1/1000):2 w l lw 2 t 'Qemu qboot', \
      qboot_net_dat   index 0 using ($1/1000):2 w l lw 2 t 'Qemu qboot+Network', \
 
-#     fc_lk_dat       index 1 using 1:2         w l lw 2 t 'FC-pre (w/ LK kernel)', \
+#     fc_lk_dat       index 1 using 1:2         w l lw 2 t 'anon-pre (w/ LK kernel)', \

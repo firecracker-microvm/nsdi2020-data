@@ -29,7 +29,7 @@ set mytics 4
 set grid ytics mytics xtics mxtics
 
 plot \
-     fc_dat     using ($1/1024):(($8 * 100 / $1) - 100) w lp lw 2 t 'FC', \
+     fc_dat     using ($1/1024):(($8 * 100 / $1) - 100) w lp lw 2 t 'anon', \
      chv_dat    using ($1/1024):(($8 * 100 / $1) - 100) w lp lw 2 t 'CloudHV', \
      qboot_dat  using ($1/1024):(($8 * 100 / $1) - 100) w lp lw 2 t 'Qemu', \
 
@@ -56,7 +56,7 @@ set mytics 4
 set grid ytics mytics xtics mxtics
 
 plot \
-     fc_dat     using ($1/1048576):(($8 - $1)/1024) w lp lw 2 t 'FC', \
+     fc_dat     using ($1/1048576):(($8 - $1)/1024) w lp lw 2 t 'anon', \
      chv_dat    using ($1/1048576):(($8 - $1)/1024) w lp lw 2 t 'CloudHV', \
      qboot_dat  using ($1/1048576):(($8 - $1)/1024) w lp lw 2 t 'Qemu', \
 
@@ -82,7 +82,7 @@ set mytics 4
 set grid ytics mytics xtics mxtics
 
 plot \
-     fc_dat     using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'FC', \
+     fc_dat     using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'anon', \
      chv_dat    using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'CloudHV', \
      chv_bz_dat using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'CloudHV (bzImage)', \
      qboot_dat  using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'Qemu', \

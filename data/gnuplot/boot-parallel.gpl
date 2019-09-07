@@ -27,8 +27,8 @@ set mytics 4
 set grid ytics mytics xtics mxtics
 
 plot \
-     fc_dat      index 1 using 1:2         w l lw 2 t 'FC-pre', \
-     fc_dat      index 0 using ($1/1000):2 w l lw 2 t 'FC', \
+     fc_dat      index 1 using 1:2         w l lw 2 t 'anon-pre', \
+     fc_dat      index 0 using ($1/1000):2 w l lw 2 t 'anon', \
      chv_dat     index 0 using ($1/1000):2 w l lw 2 t 'CloudHV', \
      qboot_dat   index 0 using ($1/1000):2 w l lw 2 t 'Qemu', \
 
@@ -54,8 +54,8 @@ set mytics 4
 set grid ytics mytics xtics mxtics
 
 plot \
-     fc_dat      index 1 using 1:2         w l lw 2 t 'FC-pre', \
-     fc_dat      index 0 using ($1/1000):2 w l lw 2 t 'FC', \
+     fc_dat      index 1 using 1:2         w l lw 2 t 'anon-pre', \
+     fc_dat      index 0 using ($1/1000):2 w l lw 2 t 'anon', \
      chv_dat     index 0 using ($1/1000):2 w l lw 2 t 'CloudHV', \
      qboot_dat   index 0 using ($1/1000):2 w l lw 2 t 'Qemu', \
 
@@ -82,7 +82,7 @@ set mytics 4
 set grid ytics mytics xtics mxtics
 
 plot \
-     fc_dat      index 1 using 1:2         w l lw 2 t 'FC-pre', \
-     fc_dat      index 0 using ($1/1000):2 w l lw 2 t 'FC', \
+     fc_dat      index 1 using 1:2         w l lw 2 t 'anon-pre', \
+     fc_dat      index 0 using ($1/1000):2 w l lw 2 t 'anon', \
      chv_dat     index 0 using ($1/1000):2 w l lw 2 t 'CloudHV', \
      qboot_dat   index 0 using ($1/1000):2 w l lw 2 t 'Qemu', \
