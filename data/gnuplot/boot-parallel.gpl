@@ -21,7 +21,7 @@ set xrange [0:]
 set yrange [0:1.05]
 set offsets graph 0, 0, 0.01, 0.01
 
-set key bottom right
+set key top left
 
 set mytics 4
 set grid ytics mytics xtics mxtics
@@ -48,7 +48,7 @@ set xrange [0:]
 set yrange [0:1.05]
 set offsets graph 0, 0, 0.01, 0.01
 
-set key bottom right
+set key top left
 
 set mytics 4
 set grid ytics mytics xtics mxtics
@@ -76,7 +76,7 @@ set xrange [0:]
 set yrange [0:1.05]
 set offsets graph 0, 0, 0.01, 0.01
 
-set key bottom right
+set key top left
 
 set mytics 4
 set grid ytics mytics xtics mxtics

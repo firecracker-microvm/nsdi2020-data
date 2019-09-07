@@ -47,7 +47,7 @@ set ylabel 'Overhead (MB)'
 set xrange [*:*]
 set offsets graph 0, 0, 0.01, 0.01
 
-set key top right
+set key center right
 
 set xtics 1
 set mxtics 4

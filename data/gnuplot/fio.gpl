@@ -16,11 +16,12 @@ set terminal pdf color solid enhanced font ',16' size 5,2.4
 set output out_file
 
 set style data histogram
-set style histogram cluster gap 1
+set style histogram cluster gap 1.4
 set style fill solid
 #set style fill pattern
 set boxwidth 0.9
 set xtics format ""
+set xtics font ', 14'
 set grid ytics
 set key top left
 
@@ -37,11 +38,12 @@ set terminal pdf color solid enhanced font ',16' size 5,2.4
 set output out_file
 
 set style data histogram
-set style histogram cluster gap 1
+set style histogram cluster gap 1.4
 set style fill solid
 #set style fill pattern
 set boxwidth 0.9
 set xtics format ""
+set xtics font ', 14'
 set grid ytics
 set key top left
 
