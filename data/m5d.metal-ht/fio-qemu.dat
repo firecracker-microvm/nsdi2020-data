@@ -1,9 +1,9 @@
 # Benchmark iops bw lat99
-read_4k   
-read_4k_qd1   
-write_4k   
-write_4k_qd1   
-read_128k   
-read_128k_qd1   
-write_128k   
-write_128k_qd1   
+"4k read"   
+"4k read (qd1)"   
+"4k write"   
+"4k write (qd1)"   
+"128k read"   
+"128k read (qd1)"   
+"128k write"   
+"128k write (qd1)"   
