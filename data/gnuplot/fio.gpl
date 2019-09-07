@@ -48,8 +48,9 @@ set grid ytics
 set key top left
 
 set ylabel "Latency (us)"
+set xtics ('4k read' 0, '4k write' 1,'128k read' 2, '128k write' 3)
 
-plot metal_dat  using ($4 / 1000):xtic(1) every 2 t "metal", \
-     fc_dat     using ($4 / 1000)         every 2 t "anon", \
-     chv_dat    using ($4 / 1000)         every 2 t "Cloud HV", \
-     qemu_dat   using ($4 / 1000)         every 2 t "Qemu"
+plot metal_dat  using ($4 / 1000) every 2::1 t "metal", \
+     fc_dat     using ($4 / 1000)          every 2::1 t "anon", \
+     chv_dat    using ($4 / 1000)          every 2::1 t "Cloud HV", \
+     qemu_dat   using ($4 / 1000)          every 2::1 t "Qemu"
