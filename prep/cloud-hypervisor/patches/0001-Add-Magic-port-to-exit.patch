@@ -1,31 +1,31 @@
-From 3d2074757401ad8e183370bbdb4f530e2fc25fde Mon Sep 17 00:00:00 2001
+From b1dc374e9b8611cb0ca0b65a8f5618cc3fb9403e Mon Sep 17 00:00:00 2001
 From: Rolf Neugebauer <rn@rneugeba.io>
-Date: Sat, 17 Aug 2019 16:53:38 +0100
+Date: Sat, 4 Jan 2020 17:26:26 +0000
 Subject: [PATCH] Add Magic port to exit
 
 DO NOT MERGE
 
 Signed-off-by: Rolf Neugebauer <rn@rneugeba.io>
 ---
- vmm/src/vm.rs | 6 ++++++
+ vmm/src/cpu.rs | 6 ++++++
  1 file changed, 6 insertions(+)
 
-diff --git a/vmm/src/vm.rs b/vmm/src/vm.rs
-index cc6c6d1..7db3941 100755
---- a/vmm/src/vm.rs
-+++ b/vmm/src/vm.rs
-@@ -76,6 +76,9 @@ const KERNEL_64BIT_ENTRY_OFFSET: u64 = 0x200;
- const IOAPIC_RANGE_ADDR: u64 = 0xfec0_0000;
- const IOAPIC_RANGE_SIZE: u64 = 0x20;
+diff --git a/vmm/src/cpu.rs b/vmm/src/cpu.rs
+index 7eae968..73a34b8 100644
+--- a/vmm/src/cpu.rs
++++ b/vmm/src/cpu.rs
+@@ -33,6 +33,9 @@ use vmm_sys_util::signal::{register_signal_handler, SIGRTMIN};
+ const DEBUG_IOPORT: u16 = 0x80;
+ const DEBUG_IOPORT_PREFIX: &str = "Debug I/O port";
  
 +// Hack
 +const MAGIC_IOPORT_DEBUG_EXIT: u16 = 0x00f4;
 +
- // Debug I/O port
- #[cfg(target_arch = "x86_64")]
- const DEBUG_IOPORT: u16 = 0x80;
-@@ -467,6 +470,9 @@ impl Vcpu {
-                     Ok(())
+ /// Debug I/O port, see:
+ /// https://www.intel.com/content/www/us/en/support/articles/000005500/boards-and-kits.html
+ ///
+@@ -314,6 +317,9 @@ impl Vcpu {
+                     Ok(true)
                  }
                  VcpuExit::IoOut(addr, data) => {
 +                    if addr == MAGIC_IOPORT_DEBUG_EXIT {
