@@ -36,7 +36,7 @@ done
 
 
 # Common CLOUDHV command line options
-CLOUDHV="$CLOUDHV --cpus $CORES --memory size=${MEM}M "
+CLOUDHV="$CLOUDHV --cpus boot=$CORES --memory size=${MEM}M "
 
 KERNEL_ARGS="reboot=k tsc=reliable ipv6.disable=1 panic=-1 ro"
 if [ "x$DEBUG" = "x" ]; then
@@ -48,7 +48,7 @@ else
 fi
 
 if [ "x$ROOTFS" != "x" ]; then
-    CLOUDHV="$CLOUDHV --disk $ROOTFS "
+    CLOUDHV="$CLOUDHV --disk path=$ROOTFS "
     ROOT="root=/dev/vda"
 fi
 if [ "x$DISK" != "x" ]; then    
