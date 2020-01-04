@@ -13,7 +13,7 @@ RUN apt update && \
 
 RUN git clone git://git.qemu.org/qemu.git && \
     cd qemu && \
-    git checkout v4.0.0
+    git checkout v4.2.0
 
 WORKDIR /qemu
 
@@ -38,7 +38,7 @@ RUN ./configure \
         --disable-guest-agent \
         --disable-libiscsi \
         --disable-libnfs \
-        --disable-libssh2 \
+        --disable-libssh \
         --disable-libusb \
         --disable-live-block-migration \
         --disable-lzo \
