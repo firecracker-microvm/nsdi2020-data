@@ -87,7 +87,7 @@ RUN mkdir -p /res/bios && \
 RUN cd / && \
     git clone https://github.com/bonzini/qboot && \
     cd qboot && \
-       git checkout 295dd902155035151caae3e4db3f41c8deebba34
+       git checkout 94d3b1b5d1fc30bd7b63af9d07cb8db89a5f4868
 
 WORKDIR /qboot
 
