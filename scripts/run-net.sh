@@ -3,7 +3,7 @@
 # Run some network benchmark
 
 TIME=30
-DIR=../data/
+DIR=../data/test
 CORES=2
 MEM=512
 

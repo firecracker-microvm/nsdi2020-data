@@ -1,6 +1,6 @@
 #! /bin/sh
 
-DIR=../data/
+DIR=../data/test
 CORES=1
 
 while [ $# -gt 0 ]; do

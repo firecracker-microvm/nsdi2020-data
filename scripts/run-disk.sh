@@ -1,6 +1,6 @@
 #! /bin/sh
 
-DIR=../data/
+DIR=../data/test
 CORES=2
 MEM=512
 FILE=../img/disk-bench.img

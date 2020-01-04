@@ -5,7 +5,7 @@
 #set -x
 
 ITER=200
-DIR=../data/
+DIR=../data/test
 CORES=1
 MEM=256
 

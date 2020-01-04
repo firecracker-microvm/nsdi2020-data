@@ -1,7 +1,7 @@
 #! /bin/sh
 # A script to gather some system information
 
-DIR=../data/
+DIR=../data/test
 while [ $# -gt 0 ]; do
     case $1 in
         -d) shift; DIR=$1

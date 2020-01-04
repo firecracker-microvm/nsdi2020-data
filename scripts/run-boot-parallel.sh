@@ -5,7 +5,7 @@
 # Run a large number of Firecracker and QEMU starts in parallel to test latency behavior under contention
 
 ITER=1000
-DIR=../data/
+DIR=../data/test
 CORES=1
 MEM=256
 PARALLEL=100

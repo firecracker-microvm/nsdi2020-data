@@ -1,6 +1,6 @@
 #! /bin/sh
 
-DIR=../data/
+DIR=../data/test
 
 while [ $# -gt 0 ]; do
     case $1 in
