@@ -1,24 +1,26 @@
-From 408be4589eeed860f95f73d8f172f73343c93eaf Mon Sep 17 00:00:00 2001
+From d5371bcdc3671f862b36e897cd6cff8156f385cb Mon Sep 17 00:00:00 2001
 From: Rolf Neugebauer <rn@rneugeba.io>
-Date: Sat, 17 Aug 2019 15:02:26 +0100
+Date: Sat, 4 Jan 2020 11:39:28 +0000
 Subject: [PATCH 2/2] Log boot time as warning
 
 this way it gets printed out on stdout without
 having to mess with logger configs.
 
+DO NOT MERGE
+
 Signed-off-by: Rolf Neugebauer <rn@rneugeba.io>
 ---
- vmm/src/lib.rs | 2 +-
+ src/vmm/src/lib.rs | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/vmm/src/lib.rs b/vmm/src/lib.rs
-index 41350c2..70e3c26 100644
---- a/vmm/src/lib.rs
-+++ b/vmm/src/lib.rs
-@@ -2020,7 +2020,7 @@ impl Vmm {
+diff --git a/src/vmm/src/lib.rs b/src/vmm/src/lib.rs
+index b0a9586..4d14bb2 100644
+--- a/src/vmm/src/lib.rs
++++ b/src/vmm/src/lib.rs
+@@ -1602,7 +1602,7 @@ impl Vmm {
  
-         let boot_time_us = now_us - t0_ts.time_us;
-         let boot_time_cpu_us = now_cpu_us - t0_ts.cputime_us;
+         let boot_time_us = now_tm_us.time_us - t0_ts.time_us;
+         let boot_time_cpu_us = now_tm_us.cputime_us - t0_ts.cputime_us;
 -        info!(
 +        warn!(
              "Guest-boot-time = {:>6} us {} ms, {:>6} CPU us {} CPU ms",

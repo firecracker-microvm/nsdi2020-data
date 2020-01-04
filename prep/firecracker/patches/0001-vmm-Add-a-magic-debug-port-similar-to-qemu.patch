@@ -1,31 +1,23 @@
-From 05cd9854ad29fc1d32f5cf811c9bc9ae15c6a8ac Mon Sep 17 00:00:00 2001
+From cc234e4dc632fbb120bc008da6a72ec905410e46 Mon Sep 17 00:00:00 2001
 From: Rolf Neugebauer <rn@rneugeba.io>
-Date: Sun, 11 Aug 2019 11:31:38 +0100
+Date: Sat, 4 Jan 2020 11:37:35 +0000
 Subject: [PATCH 1/2] vmm: Add a magic debug port similar to qemu
 
 qemu has an optional debug port, defaulting to 0xf4 to
 cause an immidiate exit from the VMM. Add this to firecracker
 
-DO NOT MERGE THIS
+DO NOT MERGE
 
 Signed-off-by: Rolf Neugebauer <rn@rneugeba.io>
 ---
- vmm/src/vstate.rs | 6 ++++++
- 1 file changed, 6 insertions(+)
+ src/vmm/src/vstate.rs | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/vmm/src/vstate.rs b/vmm/src/vstate.rs
-index 52062e6..ecd8d12 100644
---- a/vmm/src/vstate.rs
-+++ b/vmm/src/vstate.rs
-@@ -5,6 +5,7 @@
- // Use of this source code is governed by a BSD-style license that can be
- // found in the THIRD-PARTY file.
- 
-+use libc;
- use std::io;
- use std::result;
- use std::sync::{Arc, Barrier};
-@@ -27,6 +28,7 @@ const KVM_MEM_LOG_DIRTY_PAGES: u32 = 0x1;
+diff --git a/src/vmm/src/vstate.rs b/src/vmm/src/vstate.rs
+index 3210f78..40231fe 100644
+--- a/src/vmm/src/vstate.rs
++++ b/src/vmm/src/vstate.rs
+@@ -36,6 +36,7 @@ const KVM_MEM_LOG_DIRTY_PAGES: u32 = 0x1;
  
  #[cfg(target_arch = "x86_64")]
  const MAGIC_IOPORT_SIGNAL_GUEST_BOOT_COMPLETE: u64 = 0x03f0;
@@ -33,17 +25,17 @@ index 52062e6..ecd8d12 100644
  #[cfg(target_arch = "aarch64")]
  const MAGIC_IOPORT_SIGNAL_GUEST_BOOT_COMPLETE: u64 = 0x40000000;
  const MAGIC_VALUE_SIGNAL_GUEST_BOOT_COMPLETE: u8 = 123;
-@@ -326,6 +328,10 @@ impl Vcpu {
-     }
- 
-     fn check_boot_complete_signal(&self, addr: u64, data: &[u8]) {
+@@ -593,6 +594,10 @@ impl Vcpu {
+         {
+             super::Vmm::log_boot_time(&self.create_ts);
+         }
 +        if addr == MAGIC_IOPORT_DEBUG_EXIT
 +        {
 +            unsafe {libc::_exit(0); };
 +        }
-         if addr == MAGIC_IOPORT_SIGNAL_GUEST_BOOT_COMPLETE
-             && data[0] == MAGIC_VALUE_SIGNAL_GUEST_BOOT_COMPLETE
-         {
+     }
+ 
+     /// Runs the vCPU in KVM context and handles the kvm exit reason.
 -- 
 2.17.1
 
