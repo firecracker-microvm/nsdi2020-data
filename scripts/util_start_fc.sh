@@ -6,6 +6,7 @@ FC=../bin/firecracker
 CORES=1
 MEM=256
 NET=
+SOCK=
 
 while [ $# -gt 0 ]; do
     case $1 in
@@ -29,7 +30,7 @@ while [ $# -gt 0 ]; do
             ;;
         -l) shift; LOGFILE=$1
             ;;
-        -s) shift; SOCK=$1
+        -s) SOCK=on
             ;;
         -d) DEBUG=$1
             ;;
@@ -38,7 +39,8 @@ while [ $# -gt 0 ]; do
 done
 
 [ "x$LOGFILE" == "x" ] && LOGFILE="/tmp/fc-$ID.log"
-[ "x$SOCK" == "x" ] && SOCK="/tmp/fc-$ID.sock"
+[ "$SOCK" == "on" ] && SOCK="/tmp/fc-$ID.sock"
+
 rm -f "$SOCK"
 
 NETCFG=
@@ -56,19 +58,31 @@ if [ "x$DISK" != "x" ]; then
     DISKCFG="-disk $DISK"
 fi
 
-us_start=$(($(date +%s%N)/1000))
+if [ "x$SOCK" == "x" ]; then
+    # Use config file
+    CFG_FILE="/tmp/fc-$ID.json"
+    
+    # Write config file
+    ../bin/config-fc -o ${CFG_FILE} -k ${KERNEL} -r ${ROOTFS} -c ${CORES} -m ${MEM} ${NETCFG} ${DISKCFG} ${DEBUG}
+    
+    us_start=$(($(date +%s%N)/1000))
+    $FC --no-api --config-file "$CFG_FILE" 2> "$LOGFILE"
+else
+    us_start=$(($(date +%s%N)/1000))
 
-$FC --api-sock "$SOCK" 2> "$LOGFILE" &
-FC_PID=$!
+    # Use the API socket
+    $FC --api-sock "$SOCK" 2> "$LOGFILE" &
+    FC_PID=$!
 
-while [ ! -e "$SOCK" ]; do
-    sleep 0.001s
-done
+    while [ ! -e "$SOCK" ]; do
+        sleep 0.001s
+    done
 
-# Configure the VM by using the config-fc Go program
-../bin/config-fc -s $SOCK -k ${KERNEL} -r ${ROOTFS} -c ${CORES} -m ${MEM} ${NETCFG} ${DISKCFG} ${DEBUG}
+    # Configure the VM using the socket
+    ../bin/config-fc -s $SOCK -k ${KERNEL} -r ${ROOTFS} -c ${CORES} -m ${MEM} ${NETCFG} ${DISKCFG} ${DEBUG}
 
-wait $FC_PID || true
+    wait $FC_PID || true
+fi
 us_end=$(($(date +%s%N)/1000))
 
 fc_time=$(grep -oE '[0-9]+ ms' "$LOGFILE" | grep -oE '[0-9]+')
