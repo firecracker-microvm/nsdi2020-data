@@ -10,6 +10,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"net"
 	"net/http"
 	"strings"
@@ -23,15 +24,15 @@ type Machine struct {
 	HyperThread bool   `json:"ht_enabled,omitempty"`
 }
 
-// Kernel is the minimal information needed to specify the kernel
-type Kernel struct {
-	ImagePath string `json:"kernel_image_path,omitempty"`
-	BootArgs  string `json:"boot_args,omitempty"`
+// BootSource is the minimal information needed to specify the kernel
+type BootSource struct {
+	Path string `json:"kernel_image_path,omitempty"`
+	Args string `json:"boot_args,omitempty"`
 }
 
 // Drive is the minimal information needed to attach a disk to a VM
 type Drive struct {
-	DriveID      string `json:"drive_id"`
+	ID           string `json:"drive_id"`
 	Path         string `json:"path_on_host"`
 	IsRootDevice bool   `json:"is_root_device"`
 	IsReadOnly   bool   `json:"is_read_only"`
@@ -46,12 +47,20 @@ type Logger struct {
 
 // NetDev is the minimal information needed to attach a network device to a VM
 type NetDev struct {
-	InterfaceID string `json:"iface_id,omitempty"`
-	GuestMAC    string `json:"guest_mac,omitempty"`
-	HostDev     string `json:"host_dev_name,omitempty"`
+	ID       string `json:"iface_id,omitempty"`
+	GuestMAC string `json:"guest_mac,omitempty"`
+	HostDev  string `json:"host_dev_name,omitempty"`
 }
 
 const commonArgs = "panic=1 pci=off reboot=k tsc=reliable ipv6.disable=1 init=/init"
+
+// Config is a full configuration of a VM (used for config file based start)
+type Config struct {
+	Machine    Machine    `json:"machine-config,omitempty"`
+	BootSource BootSource `json:"boot-source,omitempty"`
+	Drives     []Drive    `json:"drives,omitempty"`
+	NetDevs    []NetDev   `json:"network-interfaces,omitempty"`
+}
 
 const startJSON = `{
     "action_type": "InstanceStart"
@@ -89,6 +98,7 @@ func fcAPI(client *http.Client, path, body string) error {
 func main() {
 
 	socketOpt := flag.String("s", "", "Path to the firecracker control socket")
+	outOpt := flag.String("o", "", "Path to output file for config")
 
 	kernelOpt := flag.String("k", "../img/boot-time-vmlinux", "Path to the kernel image")
 	rootfsOpt := flag.String("r", "../img/boot-time-disk.img", "Path to the root disk")
@@ -102,12 +112,22 @@ func main() {
 
 	flag.Parse()
 
+	if *socketOpt == "" && *outOpt == "" {
+		panic("-s or -o required")
+	}
+	if *socketOpt != "" && *outOpt != "" {
+		panic("Either specify -s or -o, bit not both")
+	}
+
+	config := Config{}
+
 	machine := Machine{
 		VCPUs:       *coresOpt,
 		Memory:      *memOpt,
 		CPUTemplate: "T2",
-		HyperThread: true,
+		HyperThread: false,
 	}
+	config.Machine = machine
 	b, err := json.Marshal(machine)
 	if err != nil {
 		panic(err)
@@ -122,10 +142,11 @@ func main() {
 			panic("Network config")
 		}
 		netDev := NetDev{
-			InterfaceID: "1",
-			GuestMAC:    netCfg[2],
-			HostDev:     netCfg[0],
+			ID:       "1",
+			GuestMAC: netCfg[2],
+			HostDev:  netCfg[0],
 		}
+		config.NetDevs = append(config.NetDevs, netDev)
 		b, err := json.Marshal(netDev)
 		if err != nil {
 			panic(err)
@@ -135,27 +156,28 @@ func main() {
 		netArgs = " ip=" + netCfg[3] + "::" + netCfg[1] + ":" + netCfg[4] + "::eth0:off"
 	}
 
-	kernel := Kernel{
-		ImagePath: *kernelOpt,
+	boot := BootSource{
+		Path: *kernelOpt,
 	}
 	if *debugOpt {
-		kernel.BootArgs = commonArgs + netArgs + " console=ttyS0"
+		boot.Args = commonArgs + netArgs + " console=ttyS0"
 	} else {
-		kernel.BootArgs = commonArgs + netArgs + " quiet 8250.nr_uarts=0"
+		boot.Args = commonArgs + netArgs + " quiet 8250.nr_uarts=0"
 	}
-
-	b, err = json.Marshal(kernel)
+	config.BootSource = boot
+	b, err = json.Marshal(boot)
 	if err != nil {
 		panic(err)
 	}
-	kernelJSON := string(b)
+	bootJSON := string(b)
 
 	drive := Drive{
-		DriveID:      "1",
+		ID:           "1",
 		Path:         *rootfsOpt,
 		IsRootDevice: true,
 		IsReadOnly:   true,
 	}
+	config.Drives = append(config.Drives, drive)
 	b, err = json.Marshal(drive)
 	if err != nil {
 		panic(err)
@@ -165,11 +187,12 @@ func main() {
 	var diskJSON string
 	if *diskOpt != "" {
 		disk := Drive{
-			DriveID:      "2",
+			ID:           "2",
 			Path:         *diskOpt,
 			IsRootDevice: false,
 			IsReadOnly:   false,
 		}
+		config.Drives = append(config.Drives, drive)
 		b, err = json.Marshal(disk)
 		if err != nil {
 			panic(err)
@@ -195,6 +218,18 @@ func main() {
 		loggerJSON = string(b)
 	}
 
+	// Write the config to a file if requested
+	if *outOpt != "" {
+		b, err := json.Marshal(config)
+		if err != nil {
+			panic(err)
+		}
+		if err := ioutil.WriteFile(*outOpt, b, 0644); err != nil {
+			panic(err)
+		}
+		return
+	}
+
 	client := newClient(*socketOpt)
 	if err := fcAPI(client, "machine-config", machineJSON); err != nil {
 		panic(err)
@@ -202,7 +237,7 @@ func main() {
 	if err := fcAPI(client, "drives/1", driveJSON); err != nil {
 		panic(err)
 	}
-	if err := fcAPI(client, "boot-source", kernelJSON); err != nil {
+	if err := fcAPI(client, "boot-source", bootJSON); err != nil {
 		panic(err)
 	}
 	if loggerJSON != "" {
