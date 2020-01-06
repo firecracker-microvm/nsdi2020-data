@@ -125,7 +125,7 @@ func main() {
 		VCPUs:       *coresOpt,
 		Memory:      *memOpt,
 		CPUTemplate: "T2",
-		HyperThread: false,
+		HyperThread: true,
 	}
 	config.Machine = machine
 	b, err := json.Marshal(machine)
