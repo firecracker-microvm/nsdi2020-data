@@ -26,15 +26,22 @@ RAW=${DIR}/raw
 mkdir -p ${RAW}
 
 run_firecracker() {
-    local DAT=${RAW}/boot-parallel-${PARALLEL}-fc.dat
-    local CDF=${DIR}/boot-parallel-${PARALLEL}-fc-cdf.dat
+    if [ -n "$1" ]; then
+        local DAT=${RAW}/boot-parallel-${PARALLEL}-fc-file.dat
+        local CDF=${DIR}/boot-parallel-${PARALLEL}-fc-file-cdf.dat
+        local ARG=-s
+    else
+        local DAT=${RAW}/boot-parallel-${PARALLEL}-fc-api.dat
+        local CDF=${DIR}/boot-parallel-${PARALLEL}-fc-api-cdf.dat
+        local ARG=
+    fi
 
     rm -f ${DAT} ${CDF}
 
     echo "Firecracker"
 
     killall -9 firecracker 2> /dev/null
-    seq 1 $ITER | xargs -L1 -P$PARALLEL ./util_start_fc.sh -b ../bin/firecracker \
+    seq 1 $ITER | xargs -L1 -P$PARALLEL ./util_start_fc.sh -b ../bin/firecracker $ARG \
                         -k ../img/boot-time-pci-vmlinux \
                         -r ../img/boot-time-disk.img \
                         -c $CORES \
@@ -89,5 +96,6 @@ run_qemu() {
 }
 
 run_firecracker
+run_firecracker sock
 run_cloudhv
 run_qemu

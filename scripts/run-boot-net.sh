@@ -27,8 +27,8 @@ CHV_NET_CDF=${DIR}/boot-serial-chv-net-cdf.dat
 
 
 run_firecracker() {
-    local DAT=${RAW}/boot-serial-fc-net.dat
-    local CDF=${DIR}/boot-serial-fc-net-cdf.dat
+    local DAT=${RAW}/boot-serial-fc-net-api.dat
+    local CDF=${DIR}/boot-serial-fc-net-api-cdf.dat
 
     rm -f ${DAT} ${CDF}
 
@@ -36,7 +36,7 @@ run_firecracker() {
     killall -9 firecracker 2> /dev/null
     for i in $(seq ${ITER}); do
         echo "Firecracker+Net: $i"
-        ./util_start_fc.sh -b ../bin/firecracker \
+        ./util_start_fc.sh -b ../bin/firecracker -s \
                            -k ../img/boot-time-vmlinux \
                            -r ../img/boot-time-disk.img \
                            -c $CORES \

@@ -19,16 +19,22 @@ RAW=${DIR}/raw
 mkdir -p ${RAW}
 
 run_firecracker() {
-    local DAT=${RAW}/boot-serial-fc.dat
-    local CDF=${DIR}/boot-serial-fc-cdf.dat
-
+    if [ -n "$1" ]; then
+        local DAT=${RAW}/boot-serial-fc-file.dat
+        local CDF=${DIR}/boot-serial-fc-file-cdf.dat
+        local ARG=-s
+    else
+        local DAT=${RAW}/boot-serial-fc-api.dat
+        local CDF=${DIR}/boot-serial-fc-api-cdf.dat
+        local ARG=
+    fi
     rm -f ${DAT} ${CDF}
 
     # Firecracker base
     killall -9 firecracker 2> /dev/null
     for i in $(seq ${ITER}); do
         echo "Firecracker: $i"
-        ./util_start_fc.sh -b ../bin/firecracker \
+        ./util_start_fc.sh -b ../bin/firecracker $ARG \
                            -k ../img/boot-time-pci-vmlinux \
                            -r ../img/boot-time-disk.img \
                            -c $CORES \
@@ -110,6 +116,7 @@ run_qemu_qboot() {
 }
 
 run_firecracker
+run_firecracker sock
 run_cloudhv
 run_qemu
 run_qemu_qboot

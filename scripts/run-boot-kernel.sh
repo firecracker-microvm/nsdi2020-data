@@ -26,15 +26,15 @@ run_firecracker() {
     local KERNEL=$1
     local PRE=$2
 
-    local DAT=${RAW}/${PRE}.dat
-    local CDF=${DIR}/${PRE}-cdf.dat
+    local DAT=${RAW}/${PRE}-api.dat
+    local CDF=${DIR}/${PRE}-api-cdf.dat
 
     rm -f ${DAT} ${CDF}
     
     killall -9 firecracker 2> /dev/null
     for i in $(seq ${ITER}); do
         echo "Firecracker ${KERNEL}: $i"
-        ./util_start_fc.sh -b ../bin/firecracker \
+        ./util_start_fc.sh -b ../bin/firecracker -s \
                            -k ../img/${KERNEL} \
                            -r ../img/boot-time-disk.img \
                            -c $CORES \
