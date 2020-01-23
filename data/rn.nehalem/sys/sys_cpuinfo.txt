@@ -5,7 +5,7 @@ model		: 26
 model name	: Intel(R) Xeon(R) CPU           W3520  @ 2.67GHz
 stepping	: 5
 microcode	: 0x1d
-cpu MHz		: 1814.347
+cpu MHz		: 2064.534
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -18,8 +18,8 @@ fpu_exception	: yes
 cpuid level	: 11
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology nonstop_tsc cpuid aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 sse4_2 popcnt lahf_lm ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid dtherm ida flush_l1d
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
-bogomips	: 5320.48
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5320.34
 clflush size	: 64
 cache_alignment	: 64
 address sizes	: 36 bits physical, 48 bits virtual
@@ -32,7 +32,7 @@ model		: 26
 model name	: Intel(R) Xeon(R) CPU           W3520  @ 2.67GHz
 stepping	: 5
 microcode	: 0x1d
-cpu MHz		: 1728.327
+cpu MHz		: 2144.535
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -45,8 +45,8 @@ fpu_exception	: yes
 cpuid level	: 11
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology nonstop_tsc cpuid aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 sse4_2 popcnt lahf_lm ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid dtherm ida flush_l1d
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
-bogomips	: 5320.48
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5320.34
 clflush size	: 64
 cache_alignment	: 64
 address sizes	: 36 bits physical, 48 bits virtual
@@ -59,7 +59,7 @@ model		: 26
 model name	: Intel(R) Xeon(R) CPU           W3520  @ 2.67GHz
 stepping	: 5
 microcode	: 0x1d
-cpu MHz		: 1605.446
+cpu MHz		: 2298.711
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -72,8 +72,8 @@ fpu_exception	: yes
 cpuid level	: 11
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology nonstop_tsc cpuid aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 sse4_2 popcnt lahf_lm ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid dtherm ida flush_l1d
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
-bogomips	: 5320.48
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5320.34
 clflush size	: 64
 cache_alignment	: 64
 address sizes	: 36 bits physical, 48 bits virtual
@@ -86,7 +86,7 @@ model		: 26
 model name	: Intel(R) Xeon(R) CPU           W3520  @ 2.67GHz
 stepping	: 5
 microcode	: 0x1d
-cpu MHz		: 1673.500
+cpu MHz		: 2234.486
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -99,8 +99,8 @@ fpu_exception	: yes
 cpuid level	: 11
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology nonstop_tsc cpuid aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 sse4_2 popcnt lahf_lm ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid dtherm ida flush_l1d
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
-bogomips	: 5320.48
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5320.34
 clflush size	: 64
 cache_alignment	: 64
 address sizes	: 36 bits physical, 48 bits virtual
@@ -113,7 +113,7 @@ model		: 26
 model name	: Intel(R) Xeon(R) CPU           W3520  @ 2.67GHz
 stepping	: 5
 microcode	: 0x1d
-cpu MHz		: 1638.957
+cpu MHz		: 2608.234
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -126,8 +126,8 @@ fpu_exception	: yes
 cpuid level	: 11
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology nonstop_tsc cpuid aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 sse4_2 popcnt lahf_lm ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid dtherm ida flush_l1d
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
-bogomips	: 5320.48
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5320.34
 clflush size	: 64
 cache_alignment	: 64
 address sizes	: 36 bits physical, 48 bits virtual
@@ -140,7 +140,7 @@ model		: 26
 model name	: Intel(R) Xeon(R) CPU           W3520  @ 2.67GHz
 stepping	: 5
 microcode	: 0x1d
-cpu MHz		: 2020.982
+cpu MHz		: 1625.008
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -153,8 +153,8 @@ fpu_exception	: yes
 cpuid level	: 11
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology nonstop_tsc cpuid aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 sse4_2 popcnt lahf_lm ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid dtherm ida flush_l1d
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
-bogomips	: 5320.48
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5320.34
 clflush size	: 64
 cache_alignment	: 64
 address sizes	: 36 bits physical, 48 bits virtual
@@ -167,7 +167,7 @@ model		: 26
 model name	: Intel(R) Xeon(R) CPU           W3520  @ 2.67GHz
 stepping	: 5
 microcode	: 0x1d
-cpu MHz		: 1613.512
+cpu MHz		: 1863.755
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -180,8 +180,8 @@ fpu_exception	: yes
 cpuid level	: 11
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology nonstop_tsc cpuid aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 sse4_2 popcnt lahf_lm ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid dtherm ida flush_l1d
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
-bogomips	: 5320.48
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5320.34
 clflush size	: 64
 cache_alignment	: 64
 address sizes	: 36 bits physical, 48 bits virtual
@@ -194,7 +194,7 @@ model		: 26
 model name	: Intel(R) Xeon(R) CPU           W3520  @ 2.67GHz
 stepping	: 5
 microcode	: 0x1d
-cpu MHz		: 1942.781
+cpu MHz		: 2176.527
 cache size	: 8192 KB
 physical id	: 0
 siblings	: 8
@@ -207,8 +207,8 @@ fpu_exception	: yes
 cpuid level	: 11
 wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology nonstop_tsc cpuid aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 sse4_2 popcnt lahf_lm ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid dtherm ida flush_l1d
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
-bogomips	: 5320.48
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5320.34
 clflush size	: 64
 cache_alignment	: 64
 address sizes	: 36 bits physical, 48 bits virtual

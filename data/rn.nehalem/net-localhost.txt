@@ -1,0 +1,3 @@
+1-stream	10-streams
+RX	TX	RX	TX
+26.55	26.55	29.56	29.56

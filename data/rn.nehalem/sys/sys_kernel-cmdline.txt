@@ -1,1 +1,1 @@
-BOOT_IMAGE=/boot/vmlinuz-4.15.0-55-generic root=UUID=a533a429-4f8a-4e7e-8782-f88e1f453515 ro pti=off pti=off
+BOOT_IMAGE=/boot/vmlinuz-4.15.0-74-generic root=UUID=a533a429-4f8a-4e7e-8782-f88e1f453515 ro pti=off pti=off
