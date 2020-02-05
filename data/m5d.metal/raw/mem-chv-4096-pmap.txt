@@ -1,279 +1,146 @@
-<<<<<<< HEAD
-86640:   ../bin/cloud-hypervisor --cpus 1 --memory size=4096M --serial off --console null --disk ../img/bench-ssh-disk.img --net tap=bench-tap-0,MAC=02:FC:00:00:00:00 --kernel ../img/bench-ssh-vmlinux --cmdline root=/dev/vda init=/init reboot=k tsc=reliable ipv6.disable=1 panic=-1 ro quiet ip=169.254.0.1::169.254.0.2:255.255.255.252::eth0:off
+27906:   ../bin/cloud-hypervisor --cpus boot=1 --memory size=4096M --serial off --console null --disk path=../img/bench-ssh-disk.img --net tap=bench-tap-0,MAC=02:FC:00:00:00:00 --kernel ../img/bench-ssh-vmlinux --cmdline root=/dev/vda init=/init reboot=k tsc=reliable ipv6.disable=1 panic=-1 ro quiet ip=169.254.0.1::169.254.0.2:255.255.255.252::eth0:off
 Address           Kbytes     RSS   Dirty Mode  Mapping
-000055d0e4511000      92      92       0 r---- cloud-hypervisor
-000055d0e4511000       0       0       0 r---- cloud-hypervisor
-000055d0e4528000    1112    1096       0 r-x-- cloud-hypervisor
-000055d0e4528000       0       0       0 r-x-- cloud-hypervisor
-000055d0e463e000     312     128       0 r---- cloud-hypervisor
-000055d0e463e000       0       0       0 r---- cloud-hypervisor
-000055d0e468c000      56      56      56 r---- cloud-hypervisor
-000055d0e468c000       0       0       0 r---- cloud-hypervisor
-000055d0e469a000       4       4       4 rw--- cloud-hypervisor
-000055d0e469a000       0       0       0 rw--- cloud-hypervisor
-000055d0e5034000     132      36      36 rw---   [ anon ]
-000055d0e5034000       0       0       0 rw---   [ anon ]
-00007f548c000000     132       8       8 rw---   [ anon ]
-00007f548c000000       0       0       0 rw---   [ anon ]
-00007f548c021000   65404       0       0 -----   [ anon ]
-00007f548c021000       0       0       0 -----   [ anon ]
-00007f5490000000     132       8       8 rw---   [ anon ]
-00007f5490000000       0       0       0 rw---   [ anon ]
-00007f5490021000   65404       0       0 -----   [ anon ]
-00007f5490021000       0       0       0 -----   [ anon ]
-00007f5494000000     132       4       4 rw---   [ anon ]
-00007f5494000000       0       0       0 rw---   [ anon ]
-00007f5494021000   65404       0       0 -----   [ anon ]
-00007f5494021000       0       0       0 -----   [ anon ]
-00007f5498000000     132       8       8 rw---   [ anon ]
-00007f5498000000       0       0       0 rw---   [ anon ]
-00007f5498021000   65404       0       0 -----   [ anon ]
-00007f5498021000       0       0       0 -----   [ anon ]
-00007f549c000000     132      12      12 rw---   [ anon ]
-00007f549c000000       0       0       0 rw---   [ anon ]
-00007f549c021000   65404       0       0 -----   [ anon ]
-00007f549c021000       0       0       0 -----   [ anon ]
-00007f54a2470000       4       0       0 -----   [ anon ]
-00007f54a2470000       0       0       0 -----   [ anon ]
-00007f54a2471000    2048     520     520 rw---   [ anon ]
-00007f54a2471000       0       0       0 rw---   [ anon ]
-00007f54a2671000       4       0       0 -----   [ anon ]
-00007f54a2671000       0       0       0 -----   [ anon ]
-00007f54a2672000    2048      12      12 rw---   [ anon ]
-00007f54a2672000       0       0       0 rw---   [ anon ]
-00007f54a2872000       4       0       0 -----   [ anon ]
-00007f54a2872000       0       0       0 -----   [ anon ]
-00007f54a2873000    2048      12      12 rw---   [ anon ]
-00007f54a2873000       0       0       0 rw---   [ anon ]
-00007f54a2a73000       4       0       0 -----   [ anon ]
-00007f54a2a73000       0       0       0 -----   [ anon ]
-00007f54a2a74000    2048       8       8 rw---   [ anon ]
-00007f54a2a74000       0       0       0 rw---   [ anon ]
-00007f54a2c74000       4       0       0 -----   [ anon ]
-00007f54a2c74000       0       0       0 -----   [ anon ]
-00007f54a2c75000    2048     524     524 rw---   [ anon ]
-00007f54a2c75000       0       0       0 rw---   [ anon ]
-00007f54a2e75000 4194304  312528  312528 rw---   [ anon ]
-00007f54a2e75000       0       0       0 rw---   [ anon ]
-00007f55a2e75000    1652     316       0 r-x-- libm-2.27.so
-00007f55a2e75000       0       0       0 r-x-- libm-2.27.so
-00007f55a3012000    2044       0       0 ----- libm-2.27.so
-00007f55a3012000       0       0       0 ----- libm-2.27.so
-00007f55a3211000       4       4       4 r---- libm-2.27.so
-00007f55a3211000       0       0       0 r---- libm-2.27.so
-00007f55a3212000       4       4       4 rw--- libm-2.27.so
-00007f55a3212000       0       0       0 rw--- libm-2.27.so
-00007f55a3213000    1948    1372       0 r-x-- libc-2.27.so
-00007f55a3213000       0       0       0 r-x-- libc-2.27.so
-00007f55a33fa000    2048       0       0 ----- libc-2.27.so
-00007f55a33fa000       0       0       0 ----- libc-2.27.so
-00007f55a35fa000      16      16      16 r---- libc-2.27.so
-00007f55a35fa000       0       0       0 r---- libc-2.27.so
-00007f55a35fe000       8       8       8 rw--- libc-2.27.so
-00007f55a35fe000       0       0       0 rw--- libc-2.27.so
-00007f55a3600000      16      12      12 rw---   [ anon ]
-00007f55a3600000       0       0       0 rw---   [ anon ]
-00007f55a3604000      92      88       0 r-x-- libgcc_s.so.1
-00007f55a3604000       0       0       0 r-x-- libgcc_s.so.1
-00007f55a361b000    2044       0       0 ----- libgcc_s.so.1
-00007f55a361b000       0       0       0 ----- libgcc_s.so.1
-00007f55a381a000       4       4       4 r---- libgcc_s.so.1
-00007f55a381a000       0       0       0 r---- libgcc_s.so.1
-00007f55a381b000       4       4       4 rw--- libgcc_s.so.1
-00007f55a381b000       0       0       0 rw--- libgcc_s.so.1
-00007f55a381c000     104     104       0 r-x-- libpthread-2.27.so
-00007f55a381c000       0       0       0 r-x-- libpthread-2.27.so
-00007f55a3836000    2044       0       0 ----- libpthread-2.27.so
-00007f55a3836000       0       0       0 ----- libpthread-2.27.so
-00007f55a3a35000       4       4       4 r---- libpthread-2.27.so
-00007f55a3a35000       0       0       0 r---- libpthread-2.27.so
-00007f55a3a36000       4       4       4 rw--- libpthread-2.27.so
-00007f55a3a36000       0       0       0 rw--- libpthread-2.27.so
-00007f55a3a37000      16       4       4 rw---   [ anon ]
-00007f55a3a37000       0       0       0 rw---   [ anon ]
-00007f55a3a3b000      28      28       0 r-x-- librt-2.27.so
-00007f55a3a3b000       0       0       0 r-x-- librt-2.27.so
-00007f55a3a42000    2044       0       0 ----- librt-2.27.so
-00007f55a3a42000       0       0       0 ----- librt-2.27.so
-00007f55a3c41000       4       4       4 r---- librt-2.27.so
-00007f55a3c41000       0       0       0 r---- librt-2.27.so
-00007f55a3c42000       4       4       4 rw--- librt-2.27.so
-00007f55a3c42000       0       0       0 rw--- librt-2.27.so
-00007f55a3c43000      12      12       0 r-x-- libdl-2.27.so
-00007f55a3c43000       0       0       0 r-x-- libdl-2.27.so
-00007f55a3c46000    2044       0       0 ----- libdl-2.27.so
-00007f55a3c46000       0       0       0 ----- libdl-2.27.so
-00007f55a3e45000       4       4       4 r---- libdl-2.27.so
-00007f55a3e45000       0       0       0 r---- libdl-2.27.so
-00007f55a3e46000       4       4       4 rw--- libdl-2.27.so
-00007f55a3e46000       0       0       0 rw--- libdl-2.27.so
-00007f55a3e47000     156     156       0 r-x-- ld-2.27.so
-00007f55a3e47000       0       0       0 r-x-- ld-2.27.so
-00007f55a4032000     200     152     152 rw---   [ anon ]
-00007f55a4032000       0       0       0 rw---   [ anon ]
-00007f55a4064000      12       8       8 rw-s-   [ anon ]
-00007f55a4064000       0       0       0 rw-s-   [ anon ]
-00007f55a4067000       4       4       4 rw-s- zero (deleted)
-00007f55a4067000       0       0       0 rw-s- zero (deleted)
-00007f55a4068000       4       4       4 rw-s- zero (deleted)
-00007f55a4068000       0       0       0 rw-s- zero (deleted)
-00007f55a4069000      12      12      12 rw-s- zero (deleted)
-00007f55a4069000       0       0       0 rw-s- zero (deleted)
-00007f55a406c000       8       0       0 rw---   [ anon ]
-00007f55a406c000       0       0       0 rw---   [ anon ]
-00007f55a406e000       4       4       4 r---- ld-2.27.so
-00007f55a406e000       0       0       0 r---- ld-2.27.so
-00007f55a406f000       4       4       4 rw--- ld-2.27.so
-00007f55a406f000       0       0       0 rw--- ld-2.27.so
-00007f55a4070000       4       4       4 rw---   [ anon ]
-00007f55a4070000       0       0       0 rw---   [ anon ]
-00007ffd92a6a000     132      20      20 rw---   [ stack ]
-00007ffd92a6a000       0       0       0 rw---   [ stack ]
-00007ffd92b76000      12       0       0 r----   [ anon ]
-00007ffd92b76000       0       0       0 r----   [ anon ]
-00007ffd92b79000       8       4       0 r-x--   [ anon ]
-00007ffd92b79000       0       0       0 r-x--   [ anon ]
+0000564553400000     136     136       0 r---- cloud-hypervisor
+0000564553400000       0       0       0 r---- cloud-hypervisor
+0000564553422000    2032    1848       0 r-x-- cloud-hypervisor
+0000564553422000       0       0       0 r-x-- cloud-hypervisor
+000056455361e000     584     196       0 r---- cloud-hypervisor
+000056455361e000       0       0       0 r---- cloud-hypervisor
+00005645536b1000      88      88      88 r---- cloud-hypervisor
+00005645536b1000       0       0       0 r---- cloud-hypervisor
+00005645536c7000       4       4       4 rw--- cloud-hypervisor
+00005645536c7000       0       0       0 rw--- cloud-hypervisor
+0000564554c83000     132      28      28 rw---   [ anon ]
+0000564554c83000       0       0       0 rw---   [ anon ]
+00007f9dbc000000     132       8       8 rw---   [ anon ]
+00007f9dbc000000       0       0       0 rw---   [ anon ]
+00007f9dbc021000   65404       0       0 -----   [ anon ]
+00007f9dbc021000       0       0       0 -----   [ anon ]
+00007f9dc4000000     132       8       8 rw---   [ anon ]
+00007f9dc4000000       0       0       0 rw---   [ anon ]
+00007f9dc4021000   65404       0       0 -----   [ anon ]
+00007f9dc4021000       0       0       0 -----   [ anon ]
+00007f9dc8000000     132       8       8 rw---   [ anon ]
+00007f9dc8000000       0       0       0 rw---   [ anon ]
+00007f9dc8021000   65404       0       0 -----   [ anon ]
+00007f9dc8021000       0       0       0 -----   [ anon ]
+00007f9dcc000000 4194436  312440  312440 rw---   [ anon ]
+00007f9dcc000000       0       0       0 rw---   [ anon ]
+00007f9ecc021000   65404       0       0 -----   [ anon ]
+00007f9ecc021000       0       0       0 -----   [ anon ]
+00007f9ed0000000     132      12      12 rw---   [ anon ]
+00007f9ed0000000       0       0       0 rw---   [ anon ]
+00007f9ed0021000   65404       0       0 -----   [ anon ]
+00007f9ed0021000       0       0       0 -----   [ anon ]
+00007f9ed4000000     132      40      40 rw---   [ anon ]
+00007f9ed4000000       0       0       0 rw---   [ anon ]
+00007f9ed4021000   65404       0       0 -----   [ anon ]
+00007f9ed4021000       0       0       0 -----   [ anon ]
+00007f9edb3c6000       4       0       0 -----   [ anon ]
+00007f9edb3c6000       0       0       0 -----   [ anon ]
+00007f9edb3c7000    2048     520     520 rw---   [ anon ]
+00007f9edb3c7000       0       0       0 rw---   [ anon ]
+00007f9edb5c7000       4       0       0 -----   [ anon ]
+00007f9edb5c7000       0       0       0 -----   [ anon ]
+00007f9edb5c8000    2048      12      12 rw---   [ anon ]
+00007f9edb5c8000       0       0       0 rw---   [ anon ]
+00007f9edb7c8000       4       0       0 -----   [ anon ]
+00007f9edb7c8000       0       0       0 -----   [ anon ]
+00007f9edb7c9000    2048      12      12 rw---   [ anon ]
+00007f9edb7c9000       0       0       0 rw---   [ anon ]
+00007f9edb9c9000       4       0       0 -----   [ anon ]
+00007f9edb9c9000       0       0       0 -----   [ anon ]
+00007f9edb9ca000    2048     524     524 rw---   [ anon ]
+00007f9edb9ca000       0       0       0 rw---   [ anon ]
+00007f9edbbca000       4       0       0 -----   [ anon ]
+00007f9edbbca000       0       0       0 -----   [ anon ]
+00007f9edbbcb000    2048      12      12 rw---   [ anon ]
+00007f9edbbcb000       0       0       0 rw---   [ anon ]
+00007f9edbdcb000       4       0       0 -----   [ anon ]
+00007f9edbdcb000       0       0       0 -----   [ anon ]
+00007f9edbdcc000    2048      24      24 rw---   [ anon ]
+00007f9edbdcc000       0       0       0 rw---   [ anon ]
+00007f9edbfcc000    1652     384       0 r-x-- libm-2.27.so
+00007f9edbfcc000       0       0       0 r-x-- libm-2.27.so
+00007f9edc169000    2044       0       0 ----- libm-2.27.so
+00007f9edc169000       0       0       0 ----- libm-2.27.so
+00007f9edc368000       4       4       4 r---- libm-2.27.so
+00007f9edc368000       0       0       0 r---- libm-2.27.so
+00007f9edc369000       4       4       4 rw--- libm-2.27.so
+00007f9edc369000       0       0       0 rw--- libm-2.27.so
+00007f9edc36a000    1948    1496       0 r-x-- libc-2.27.so
+00007f9edc36a000       0       0       0 r-x-- libc-2.27.so
+00007f9edc551000    2048       0       0 ----- libc-2.27.so
+00007f9edc551000       0       0       0 ----- libc-2.27.so
+00007f9edc751000      16      16      16 r---- libc-2.27.so
+00007f9edc751000       0       0       0 r---- libc-2.27.so
+00007f9edc755000       8       8       8 rw--- libc-2.27.so
+00007f9edc755000       0       0       0 rw--- libc-2.27.so
+00007f9edc757000      16      12      12 rw---   [ anon ]
+00007f9edc757000       0       0       0 rw---   [ anon ]
+00007f9edc75b000      92      84       0 r-x-- libgcc_s.so.1
+00007f9edc75b000       0       0       0 r-x-- libgcc_s.so.1
+00007f9edc772000    2044       0       0 ----- libgcc_s.so.1
+00007f9edc772000       0       0       0 ----- libgcc_s.so.1
+00007f9edc971000       4       4       4 r---- libgcc_s.so.1
+00007f9edc971000       0       0       0 r---- libgcc_s.so.1
+00007f9edc972000       4       4       4 rw--- libgcc_s.so.1
+00007f9edc972000       0       0       0 rw--- libgcc_s.so.1
+00007f9edc973000     104     104       0 r-x-- libpthread-2.27.so
+00007f9edc973000       0       0       0 r-x-- libpthread-2.27.so
+00007f9edc98d000    2044       0       0 ----- libpthread-2.27.so
+00007f9edc98d000       0       0       0 ----- libpthread-2.27.so
+00007f9edcb8c000       4       4       4 r---- libpthread-2.27.so
+00007f9edcb8c000       0       0       0 r---- libpthread-2.27.so
+00007f9edcb8d000       4       4       4 rw--- libpthread-2.27.so
+00007f9edcb8d000       0       0       0 rw--- libpthread-2.27.so
+00007f9edcb8e000      16       4       4 rw---   [ anon ]
+00007f9edcb8e000       0       0       0 rw---   [ anon ]
+00007f9edcb92000      28      28       0 r-x-- librt-2.27.so
+00007f9edcb92000       0       0       0 r-x-- librt-2.27.so
+00007f9edcb99000    2044       0       0 ----- librt-2.27.so
+00007f9edcb99000       0       0       0 ----- librt-2.27.so
+00007f9edcd98000       4       4       4 r---- librt-2.27.so
+00007f9edcd98000       0       0       0 r---- librt-2.27.so
+00007f9edcd99000       4       4       4 rw--- librt-2.27.so
+00007f9edcd99000       0       0       0 rw--- librt-2.27.so
+00007f9edcd9a000      12      12       0 r-x-- libdl-2.27.so
+00007f9edcd9a000       0       0       0 r-x-- libdl-2.27.so
+00007f9edcd9d000    2044       0       0 ----- libdl-2.27.so
+00007f9edcd9d000       0       0       0 ----- libdl-2.27.so
+00007f9edcf9c000       4       4       4 r---- libdl-2.27.so
+00007f9edcf9c000       0       0       0 r---- libdl-2.27.so
+00007f9edcf9d000       4       4       4 rw--- libdl-2.27.so
+00007f9edcf9d000       0       0       0 rw--- libdl-2.27.so
+00007f9edcf9e000     156     156       0 r-x-- ld-2.27.so
+00007f9edcf9e000       0       0       0 r-x-- ld-2.27.so
+00007f9edd187000     164     132     132 rw---   [ anon ]
+00007f9edd187000       0       0       0 rw---   [ anon ]
+00007f9edd1b0000      12       8       8 rw-s-   [ anon ]
+00007f9edd1b0000       0       0       0 rw-s-   [ anon ]
+00007f9edd1b3000       4       4       4 rw-s- zero (deleted)
+00007f9edd1b3000       0       0       0 rw-s- zero (deleted)
+00007f9edd1b4000      28      20      20 rw---   [ anon ]
+00007f9edd1b4000       0       0       0 rw---   [ anon ]
+00007f9edd1bb000       4       4       4 rw-s- zero (deleted)
+00007f9edd1bb000       0       0       0 rw-s- zero (deleted)
+00007f9edd1bc000      12      12      12 rw-s- zero (deleted)
+00007f9edd1bc000       0       0       0 rw-s- zero (deleted)
+00007f9edd1bf000      24       0       0 rw---   [ anon ]
+00007f9edd1bf000       0       0       0 rw---   [ anon ]
+00007f9edd1c5000       4       4       4 r---- ld-2.27.so
+00007f9edd1c5000       0       0       0 r---- ld-2.27.so
+00007f9edd1c6000       4       4       4 rw--- ld-2.27.so
+00007f9edd1c6000       0       0       0 rw--- ld-2.27.so
+00007f9edd1c7000       4       4       4 rw---   [ anon ]
+00007f9edd1c7000       0       0       0 rw---   [ anon ]
+00007fff8a618000     132      16      16 rw---   [ stack ]
+00007fff8a618000       0       0       0 rw---   [ stack ]
+00007fff8a75d000      12       0       0 r----   [ anon ]
+00007fff8a75d000       0       0       0 r----   [ anon ]
+00007fff8a760000       8       4       0 r-x--   [ anon ]
+00007fff8a760000       0       0       0 r-x--   [ anon ]
 ffffffffff600000       4       0       0 r-x--   [ anon ]
 ffffffffff600000       0       0       0 r-x--   [ anon ]
 ---------------- ------- ------- ------- 
-total kB         4550716  317428  314032
-=======
-82868:   ../bin/cloud-hypervisor --cpus 1 --memory size=4096M --serial off --console null --disk ../img/bench-ssh-disk.img --net tap=bench-tap-0,MAC=02:FC:00:00:00:00 --kernel ../img/bench-ssh-vmlinux --cmdline root=/dev/vda init=/init reboot=k tsc=reliable ipv6.disable=1 panic=-1 ro quiet ip=169.254.0.1::169.254.0.2:255.255.255.252::eth0:off
-Address           Kbytes     RSS   Dirty Mode  Mapping
-0000559a27186000      92      92       0 r---- cloud-hypervisor
-0000559a27186000       0       0       0 r---- cloud-hypervisor
-0000559a2719d000    1112    1096       0 r-x-- cloud-hypervisor
-0000559a2719d000       0       0       0 r-x-- cloud-hypervisor
-0000559a272b3000     312     112       0 r---- cloud-hypervisor
-0000559a272b3000       0       0       0 r---- cloud-hypervisor
-0000559a27301000      56      56      56 r---- cloud-hypervisor
-0000559a27301000       0       0       0 r---- cloud-hypervisor
-0000559a2730f000       4       4       4 rw--- cloud-hypervisor
-0000559a2730f000       0       0       0 rw--- cloud-hypervisor
-0000559a2925e000     132      36      36 rw---   [ anon ]
-0000559a2925e000       0       0       0 rw---   [ anon ]
-00007ff30c000000     132       8       8 rw---   [ anon ]
-00007ff30c000000       0       0       0 rw---   [ anon ]
-00007ff30c021000   65404       0       0 -----   [ anon ]
-00007ff30c021000       0       0       0 -----   [ anon ]
-00007ff310000000     132       8       8 rw---   [ anon ]
-00007ff310000000       0       0       0 rw---   [ anon ]
-00007ff310021000   65404       0       0 -----   [ anon ]
-00007ff310021000       0       0       0 -----   [ anon ]
-00007ff314000000     132       4       4 rw---   [ anon ]
-00007ff314000000       0       0       0 rw---   [ anon ]
-00007ff314021000   65404       0       0 -----   [ anon ]
-00007ff314021000       0       0       0 -----   [ anon ]
-00007ff318000000     132       8       8 rw---   [ anon ]
-00007ff318000000       0       0       0 rw---   [ anon ]
-00007ff318021000   65404       0       0 -----   [ anon ]
-00007ff318021000       0       0       0 -----   [ anon ]
-00007ff31c000000     132      12      12 rw---   [ anon ]
-00007ff31c000000       0       0       0 rw---   [ anon ]
-00007ff31c021000   65404       0       0 -----   [ anon ]
-00007ff31c021000       0       0       0 -----   [ anon ]
-00007ff321f05000       4       0       0 -----   [ anon ]
-00007ff321f05000       0       0       0 -----   [ anon ]
-00007ff321f06000    2048     520     520 rw---   [ anon ]
-00007ff321f06000       0       0       0 rw---   [ anon ]
-00007ff322106000       4       0       0 -----   [ anon ]
-00007ff322106000       0       0       0 -----   [ anon ]
-00007ff322107000    2048      12      12 rw---   [ anon ]
-00007ff322107000       0       0       0 rw---   [ anon ]
-00007ff322307000       4       0       0 -----   [ anon ]
-00007ff322307000       0       0       0 -----   [ anon ]
-00007ff322308000    2048      12      12 rw---   [ anon ]
-00007ff322308000       0       0       0 rw---   [ anon ]
-00007ff322508000       4       0       0 -----   [ anon ]
-00007ff322508000       0       0       0 -----   [ anon ]
-00007ff322509000    2048       8       8 rw---   [ anon ]
-00007ff322509000       0       0       0 rw---   [ anon ]
-00007ff322709000       4       0       0 -----   [ anon ]
-00007ff322709000       0       0       0 -----   [ anon ]
-00007ff32270a000    2048     524     524 rw---   [ anon ]
-00007ff32270a000       0       0       0 rw---   [ anon ]
-00007ff32290a000 4194304  311952  311952 rw---   [ anon ]
-00007ff32290a000       0       0       0 rw---   [ anon ]
-00007ff42290a000    1652     372       0 r-x-- libm-2.27.so
-00007ff42290a000       0       0       0 r-x-- libm-2.27.so
-00007ff422aa7000    2044       0       0 ----- libm-2.27.so
-00007ff422aa7000       0       0       0 ----- libm-2.27.so
-00007ff422ca6000       4       4       4 r---- libm-2.27.so
-00007ff422ca6000       0       0       0 r---- libm-2.27.so
-00007ff422ca7000       4       4       4 rw--- libm-2.27.so
-00007ff422ca7000       0       0       0 rw--- libm-2.27.so
-00007ff422ca8000    1948    1292       0 r-x-- libc-2.27.so
-00007ff422ca8000       0       0       0 r-x-- libc-2.27.so
-00007ff422e8f000    2048       0       0 ----- libc-2.27.so
-00007ff422e8f000       0       0       0 ----- libc-2.27.so
-00007ff42308f000      16      16      16 r---- libc-2.27.so
-00007ff42308f000       0       0       0 r---- libc-2.27.so
-00007ff423093000       8       8       8 rw--- libc-2.27.so
-00007ff423093000       0       0       0 rw--- libc-2.27.so
-00007ff423095000      16      12      12 rw---   [ anon ]
-00007ff423095000       0       0       0 rw---   [ anon ]
-00007ff423099000      92      88       0 r-x-- libgcc_s.so.1
-00007ff423099000       0       0       0 r-x-- libgcc_s.so.1
-00007ff4230b0000    2044       0       0 ----- libgcc_s.so.1
-00007ff4230b0000       0       0       0 ----- libgcc_s.so.1
-00007ff4232af000       4       4       4 r---- libgcc_s.so.1
-00007ff4232af000       0       0       0 r---- libgcc_s.so.1
-00007ff4232b0000       4       4       4 rw--- libgcc_s.so.1
-00007ff4232b0000       0       0       0 rw--- libgcc_s.so.1
-00007ff4232b1000     104     104       0 r-x-- libpthread-2.27.so
-00007ff4232b1000       0       0       0 r-x-- libpthread-2.27.so
-00007ff4232cb000    2044       0       0 ----- libpthread-2.27.so
-00007ff4232cb000       0       0       0 ----- libpthread-2.27.so
-00007ff4234ca000       4       4       4 r---- libpthread-2.27.so
-00007ff4234ca000       0       0       0 r---- libpthread-2.27.so
-00007ff4234cb000       4       4       4 rw--- libpthread-2.27.so
-00007ff4234cb000       0       0       0 rw--- libpthread-2.27.so
-00007ff4234cc000      16       4       4 rw---   [ anon ]
-00007ff4234cc000       0       0       0 rw---   [ anon ]
-00007ff4234d0000      28      28       0 r-x-- librt-2.27.so
-00007ff4234d0000       0       0       0 r-x-- librt-2.27.so
-00007ff4234d7000    2044       0       0 ----- librt-2.27.so
-00007ff4234d7000       0       0       0 ----- librt-2.27.so
-00007ff4236d6000       4       4       4 r---- librt-2.27.so
-00007ff4236d6000       0       0       0 r---- librt-2.27.so
-00007ff4236d7000       4       4       4 rw--- librt-2.27.so
-00007ff4236d7000       0       0       0 rw--- librt-2.27.so
-00007ff4236d8000      12      12       0 r-x-- libdl-2.27.so
-00007ff4236d8000       0       0       0 r-x-- libdl-2.27.so
-00007ff4236db000    2044       0       0 ----- libdl-2.27.so
-00007ff4236db000       0       0       0 ----- libdl-2.27.so
-00007ff4238da000       4       4       4 r---- libdl-2.27.so
-00007ff4238da000       0       0       0 r---- libdl-2.27.so
-00007ff4238db000       4       4       4 rw--- libdl-2.27.so
-00007ff4238db000       0       0       0 rw--- libdl-2.27.so
-00007ff4238dc000     156     156       0 r-x-- ld-2.27.so
-00007ff4238dc000       0       0       0 r-x-- ld-2.27.so
-00007ff423ac7000     200     152     152 rw---   [ anon ]
-00007ff423ac7000       0       0       0 rw---   [ anon ]
-00007ff423af9000      12       8       8 rw-s-   [ anon ]
-00007ff423af9000       0       0       0 rw-s-   [ anon ]
-00007ff423afc000       4       4       4 rw-s- zero (deleted)
-00007ff423afc000       0       0       0 rw-s- zero (deleted)
-00007ff423afd000       4       4       4 rw-s- zero (deleted)
-00007ff423afd000       0       0       0 rw-s- zero (deleted)
-00007ff423afe000      12      12      12 rw-s- zero (deleted)
-00007ff423afe000       0       0       0 rw-s- zero (deleted)
-00007ff423b01000       8       0       0 rw---   [ anon ]
-00007ff423b01000       0       0       0 rw---   [ anon ]
-00007ff423b03000       4       4       4 r---- ld-2.27.so
-00007ff423b03000       0       0       0 r---- ld-2.27.so
-00007ff423b04000       4       4       4 rw--- ld-2.27.so
-00007ff423b04000       0       0       0 rw--- ld-2.27.so
-00007ff423b05000       4       4       4 rw---   [ anon ]
-00007ff423b05000       0       0       0 rw---   [ anon ]
-00007fffc049b000     132      24      24 rw---   [ stack ]
-00007fffc049b000       0       0       0 rw---   [ stack ]
-00007fffc04e8000      12       0       0 r----   [ anon ]
-00007fffc04e8000       0       0       0 r----   [ anon ]
-00007fffc04eb000       8       4       0 r-x--   [ anon ]
-00007fffc04eb000       0       0       0 r-x--   [ anon ]
-ffffffffff600000       4       0       0 r-x--   [ anon ]
-ffffffffff600000       0       0       0 r-x--   [ anon ]
----------------- ------- ------- ------- 
-total kB         4550716  316816  313460
->>>>>>> cd7f3d711215bc20d6143c7c004835f13e109044
+total kB         4619580  318476  314028

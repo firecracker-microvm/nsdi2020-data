@@ -1,16 +1,18 @@
 # dmidecode 3.1
 Getting SMBIOS data from sysfs.
-SMBIOS 3.0.0 present.
-Table at 0x000E92B0.
+SMBIOS 3.2.1 present.
+# SMBIOS implementations newer than version 3.1.1 are not
+# fully supported by this version of dmidecode.
+Table at 0x000E9690.
 
-Handle 0x0000, DMI type 0, 24 bytes
+Handle 0x0000, DMI type 0, 26 bytes
 BIOS Information
 	Vendor: Amazon EC2
 	Version: 1.0
 	Release Date: 10/16/2017
 	Address: 0xF0000
 	Runtime Size: 64 kB
-	ROM Size: 16 MB
+	ROM Size: 32 MB
 	Characteristics:
 		PCI is supported
 		BIOS is upgradeable
@@ -28,16 +30,16 @@ BIOS Information
 		BIOS boot specification is supported
 		Targeted content distribution is supported
 		UEFI is supported
-	BIOS Revision: 1.2
-	Firmware Revision: 1.3
+	BIOS Revision: 2.12
+	Firmware Revision: 1.17
 
 Handle 0x0001, DMI type 1, 27 bytes
 System Information
 	Manufacturer: Amazon EC2
 	Product Name: m5d.metal
-	Version: 00001
-	Serial Number: ec21ef57-8cf3-6812-c0db-6ef03cd0ff06
-	UUID: EC21EF57-8CF3-6812-C0DB-6EF03CD0FF06
+	Version: 1.0
+	Serial Number: ec26861b-029e-9840-129d-05f0b4f743e6
+	UUID: EC26861B-029E-9840-129D-05F0B4F743E6
 	Wake-up Type: Power Switch
 	SKU Number: Not Specified
 	Family: Default string
@@ -48,7 +50,7 @@ Base Board Information
 	Product Name: Not Specified
 	Version: Not Specified
 	Serial Number: Not Specified
-	Asset Tag: i-02f2d01a10c0e6cb6
+	Asset Tag: i-083cc6bf2abdf2ecd
 	Features:
 		Board is a hosting board
 		Board is replaceable
@@ -625,19 +627,11 @@ Physical Memory Array
 	Location: System Board Or Motherboard
 	Use: System Memory
 	Error Correction Type: Single-bit ECC
-	Maximum Capacity: 2304 GB
+	Maximum Capacity: 9 TB
 	Error Information Handle: Not Provided
-	Number Of Devices: 6
+	Number Of Devices: 24
 
-Handle 0x0053, DMI type 19, 31 bytes
-Memory Array Mapped Address
-	Starting Address: 0x00000000000
-	Ending Address: 0x017FFFFFFFF
-	Range Size: 96 GB
-	Physical Array Handle: 0x0052
-	Partition Width: 3
-
-Handle 0x0054, DMI type 17, 40 bytes
+Handle 0x0053, DMI type 17, 40 bytes
 Memory Device
 	Array Handle: 0x0052
 	Error Information Handle: Not Provided
@@ -652,7 +646,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1ECC0228
+	Serial Number: 1E9AC744
 	Asset Tag: CPU1_DIMM_A1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -661,18 +655,7 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x0055, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x00000000000
-	Ending Address: 0x007FFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x0054
-	Memory Array Mapped Address Handle: 0x0053
-	Partition Row Position: 1
-	Interleave Position: 1
-	Interleaved Data Depth: 3
-
-Handle 0x0056, DMI type 17, 40 bytes
+Handle 0x0054, DMI type 17, 40 bytes
 Memory Device
 	Array Handle: 0x0052
 	Error Information Handle: Not Provided
@@ -696,7 +679,7 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x0057, DMI type 17, 40 bytes
+Handle 0x0055, DMI type 17, 40 bytes
 Memory Device
 	Array Handle: 0x0052
 	Error Information Handle: Not Provided
@@ -711,7 +694,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1ECBFF62
+	Serial Number: 1E9AC73D
 	Asset Tag: CPU1_DIMM_B1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -720,18 +703,7 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x0058, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x00800000000
-	Ending Address: 0x00FFFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x0057
-	Memory Array Mapped Address Handle: 0x0053
-	Partition Row Position: 1
-	Interleave Position: 2
-	Interleaved Data Depth: 3
-
-Handle 0x0059, DMI type 17, 40 bytes
+Handle 0x0056, DMI type 17, 40 bytes
 Memory Device
 	Array Handle: 0x0052
 	Error Information Handle: Not Provided
@@ -755,7 +727,7 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x005A, DMI type 17, 40 bytes
+Handle 0x0057, DMI type 17, 40 bytes
 Memory Device
 	Array Handle: 0x0052
 	Error Information Handle: Not Provided
@@ -770,7 +742,7 @@ Memory Device
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1ECC136E
+	Serial Number: 1E9AC762
 	Asset Tag: CPU1_DIMM_C1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -779,18 +751,7 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x005B, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x01000000000
-	Ending Address: 0x017FFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x005A
-	Memory Array Mapped Address Handle: 0x0053
-	Partition Row Position: 1
-	Interleave Position: 3
-	Interleaved Data Depth: 3
-
-Handle 0x005C, DMI type 17, 40 bytes
+Handle 0x0058, DMI type 17, 40 bytes
 Memory Device
 	Array Handle: 0x0052
 	Error Information Handle: Not Provided
@@ -814,26 +775,9 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x005D, DMI type 16, 23 bytes
-Physical Memory Array
-	Location: System Board Or Motherboard
-	Use: System Memory
-	Error Correction Type: Single-bit ECC
-	Maximum Capacity: 2304 GB
-	Error Information Handle: Not Provided
-	Number Of Devices: 6
-
-Handle 0x005E, DMI type 19, 31 bytes
-Memory Array Mapped Address
-	Starting Address: 0x01800000000
-	Ending Address: 0x02FFFFFFFFF
-	Range Size: 96 GB
-	Physical Array Handle: 0x005D
-	Partition Width: 3
-
-Handle 0x005F, DMI type 17, 40 bytes
+Handle 0x0059, DMI type 17, 40 bytes
 Memory Device
-	Array Handle: 0x005D
+	Array Handle: 0x0052
 	Error Information Handle: Not Provided
 	Total Width: 72 bits
 	Data Width: 64 bits
@@ -841,12 +785,12 @@ Memory Device
 	Form Factor: DIMM
 	Set: None
 	Locator: CPU1_DIMM_D1
-	Bank Locator: NODE 2
+	Bank Locator: NODE 1
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1ECC1C89
+	Serial Number: 1E9AC732
 	Asset Tag: CPU1_DIMM_D1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -855,20 +799,9 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x0060, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x01800000000
-	Ending Address: 0x01FFFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x005F
-	Memory Array Mapped Address Handle: 0x005E
-	Partition Row Position: 1
-	Interleave Position: 1
-	Interleaved Data Depth: 3
-
-Handle 0x0061, DMI type 17, 40 bytes
+Handle 0x005A, DMI type 17, 40 bytes
 Memory Device
-	Array Handle: 0x005D
+	Array Handle: 0x0052
 	Error Information Handle: Not Provided
 	Total Width: Unknown
 	Data Width: Unknown
@@ -876,6 +809,150 @@ Memory Device
 	Form Factor: Unknown
 	Set: None
 	Locator: CPU1_DIMM_D2
+	Bank Locator: NODE 1
+	Type: Unknown
+	Type Detail: Unknown
+	Speed: Unknown
+	Manufacturer: NO DIMM
+	Serial Number: NO DIMM
+	Asset Tag: NO DIMM
+	Part Number: NO DIMM
+	Rank: Unknown
+	Configured Clock Speed: Unknown
+	Minimum Voltage: 1.2 V
+	Maximum Voltage: 1.2 V
+	Configured Voltage: 1.2 V
+
+Handle 0x005B, DMI type 17, 40 bytes
+Memory Device
+	Array Handle: 0x0052
+	Error Information Handle: Not Provided
+	Total Width: 72 bits
+	Data Width: 64 bits
+	Size: 32 GB
+	Form Factor: DIMM
+	Set: None
+	Locator: CPU1_DIMM_E1
+	Bank Locator: NODE 1
+	Type: DDR4
+	Type Detail: Synchronous
+	Speed: 2666 MT/s
+	Manufacturer: Micron
+	Serial Number: 1E9AC70E
+	Asset Tag: CPU1_DIMM_E1_AssetTag
+	Part Number: 36ASF4G72PZ-2G6D1   
+	Rank: 2
+	Configured Clock Speed: 2666 MT/s
+	Minimum Voltage: 1.2 V
+	Maximum Voltage: 1.2 V
+	Configured Voltage: 1.2 V
+
+Handle 0x005C, DMI type 17, 40 bytes
+Memory Device
+	Array Handle: 0x0052
+	Error Information Handle: Not Provided
+	Total Width: Unknown
+	Data Width: Unknown
+	Size: No Module Installed
+	Form Factor: Unknown
+	Set: None
+	Locator: CPU1_DIMM_E2
+	Bank Locator: NODE 1
+	Type: Unknown
+	Type Detail: Unknown
+	Speed: Unknown
+	Manufacturer: NO DIMM
+	Serial Number: NO DIMM
+	Asset Tag: NO DIMM
+	Part Number: NO DIMM
+	Rank: Unknown
+	Configured Clock Speed: Unknown
+	Minimum Voltage: 1.2 V
+	Maximum Voltage: 1.2 V
+	Configured Voltage: 1.2 V
+
+Handle 0x005D, DMI type 17, 40 bytes
+Memory Device
+	Array Handle: 0x0052
+	Error Information Handle: Not Provided
+	Total Width: 72 bits
+	Data Width: 64 bits
+	Size: 32 GB
+	Form Factor: DIMM
+	Set: None
+	Locator: CPU1_DIMM_F1
+	Bank Locator: NODE 1
+	Type: DDR4
+	Type Detail: Synchronous
+	Speed: 2666 MT/s
+	Manufacturer: Micron
+	Serial Number: 1E9AC703
+	Asset Tag: CPU1_DIMM_F1_AssetTag
+	Part Number: 36ASF4G72PZ-2G6D1   
+	Rank: 2
+	Configured Clock Speed: 2666 MT/s
+	Minimum Voltage: 1.2 V
+	Maximum Voltage: 1.2 V
+	Configured Voltage: 1.2 V
+
+Handle 0x005E, DMI type 17, 40 bytes
+Memory Device
+	Array Handle: 0x0052
+	Error Information Handle: Not Provided
+	Total Width: Unknown
+	Data Width: Unknown
+	Size: No Module Installed
+	Form Factor: Unknown
+	Set: None
+	Locator: CPU1_DIMM_F2
+	Bank Locator: NODE 1
+	Type: Unknown
+	Type Detail: Unknown
+	Speed: Unknown
+	Manufacturer: NO DIMM
+	Serial Number: NO DIMM
+	Asset Tag: NO DIMM
+	Part Number: NO DIMM
+	Rank: Unknown
+	Configured Clock Speed: Unknown
+	Minimum Voltage: 1.2 V
+	Maximum Voltage: 1.2 V
+	Configured Voltage: 1.2 V
+
+Handle 0x005F, DMI type 17, 40 bytes
+Memory Device
+	Array Handle: 0x0052
+	Error Information Handle: Not Provided
+	Total Width: 72 bits
+	Data Width: 64 bits
+	Size: 32 GB
+	Form Factor: DIMM
+	Set: None
+	Locator: CPU2_DIMM_A1
+	Bank Locator: NODE 2
+	Type: DDR4
+	Type Detail: Synchronous
+	Speed: 2666 MT/s
+	Manufacturer: Micron
+	Serial Number: 1E9AC750
+	Asset Tag: CPU2_DIMM_A1_AssetTag
+	Part Number: 36ASF4G72PZ-2G6D1   
+	Rank: 2
+	Configured Clock Speed: 2666 MT/s
+	Minimum Voltage: 1.2 V
+	Maximum Voltage: 1.2 V
+	Configured Voltage: 1.2 V
+
+Handle 0x0060, DMI type 17, 40 bytes
+Memory Device
+	Array Handle: 0x0052
+	Error Information Handle: Not Provided
+	Total Width: Unknown
+	Data Width: Unknown
+	Size: No Module Installed
+	Form Factor: Unknown
+	Set: None
+	Locator: CPU2_DIMM_A2
 	Bank Locator: NODE 2
 	Type: Unknown
 	Type Detail: Unknown
@@ -890,23 +967,23 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x0062, DMI type 17, 40 bytes
+Handle 0x0061, DMI type 17, 40 bytes
 Memory Device
-	Array Handle: 0x005D
+	Array Handle: 0x0052
 	Error Information Handle: Not Provided
 	Total Width: 72 bits
 	Data Width: 64 bits
 	Size: 32 GB
 	Form Factor: DIMM
 	Set: None
-	Locator: CPU1_DIMM_E1
+	Locator: CPU2_DIMM_B1
 	Bank Locator: NODE 2
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1ECBFDEF
-	Asset Tag: CPU1_DIMM_E1_AssetTag
+	Serial Number: 1E9AC72D
+	Asset Tag: CPU2_DIMM_B1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
 	Configured Clock Speed: 2666 MT/s
@@ -914,27 +991,64 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x0063, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x02000000000
-	Ending Address: 0x027FFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x0062
-	Memory Array Mapped Address Handle: 0x005E
-	Partition Row Position: 1
-	Interleave Position: 2
-	Interleaved Data Depth: 3
-
-Handle 0x0064, DMI type 17, 40 bytes
+Handle 0x0062, DMI type 17, 40 bytes
 Memory Device
-	Array Handle: 0x005D
+	Array Handle: 0x0052
 	Error Information Handle: Not Provided
 	Total Width: Unknown
 	Data Width: Unknown
 	Size: No Module Installed
 	Form Factor: Unknown
 	Set: None
-	Locator: CPU1_DIMM_E2
+	Locator: CPU2_DIMM_B2
+	Bank Locator: NODE 2
+	Type: Unknown
+	Type Detail: Unknown
+	Speed: Unknown
+	Manufacturer: NO DIMM
+	Serial Number: NO DIMM
+	Asset Tag: NO DIMM
+	Part Number: NO DIMM
+	Rank: Unknown
+	Configured Clock Speed: Unknown
+	Minimum Voltage: 1.2 V
+	Maximum Voltage: 1.2 V
+	Configured Voltage: 1.2 V
+
+Handle 0x0063, DMI type 17, 40 bytes
+Memory Device
+	Array Handle: 0x0052
+	Error Information Handle: Not Provided
+	Total Width: 72 bits
+	Data Width: 64 bits
+	Size: 32 GB
+	Form Factor: DIMM
+	Set: None
+	Locator: CPU2_DIMM_C1
+	Bank Locator: NODE 2
+	Type: DDR4
+	Type Detail: Synchronous
+	Speed: 2666 MT/s
+	Manufacturer: Micron
+	Serial Number: 1E9AC792
+	Asset Tag: CPU2_DIMM_C1_AssetTag
+	Part Number: 36ASF4G72PZ-2G6D1   
+	Rank: 2
+	Configured Clock Speed: 2666 MT/s
+	Minimum Voltage: 1.2 V
+	Maximum Voltage: 1.2 V
+	Configured Voltage: 1.2 V
+
+Handle 0x0064, DMI type 17, 40 bytes
+Memory Device
+	Array Handle: 0x0052
+	Error Information Handle: Not Provided
+	Total Width: Unknown
+	Data Width: Unknown
+	Size: No Module Installed
+	Form Factor: Unknown
+	Set: None
+	Locator: CPU2_DIMM_C2
 	Bank Locator: NODE 2
 	Type: Unknown
 	Type Detail: Unknown
@@ -951,277 +1065,7 @@ Memory Device
 
 Handle 0x0065, DMI type 17, 40 bytes
 Memory Device
-	Array Handle: 0x005D
-	Error Information Handle: Not Provided
-	Total Width: 72 bits
-	Data Width: 64 bits
-	Size: 32 GB
-	Form Factor: DIMM
-	Set: None
-	Locator: CPU1_DIMM_F1
-	Bank Locator: NODE 2
-	Type: DDR4
-	Type Detail: Synchronous
-	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1ECBFF44
-	Asset Tag: CPU1_DIMM_F1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
-	Rank: 2
-	Configured Clock Speed: 2666 MT/s
-	Minimum Voltage: 1.2 V
-	Maximum Voltage: 1.2 V
-	Configured Voltage: 1.2 V
-
-Handle 0x0066, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x02800000000
-	Ending Address: 0x02FFFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x0065
-	Memory Array Mapped Address Handle: 0x005E
-	Partition Row Position: 1
-	Interleave Position: 3
-	Interleaved Data Depth: 3
-
-Handle 0x0067, DMI type 17, 40 bytes
-Memory Device
-	Array Handle: 0x005D
-	Error Information Handle: Not Provided
-	Total Width: Unknown
-	Data Width: Unknown
-	Size: No Module Installed
-	Form Factor: Unknown
-	Set: None
-	Locator: CPU1_DIMM_F2
-	Bank Locator: NODE 2
-	Type: Unknown
-	Type Detail: Unknown
-	Speed: Unknown
-	Manufacturer: NO DIMM
-	Serial Number: NO DIMM
-	Asset Tag: NO DIMM
-	Part Number: NO DIMM
-	Rank: Unknown
-	Configured Clock Speed: Unknown
-	Minimum Voltage: 1.2 V
-	Maximum Voltage: 1.2 V
-	Configured Voltage: 1.2 V
-
-Handle 0x0068, DMI type 16, 23 bytes
-Physical Memory Array
-	Location: System Board Or Motherboard
-	Use: System Memory
-	Error Correction Type: Single-bit ECC
-	Maximum Capacity: 2304 GB
-	Error Information Handle: Not Provided
-	Number Of Devices: 6
-
-Handle 0x0069, DMI type 19, 31 bytes
-Memory Array Mapped Address
-	Starting Address: 0x03000000000
-	Ending Address: 0x047FFFFFFFF
-	Range Size: 96 GB
-	Physical Array Handle: 0x0068
-	Partition Width: 3
-
-Handle 0x006A, DMI type 17, 40 bytes
-Memory Device
-	Array Handle: 0x0068
-	Error Information Handle: Not Provided
-	Total Width: 72 bits
-	Data Width: 64 bits
-	Size: 32 GB
-	Form Factor: DIMM
-	Set: None
-	Locator: CPU2_DIMM_A1
-	Bank Locator: NODE 3
-	Type: DDR4
-	Type Detail: Synchronous
-	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1ECC1BDB
-	Asset Tag: CPU2_DIMM_A1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
-	Rank: 2
-	Configured Clock Speed: 2666 MT/s
-	Minimum Voltage: 1.2 V
-	Maximum Voltage: 1.2 V
-	Configured Voltage: 1.2 V
-
-Handle 0x006B, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x03000000000
-	Ending Address: 0x037FFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x006A
-	Memory Array Mapped Address Handle: 0x0069
-	Partition Row Position: 1
-	Interleave Position: 1
-	Interleaved Data Depth: 3
-
-Handle 0x006C, DMI type 17, 40 bytes
-Memory Device
-	Array Handle: 0x0068
-	Error Information Handle: Not Provided
-	Total Width: Unknown
-	Data Width: Unknown
-	Size: No Module Installed
-	Form Factor: Unknown
-	Set: None
-	Locator: CPU2_DIMM_A2
-	Bank Locator: NODE 3
-	Type: Unknown
-	Type Detail: Unknown
-	Speed: Unknown
-	Manufacturer: NO DIMM
-	Serial Number: NO DIMM
-	Asset Tag: NO DIMM
-	Part Number: NO DIMM
-	Rank: Unknown
-	Configured Clock Speed: Unknown
-	Minimum Voltage: 1.2 V
-	Maximum Voltage: 1.2 V
-	Configured Voltage: 1.2 V
-
-Handle 0x006D, DMI type 17, 40 bytes
-Memory Device
-	Array Handle: 0x0068
-	Error Information Handle: Not Provided
-	Total Width: 72 bits
-	Data Width: 64 bits
-	Size: 32 GB
-	Form Factor: DIMM
-	Set: None
-	Locator: CPU2_DIMM_B1
-	Bank Locator: NODE 3
-	Type: DDR4
-	Type Detail: Synchronous
-	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1ECC1B00
-	Asset Tag: CPU2_DIMM_B1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
-	Rank: 2
-	Configured Clock Speed: 2666 MT/s
-	Minimum Voltage: 1.2 V
-	Maximum Voltage: 1.2 V
-	Configured Voltage: 1.2 V
-
-Handle 0x006E, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x03800000000
-	Ending Address: 0x03FFFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x006D
-	Memory Array Mapped Address Handle: 0x0069
-	Partition Row Position: 1
-	Interleave Position: 2
-	Interleaved Data Depth: 3
-
-Handle 0x006F, DMI type 17, 40 bytes
-Memory Device
-	Array Handle: 0x0068
-	Error Information Handle: Not Provided
-	Total Width: Unknown
-	Data Width: Unknown
-	Size: No Module Installed
-	Form Factor: Unknown
-	Set: None
-	Locator: CPU2_DIMM_B2
-	Bank Locator: NODE 3
-	Type: Unknown
-	Type Detail: Unknown
-	Speed: Unknown
-	Manufacturer: NO DIMM
-	Serial Number: NO DIMM
-	Asset Tag: NO DIMM
-	Part Number: NO DIMM
-	Rank: Unknown
-	Configured Clock Speed: Unknown
-	Minimum Voltage: 1.2 V
-	Maximum Voltage: 1.2 V
-	Configured Voltage: 1.2 V
-
-Handle 0x0070, DMI type 17, 40 bytes
-Memory Device
-	Array Handle: 0x0068
-	Error Information Handle: Not Provided
-	Total Width: 72 bits
-	Data Width: 64 bits
-	Size: 32 GB
-	Form Factor: DIMM
-	Set: None
-	Locator: CPU2_DIMM_C1
-	Bank Locator: NODE 3
-	Type: DDR4
-	Type Detail: Synchronous
-	Speed: 2666 MT/s
-	Manufacturer: Micron
-	Serial Number: 1ECC1C04
-	Asset Tag: CPU2_DIMM_C1_AssetTag
-	Part Number: 36ASF4G72PZ-2G6D1   
-	Rank: 2
-	Configured Clock Speed: 2666 MT/s
-	Minimum Voltage: 1.2 V
-	Maximum Voltage: 1.2 V
-	Configured Voltage: 1.2 V
-
-Handle 0x0071, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x04000000000
-	Ending Address: 0x047FFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x0070
-	Memory Array Mapped Address Handle: 0x0069
-	Partition Row Position: 1
-	Interleave Position: 3
-	Interleaved Data Depth: 3
-
-Handle 0x0072, DMI type 17, 40 bytes
-Memory Device
-	Array Handle: 0x0068
-	Error Information Handle: Not Provided
-	Total Width: Unknown
-	Data Width: Unknown
-	Size: No Module Installed
-	Form Factor: Unknown
-	Set: None
-	Locator: CPU2_DIMM_C2
-	Bank Locator: NODE 3
-	Type: Unknown
-	Type Detail: Unknown
-	Speed: Unknown
-	Manufacturer: NO DIMM
-	Serial Number: NO DIMM
-	Asset Tag: NO DIMM
-	Part Number: NO DIMM
-	Rank: Unknown
-	Configured Clock Speed: Unknown
-	Minimum Voltage: 1.2 V
-	Maximum Voltage: 1.2 V
-	Configured Voltage: 1.2 V
-
-Handle 0x0073, DMI type 16, 23 bytes
-Physical Memory Array
-	Location: System Board Or Motherboard
-	Use: System Memory
-	Error Correction Type: Single-bit ECC
-	Maximum Capacity: 2304 GB
-	Error Information Handle: Not Provided
-	Number Of Devices: 6
-
-Handle 0x0074, DMI type 19, 31 bytes
-Memory Array Mapped Address
-	Starting Address: 0x04800000000
-	Ending Address: 0x05FFFFFFFFF
-	Range Size: 96 GB
-	Physical Array Handle: 0x0073
-	Partition Width: 3
-
-Handle 0x0075, DMI type 17, 40 bytes
-Memory Device
-	Array Handle: 0x0073
+	Array Handle: 0x0052
 	Error Information Handle: Not Provided
 	Total Width: 72 bits
 	Data Width: 64 bits
@@ -1229,12 +1073,12 @@ Memory Device
 	Form Factor: DIMM
 	Set: None
 	Locator: CPU2_DIMM_D1
-	Bank Locator: NODE 4
+	Bank Locator: NODE 2
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1ECC1AC1
+	Serial Number: 1E9ACDA5
 	Asset Tag: CPU2_DIMM_D1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -1243,20 +1087,9 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x0076, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x04800000000
-	Ending Address: 0x04FFFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x0075
-	Memory Array Mapped Address Handle: 0x0074
-	Partition Row Position: 1
-	Interleave Position: 1
-	Interleaved Data Depth: 3
-
-Handle 0x0077, DMI type 17, 40 bytes
+Handle 0x0066, DMI type 17, 40 bytes
 Memory Device
-	Array Handle: 0x0073
+	Array Handle: 0x0052
 	Error Information Handle: Not Provided
 	Total Width: Unknown
 	Data Width: Unknown
@@ -1264,7 +1097,7 @@ Memory Device
 	Form Factor: Unknown
 	Set: None
 	Locator: CPU2_DIMM_D2
-	Bank Locator: NODE 4
+	Bank Locator: NODE 2
 	Type: Unknown
 	Type Detail: Unknown
 	Speed: Unknown
@@ -1278,9 +1111,9 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x0078, DMI type 17, 40 bytes
+Handle 0x0067, DMI type 17, 40 bytes
 Memory Device
-	Array Handle: 0x0073
+	Array Handle: 0x0052
 	Error Information Handle: Not Provided
 	Total Width: 72 bits
 	Data Width: 64 bits
@@ -1288,12 +1121,12 @@ Memory Device
 	Form Factor: DIMM
 	Set: None
 	Locator: CPU2_DIMM_E1
-	Bank Locator: NODE 4
+	Bank Locator: NODE 2
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1ECC1AE5
+	Serial Number: 1E9AC5F7
 	Asset Tag: CPU2_DIMM_E1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -1302,20 +1135,9 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x0079, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x05000000000
-	Ending Address: 0x057FFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x0078
-	Memory Array Mapped Address Handle: 0x0074
-	Partition Row Position: 1
-	Interleave Position: 2
-	Interleaved Data Depth: 3
-
-Handle 0x007A, DMI type 17, 40 bytes
+Handle 0x0068, DMI type 17, 40 bytes
 Memory Device
-	Array Handle: 0x0073
+	Array Handle: 0x0052
 	Error Information Handle: Not Provided
 	Total Width: Unknown
 	Data Width: Unknown
@@ -1323,7 +1145,7 @@ Memory Device
 	Form Factor: Unknown
 	Set: None
 	Locator: CPU2_DIMM_E2
-	Bank Locator: NODE 4
+	Bank Locator: NODE 2
 	Type: Unknown
 	Type Detail: Unknown
 	Speed: Unknown
@@ -1337,9 +1159,9 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x007B, DMI type 17, 40 bytes
+Handle 0x0069, DMI type 17, 40 bytes
 Memory Device
-	Array Handle: 0x0073
+	Array Handle: 0x0052
 	Error Information Handle: Not Provided
 	Total Width: 72 bits
 	Data Width: 64 bits
@@ -1347,12 +1169,12 @@ Memory Device
 	Form Factor: DIMM
 	Set: None
 	Locator: CPU2_DIMM_F1
-	Bank Locator: NODE 4
+	Bank Locator: NODE 2
 	Type: DDR4
 	Type Detail: Synchronous
 	Speed: 2666 MT/s
 	Manufacturer: Micron
-	Serial Number: 1ECC1A5B
+	Serial Number: 1E9AC778
 	Asset Tag: CPU2_DIMM_F1_AssetTag
 	Part Number: 36ASF4G72PZ-2G6D1   
 	Rank: 2
@@ -1361,20 +1183,9 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x007C, DMI type 20, 35 bytes
-Memory Device Mapped Address
-	Starting Address: 0x05800000000
-	Ending Address: 0x05FFFFFFFFF
-	Range Size: 32 GB
-	Physical Device Handle: 0x007B
-	Memory Array Mapped Address Handle: 0x0074
-	Partition Row Position: 1
-	Interleave Position: 3
-	Interleaved Data Depth: 3
-
-Handle 0x007D, DMI type 17, 40 bytes
+Handle 0x006A, DMI type 17, 40 bytes
 Memory Device
-	Array Handle: 0x0073
+	Array Handle: 0x0052
 	Error Information Handle: Not Provided
 	Total Width: Unknown
 	Data Width: Unknown
@@ -1382,7 +1193,7 @@ Memory Device
 	Form Factor: Unknown
 	Set: None
 	Locator: CPU2_DIMM_F2
-	Bank Locator: NODE 4
+	Bank Locator: NODE 2
 	Type: Unknown
 	Type Detail: Unknown
 	Speed: Unknown
@@ -1396,7 +1207,36 @@ Memory Device
 	Maximum Voltage: 1.2 V
 	Configured Voltage: 1.2 V
 
-Handle 0x007E, DMI type 7, 19 bytes
+Handle 0x006B, DMI type 19, 31 bytes
+Memory Array Mapped Address
+	Starting Address: 0x00000000000
+	Ending Address: 0x000BFFFFFFF
+	Range Size: 3 GB
+	Physical Array Handle: 0x0052
+	Partition Width: 6
+
+Handle 0x006C, DMI type 19, 31 bytes
+Memory Array Mapped Address
+	Starting Address: 0x00100000000
+	Ending Address: 0x0303FFFFFFF
+	Range Size: 189 GB
+	Physical Array Handle: 0x0052
+	Partition Width: 6
+
+Handle 0x006D, DMI type 19, 31 bytes
+Memory Array Mapped Address
+	Starting Address: 0x03040000000
+	Ending Address: 0x0603FFFFFFF
+	Range Size: 192 GB
+	Physical Array Handle: 0x0052
+	Partition Width: 6
+
+Handle 0x006E, DMI type 133, 12 bytes
+OEM-specific Type
+	Header and Data:
+		85 0C 6E 00 00 B0 E8 AA 00 40 00 00
+
+Handle 0x006F, DMI type 7, 27 bytes
 Cache Information
 	Socket Designation: L1-Cache
 	Configuration: Enabled, Not Socketed, Level 1
@@ -1412,7 +1252,7 @@ Cache Information
 	System Type: Instruction
 	Associativity: 8-way Set-associative
 
-Handle 0x007F, DMI type 7, 19 bytes
+Handle 0x0070, DMI type 7, 27 bytes
 Cache Information
 	Socket Designation: L2-Cache
 	Configuration: Enabled, Not Socketed, Level 2
@@ -1428,7 +1268,7 @@ Cache Information
 	System Type: Unified
 	Associativity: 16-way Set-associative
 
-Handle 0x0080, DMI type 7, 19 bytes
+Handle 0x0071, DMI type 7, 27 bytes
 Cache Information
 	Socket Designation: L3-Cache
 	Configuration: Enabled, Not Socketed, Level 3
@@ -1444,7 +1284,7 @@ Cache Information
 	System Type: Unified
 	Associativity: Fully Associative
 
-Handle 0x0081, DMI type 4, 48 bytes
+Handle 0x0072, DMI type 4, 48 bytes
 Processor Information
 	Socket Designation: CPU0
 	Type: Central Processor
@@ -1487,10 +1327,10 @@ Processor Information
 	Max Speed: 4000 MHz
 	Current Speed: 2500 MHz
 	Status: Populated, Enabled
-	Upgrade: Other
-	L1 Cache Handle: 0x007E
-	L2 Cache Handle: 0x007F
-	L3 Cache Handle: 0x0080
+	Upgrade: Socket LGA3647-1
+	L1 Cache Handle: 0x006F
+	L2 Cache Handle: 0x0070
+	L3 Cache Handle: 0x0071
 	Serial Number: Not Specified
 	Asset Tag: UNKNOWN
 	Part Number: Not Specified
@@ -1505,7 +1345,7 @@ Processor Information
 		Enhanced Virtualization
 		Power/Performance Control
 
-Handle 0x0082, DMI type 7, 19 bytes
+Handle 0x0073, DMI type 7, 27 bytes
 Cache Information
 	Socket Designation: L1-Cache
 	Configuration: Enabled, Not Socketed, Level 1
@@ -1521,7 +1361,7 @@ Cache Information
 	System Type: Instruction
 	Associativity: 8-way Set-associative
 
-Handle 0x0083, DMI type 7, 19 bytes
+Handle 0x0074, DMI type 7, 27 bytes
 Cache Information
 	Socket Designation: L2-Cache
 	Configuration: Enabled, Not Socketed, Level 2
@@ -1537,7 +1377,7 @@ Cache Information
 	System Type: Unified
 	Associativity: 16-way Set-associative
 
-Handle 0x0084, DMI type 7, 19 bytes
+Handle 0x0075, DMI type 7, 27 bytes
 Cache Information
 	Socket Designation: L3-Cache
 	Configuration: Enabled, Not Socketed, Level 3
@@ -1553,7 +1393,7 @@ Cache Information
 	System Type: Unified
 	Associativity: Fully Associative
 
-Handle 0x0085, DMI type 4, 48 bytes
+Handle 0x0076, DMI type 4, 48 bytes
 Processor Information
 	Socket Designation: CPU1
 	Type: Central Processor
@@ -1596,10 +1436,10 @@ Processor Information
 	Max Speed: 4000 MHz
 	Current Speed: 2500 MHz
 	Status: Populated, Enabled
-	Upgrade: Other
-	L1 Cache Handle: 0x0082
-	L2 Cache Handle: 0x0083
-	L3 Cache Handle: 0x0084
+	Upgrade: Socket LGA3647-1
+	L1 Cache Handle: 0x0073
+	L2 Cache Handle: 0x0074
+	L3 Cache Handle: 0x0075
 	Serial Number: Not Specified
 	Asset Tag: UNKNOWN
 	Part Number: Not Specified
@@ -1614,13 +1454,13 @@ Processor Information
 		Enhanced Virtualization
 		Power/Performance Control
 
-Handle 0x008A, DMI type 13, 22 bytes
+Handle 0x007B, DMI type 13, 22 bytes
 BIOS Language Information
 	Language Description Format: Long
 	Installable Languages: 1
 		en|US|iso8859-1
 	Currently Installed Language: en|US|iso8859-1
 
-Handle 0x009C, DMI type 127, 4 bytes
+Handle 0x008D, DMI type 127, 4 bytes
 End Of Table
 
