@@ -1,35 +1,34 @@
-<<<<<<< HEAD
-MemTotal:         501856 kB
-MemFree:          369588 kB
-MemAvailable:     446360 kB
+MemTotal:         501852 kB
+MemFree:          369852 kB
+MemAvailable:     446620 kB
 Buffers:            1104 kB
 Cached:            84252 kB
 SwapCached:            0 kB
-Active:            52716 kB
-Inactive:          65716 kB
-Active(anon):      33236 kB
+Active:            52544 kB
+Inactive:          65680 kB
+Active(anon):      33028 kB
 Inactive(anon):       32 kB
-Active(file):      19480 kB
-Inactive(file):    65684 kB
+Active(file):      19516 kB
+Inactive(file):    65648 kB
 Unevictable:           0 kB
 Mlocked:               0 kB
 SwapTotal:             0 kB
 SwapFree:              0 kB
 Dirty:                 0 kB
 Writeback:             0 kB
-AnonPages:         33080 kB
-Mapped:            29956 kB
+AnonPages:         32860 kB
+Mapped:            29664 kB
 Shmem:               196 kB
-Slab:               8040 kB
-SReclaimable:       2436 kB
-SUnreclaim:         5604 kB
+Slab:               8012 kB
+SReclaimable:       2428 kB
+SUnreclaim:         5584 kB
 KernelStack:        1280 kB
-PageTables:          380 kB
+PageTables:          360 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
-CommitLimit:      250928 kB
-Committed_AS:     538488 kB
+CommitLimit:      250924 kB
+Committed_AS:     539900 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
@@ -41,8 +40,6 @@ HugePages_Free:        0
 HugePages_Rsvd:        0
 HugePages_Surp:        0
 Hugepagesize:       2048 kB
-DirectMap4k:       16384 kB
-DirectMap2M:      507904 kB
+DirectMap4k:       18432 kB
+DirectMap2M:      505856 kB
 DirectMap1G:           0 kB
-=======
->>>>>>> cd7f3d711215bc20d6143c7c004835f13e109044

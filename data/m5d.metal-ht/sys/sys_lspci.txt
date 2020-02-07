@@ -1760,7 +1760,6 @@
 		DevSta:	CorrErr- UncorrErr- FatalErr- UnsuppReq- AuxPwr- TransPend-
 		DevCap2: Completion Timeout: Not Supported, TimeoutDis-, LTR-, OBFF Not Supported
 		DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis-, LTR-, OBFF Disabled
-	Kernel driver in use: skx_uncore
 
 7a:12.1 Performance counters [1101]: Intel Corporation Sky Lake-E M3KTI Registers [8086:204d] (rev 04)
 	Subsystem: Intel Corporation Sky Lake-E M3KTI Registers [8086:0000]
@@ -1774,6 +1773,7 @@
 	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx-
 	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	NUMA node: 0
+	Kernel driver in use: skx_uncore
 
 7a:12.4 Performance counters [1101]: Intel Corporation Sky Lake-E M3KTI Registers [8086:204c] (rev 04)
 	Subsystem: Intel Corporation Sky Lake-E M3KTI Registers [8086:0000]
@@ -1789,13 +1789,13 @@
 		DevSta:	CorrErr- UncorrErr- FatalErr- UnsuppReq- AuxPwr- TransPend-
 		DevCap2: Completion Timeout: Not Supported, TimeoutDis-, LTR-, OBFF Not Supported
 		DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis-, LTR-, OBFF Disabled
-	Kernel driver in use: skx_uncore
 
 7a:12.5 Performance counters [1101]: Intel Corporation Sky Lake-E M3KTI Registers [8086:204d] (rev 04)
 	Subsystem: Intel Corporation Sky Lake-E M3KTI Registers [8086:0000]
 	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx-
 	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	NUMA node: 0
+	Kernel driver in use: skx_uncore
 
 7a:15.0 System peripheral [0880]: Intel Corporation Sky Lake-E M2PCI Registers [8086:2018] (rev 04)
 	Subsystem: Intel Corporation Sky Lake-E M2PCI Registers [8086:0000]
@@ -5812,7 +5812,6 @@ f3:12.0 Performance counters [1101]: Intel Corporation Sky Lake-E M3KTI Register
 		DevSta:	CorrErr- UncorrErr- FatalErr- UnsuppReq- AuxPwr- TransPend-
 		DevCap2: Completion Timeout: Not Supported, TimeoutDis-, LTR-, OBFF Not Supported
 		DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis-, LTR-, OBFF Disabled
-	Kernel driver in use: skx_uncore
 
 f3:12.1 Performance counters [1101]: Intel Corporation Sky Lake-E M3KTI Registers [8086:204d] (rev 04)
 	Subsystem: Intel Corporation Sky Lake-E M3KTI Registers [8086:0000]
@@ -5826,6 +5825,7 @@ f3:12.2 System peripheral [0880]: Intel Corporation Sky Lake-E M3KTI Registers [
 	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx-
 	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	NUMA node: 1
+	Kernel driver in use: skx_uncore
 
 f3:12.4 Performance counters [1101]: Intel Corporation Sky Lake-E M3KTI Registers [8086:204c] (rev 04)
 	Subsystem: Intel Corporation Sky Lake-E M3KTI Registers [8086:0000]
@@ -5841,13 +5841,13 @@ f3:12.4 Performance counters [1101]: Intel Corporation Sky Lake-E M3KTI Register
 		DevSta:	CorrErr- UncorrErr- FatalErr- UnsuppReq- AuxPwr- TransPend-
 		DevCap2: Completion Timeout: Not Supported, TimeoutDis-, LTR-, OBFF Not Supported
 		DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis-, LTR-, OBFF Disabled
-	Kernel driver in use: skx_uncore
 
 f3:12.5 Performance counters [1101]: Intel Corporation Sky Lake-E M3KTI Registers [8086:204d] (rev 04)
 	Subsystem: Intel Corporation Sky Lake-E M3KTI Registers [8086:0000]
 	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx-
 	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
 	NUMA node: 1
+	Kernel driver in use: skx_uncore
 
 f3:15.0 System peripheral [0880]: Intel Corporation Sky Lake-E M2PCI Registers [8086:2018] (rev 04)
 	Subsystem: Intel Corporation Sky Lake-E M2PCI Registers [8086:0000]

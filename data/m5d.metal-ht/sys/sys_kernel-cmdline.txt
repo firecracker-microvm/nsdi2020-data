@@ -1,1 +1,1 @@
-BOOT_IMAGE=/boot/vmlinuz-4.15.0-1044-aws root=LABEL=cloudimg-rootfs ro console=tty1 console=ttyS0 nvme_core.io_timeout=4294967295
+BOOT_IMAGE=/boot/vmlinuz-4.15.0-1057-aws root=UUID=8abb4f2d-c7e0-4daf-80b5-24e1c814cf55 ro console=tty1 console=ttyS0 nvme_core.io_timeout=4294967295
