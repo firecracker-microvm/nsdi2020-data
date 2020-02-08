@@ -1,44 +1,40 @@
-2692:   ../bin/firecracker --api-sock /tmp/fc-0.sock
+15421:   ../bin/firecracker --no-api --config-file /tmp/fc-0.json
 Address           Kbytes     RSS   Dirty Mode  Mapping
-0000000000400000    2012    1836       0 r-x-- firecracker
+0000000000400000    1724    1664       0 r-x-- firecracker
 0000000000400000       0       0       0 r-x-- firecracker
-00000000007f6000      60      60       4 rw--- firecracker
-00000000007f6000       0       0       0 rw--- firecracker
-0000000000805000       8       8       8 rw---   [ anon ]
-0000000000805000       0       0       0 rw---   [ anon ]
-0000000000f28000     296     208     208 rw---   [ anon ]
-0000000000f28000       0       0       0 rw---   [ anon ]
-00007fb98e3f6000       8       0       0 rw---   [ anon ]
-00007fb98e3f6000       0       0       0 rw---   [ anon ]
-00007fb98e3f8000       4       0       0 -----   [ anon ]
-00007fb98e3f8000       0       0       0 -----   [ anon ]
-00007fb98e3f9000    2052     264     264 rw---   [ anon ]
-00007fb98e3f9000       0       0       0 rw---   [ anon ]
-00007fb98e5fa000       4       4       0 r--s- GB
-00007fb98e5fa000       0       0       0 r--s- GB
-00007fb98e5fb000      12       4       4 rw-s-   [ anon ]
-00007fb98e5fb000       0       0       0 rw-s-   [ anon ]
-00007fb98e5fe000       4       4       4 rw-s- zero (deleted)
-00007fb98e5fe000       0       0       0 rw-s- zero (deleted)
-00007fb98e5ff000       4       4       4 rw-s- zero (deleted)
-00007fb98e5ff000       0       0       0 rw-s- zero (deleted)
-00007fb98e600000      12      12      12 rw-s- zero (deleted)
-00007fb98e600000       0       0       0 rw-s- zero (deleted)
-00007fb98e603000 2097152  203628  203372 rw-s- zero (deleted)
-00007fb98e603000       0       0       0 rw-s- zero (deleted)
-00007fba0e603000       8       0       0 rw---   [ anon ]
-00007fba0e603000       0       0       0 rw---   [ anon ]
-00007fba0e605000       4       0       0 -----   [ anon ]
-00007fba0e605000       0       0       0 -----   [ anon ]
-00007fba0e606000    2064      32      32 rw---   [ anon ]
-00007fba0e606000       0       0       0 rw---   [ anon ]
-00007fff22858000     132      24      24 rw---   [ stack ]
-00007fff22858000       0       0       0 rw---   [ stack ]
-00007fff22976000      12       0       0 r----   [ anon ]
-00007fff22976000       0       0       0 r----   [ anon ]
-00007fff22979000       8       4       0 r-x--   [ anon ]
-00007fff22979000       0       0       0 r-x--   [ anon ]
+00000000007af000      56      56       4 rw--- firecracker
+00000000007af000       0       0       0 rw--- firecracker
+00000000007bd000       8       8       8 rw---   [ anon ]
+00000000007bd000       0       0       0 rw---   [ anon ]
+0000000001d8a000     248     176     176 rw---   [ anon ]
+0000000001d8a000       0       0       0 rw---   [ anon ]
+00007ffa8a693000       8       0       0 rw---   [ anon ]
+00007ffa8a693000       0       0       0 rw---   [ anon ]
+00007ffa8a695000       8       0       0 -----   [ anon ]
+00007ffa8a695000       0       0       0 -----   [ anon ]
+00007ffa8a697000    2052     264     264 rw---   [ anon ]
+00007ffa8a697000       0       0       0 rw---   [ anon ]
+00007ffa8a898000       4       4       0 r--s- GB
+00007ffa8a898000       0       0       0 r--s- GB
+00007ffa8a899000      12       4       4 rw-s-   [ anon ]
+00007ffa8a899000       0       0       0 rw-s-   [ anon ]
+00007ffa8a89c000       4       4       4 rw-s- zero (deleted)
+00007ffa8a89c000       0       0       0 rw-s- zero (deleted)
+00007ffa8a89d000       4       4       4 rw-s- zero (deleted)
+00007ffa8a89d000       0       0       0 rw-s- zero (deleted)
+00007ffa8a89e000      12      12      12 rw-s- zero (deleted)
+00007ffa8a89e000       0       0       0 rw-s- zero (deleted)
+00007ffa8a8a1000 2097152  203480  203224 rw-s- zero (deleted)
+00007ffa8a8a1000       0       0       0 rw-s- zero (deleted)
+00007ffb0a8a1000      12       4       4 rw---   [ anon ]
+00007ffb0a8a1000       0       0       0 rw---   [ anon ]
+00007ffef3507000     132      36      36 rw---   [ stack ]
+00007ffef3507000       0       0       0 rw---   [ stack ]
+00007ffef352e000      12       0       0 r----   [ anon ]
+00007ffef352e000       0       0       0 r----   [ anon ]
+00007ffef3531000       8       4       0 r-x--   [ anon ]
+00007ffef3531000       0       0       0 r-x--   [ anon ]
 ffffffffff600000       4       0       0 r-x--   [ anon ]
 ffffffffff600000       0       0       0 r-x--   [ anon ]
 ---------------- ------- ------- ------- 
-total kB         2103860  206092  203936
+total kB         2101460  205720  203740

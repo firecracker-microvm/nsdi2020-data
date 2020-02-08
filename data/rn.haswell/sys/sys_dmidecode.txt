@@ -36,7 +36,7 @@ System Information
 	Version:                       
 	Serial Number: YLTQ030733
 	UUID: 5862C37C-7D04-D543-8C27-B1591B5DBB46
-	Wake-up Type: Power Switch
+	Wake-up Type: AC Power Restored
 	SKU Number: S26361-Kxxx-Vyyy
 	Family:                 
 
