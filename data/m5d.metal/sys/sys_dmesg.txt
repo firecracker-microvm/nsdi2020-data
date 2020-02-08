@@ -2360,3 +2360,16 @@
 [   11.012361] Netfilter messages via NETLINK v0.30.
 [   11.013514] ctnetlink v0.93: registering with nfnetlink.
 [   11.334094] IPv6: ADDRCONF(NETDEV_UP): docker0: link is not ready
+[38139.479128] perf: interrupt took too long (2509 > 2500), lowering kernel.perf_event_max_sample_rate to 79500
+[61199.280402] perf: interrupt took too long (3146 > 3136), lowering kernel.perf_event_max_sample_rate to 63500
+[100264.849833] perf: interrupt took too long (3955 > 3932), lowering kernel.perf_event_max_sample_rate to 50500
+[157275.610475] SGI XFS with ACLs, security attributes, realtime, no debug enabled
+[165659.879857] perf: interrupt took too long (4952 > 4943), lowering kernel.perf_event_max_sample_rate to 40250
+[760921.738497] systemd: 77 output lines suppressed due to ratelimiting
+[760921.744891] systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+[760921.766129] systemd[1]: Detected architecture x86-64.
+[760922.541430] systemd[1]: Stopping Journal Service...
+[760922.541652] systemd-journald[869]: Received SIGTERM from PID 1 (systemd).
+[760922.576174] systemd[1]: Stopped Journal Service.
+[760922.579085] systemd[1]: Starting Journal Service...
+[760922.622036] systemd[1]: Started Journal Service.
