@@ -1,2 +1,0 @@
-QEMU emulator version 4.2.0 (v4.2.0-dirty)
-Copyright (c) 2003-2019 Fabrice Bellard and the QEMU Project developers

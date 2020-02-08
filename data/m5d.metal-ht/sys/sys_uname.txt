@@ -1,1 +1,0 @@
-Linux ip-10-0-0-129 4.15.0-1057-aws #59-Ubuntu SMP Wed Dec 4 10:02:00 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux

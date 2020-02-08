@@ -1,2 +1,0 @@
-  PID    VSZ   RSS COMMAND
-49822 4619576 314760 ../bin/cloud-hypervisor --cpus boot=1 --memory size=4096M --serial off --console null --disk path=../img/bench-ssh-disk.img --net tap=bench-tap-0,MAC=02:FC:00:00:00:00 --kernel ../img/bench-ssh-vmlinux --cmdline root=/dev/vda init=/init reboot=k tsc=reliable ipv6.disable=1 panic=-1 ro quiet ip=169.254.0.1::169.254.0.2:255.255.255.252::eth0:off
