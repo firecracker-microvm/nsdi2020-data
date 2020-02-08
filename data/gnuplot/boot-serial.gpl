@@ -5,7 +5,7 @@
 # where <dir> is the platform directory
 
 
-fc_dat =    sprintf("%s/boot-serial-fc-cdf.dat", base)
+fc_dat =    sprintf("%s/boot-serial-fc-api-cdf.dat", base)
 chv_dat =   sprintf("%s/boot-serial-chv-cdf.dat", base)
 qboot_dat = sprintf("%s/boot-serial-qboot-cdf.dat", base)
 

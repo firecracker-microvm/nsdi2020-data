@@ -7,7 +7,6 @@
 
 fc_dat =     sprintf("%s/mem-fc.dat", base)
 chv_dat =    sprintf("%s/mem-chv.dat", base)
-chv_bz_dat = sprintf("%s/mem-chv-bz.dat", base)
 qboot_dat =  sprintf("%s/mem-qemu.dat", base)
 
 out_file = sprintf("%s/mem-percent.pdf", base)
@@ -84,5 +83,4 @@ set grid ytics mytics xtics mxtics
 plot \
      fc_dat     using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'FC', \
      chv_dat    using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'CloudHV', \
-     chv_bz_dat using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'CloudHV (bzImage)', \
      qboot_dat  using ($1/1048576):(($8 - $4)/1024) w lp lw 2 t 'QEMU', \

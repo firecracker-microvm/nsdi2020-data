@@ -5,7 +5,7 @@
 # where <dir> is the platform directory
 
 
-fc_dat =        sprintf("%s/boot-parallel-10-fc-cdf.dat", base)
+fc_dat =        sprintf("%s/boot-parallel-10-fc-api-cdf.dat", base)
 chv_dat =       sprintf("%s/boot-parallel-10-chv-cdf.dat", base)
 qboot_dat =     sprintf("%s/boot-parallel-10-qemu-cdf.dat", base)
 
@@ -32,7 +32,7 @@ plot \
      chv_dat     index 0 using ($1/1000):2 w l lw 2 t 'CloudHV', \
      qboot_dat   index 0 using ($1/1000):2 w l lw 2 t 'QEMU', \
 
-fc_dat =        sprintf("%s/boot-parallel-50-fc-cdf.dat", base)
+fc_dat =        sprintf("%s/boot-parallel-50-fc-api-cdf.dat", base)
 chv_dat =       sprintf("%s/boot-parallel-50-chv-cdf.dat", base)
 qboot_dat =     sprintf("%s/boot-parallel-50-qemu-cdf.dat", base)
 
@@ -60,7 +60,7 @@ plot \
      qboot_dat   index 0 using ($1/1000):2 w l lw 2 t 'QEMU', \
 
 
-fc_dat =        sprintf("%s/boot-parallel-100-fc-cdf.dat", base)
+fc_dat =        sprintf("%s/boot-parallel-100-fc-api-cdf.dat", base)
 chv_dat =       sprintf("%s/boot-parallel-100-chv-cdf.dat", base)
 qboot_dat =     sprintf("%s/boot-parallel-100-qemu-cdf.dat", base)
 
