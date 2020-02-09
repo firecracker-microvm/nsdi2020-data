@@ -14,6 +14,7 @@ chv_dat =       sprintf("%s/boot-serial-chv-cdf.dat", base)
 chv_net_dat =   sprintf("%s/boot-serial-chv-net-cdf.dat", base)
 chv_bz_dat =    sprintf("%s/boot-serial-chv-bz-cdf.dat", base)
 qemu_dat =      sprintf("%s/boot-serial-qemu-cdf.dat", base)
+qemu_uvm_dat =  sprintf("%s/boot-serial-qemu-uvm-cdf.dat", base)
 qboot_dat =     sprintf("%s/boot-serial-qboot-cdf.dat", base)
 qboot_net_dat = sprintf("%s/boot-serial-qboot-net-cdf.dat", base)
 
@@ -45,6 +46,7 @@ plot \
      chv_net_dat     index 0 using ($1/1000):2 w l lw 2 t 'CloudHV+Network', \
      chv_bz_dat      index 0 using ($1/1000):2 w l lw 2 t 'CloudHV (bzImage)', \
      qemu_dat        index 0 using ($1/1000):2 w l lw 2 t 'QEMU', \
+     qemu_uvm_dat    index 0 using ($1/1000):2 w l lw 2 t 'QEMU microVM', \
      qboot_dat       index 0 using ($1/1000):2 w l lw 2 t 'QEMU qboot', \
      qboot_net_dat   index 0 using ($1/1000):2 w l lw 2 t 'QEMU qboot+Network', \
 
