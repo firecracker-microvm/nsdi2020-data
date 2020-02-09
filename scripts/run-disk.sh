@@ -41,7 +41,7 @@ run_firecracker() {
     ./util_start_fc.sh -b ../bin/firecracker \
         -k ../img/bench-ssh-vmlinux -r ../img/bench-ssh-disk.img \
         -c $CORES -m $MEM -i $ID \
-        -n -f $FILE &
+        -s -n -f $FILE &
 
     # 10 seconds should be enough
     sleep 10
