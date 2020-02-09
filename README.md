@@ -1,7 +1,6 @@
 # Firecracker benchmarking code
 
-This repository contains scripts and data from Firecracker benchmarks. It is designed to be largely reproducible.
-
+This repository contains all the scripts, source code, and data used for our NSDI 2020 paper on "Firecracker: Lightweight Virtualization for Serverless Applications".
 
 
 ## Build the pre-requisites
@@ -39,3 +38,14 @@ sudo apt install -y \
     hwloc-nox
     numactl \
 ```
+
+## Running the tests
+
+There are a bunch of scripts in `./scripts`. They assume you are in the `./scripts` directory when you run them.
+
+```
+cd ./scripts
+./run-all.sh ../data/test
+```
+
+configures the host system and runs most of the tests. Test results are stored in the directory provided.
