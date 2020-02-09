@@ -52,7 +52,7 @@ if [ "x$ROOTFS" != "x" ]; then
     ROOT="root=/dev/vda"
 fi
 if [ "x$DISK" != "x" ]; then    
-    CLOUDHV="$CLOUDHV $DISK "
+    CLOUDHV="$CLOUDHV path=$DISK "
 fi
 
 if [ "x$NET" != "x" ]; then
