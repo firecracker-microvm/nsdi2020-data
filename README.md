@@ -31,8 +31,8 @@ This assumes you are running on a Ubuntu system.
 Install some host side utilities
 
 ```
-sudo apt update
-sudo apt install -y \
+sudo apt-get update
+sudo apt-get install -y --no-install-recommends \
     iperf3 \
     jq \
     hwloc-nox

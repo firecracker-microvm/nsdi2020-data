@@ -1,7 +1,9 @@
 FROM ubuntu:18.04
 
-RUN apt update && \
-    apt install -y \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        apt-utils \
+        ca-certificates \
         build-essential \
         git \
         libtool \
@@ -76,7 +78,7 @@ RUN ./configure \
 
 RUN make -j "$(getconf _NPROCESSORS_ONLN)"
 
-RUN apt install -y seabios
+RUN apt-get install -y --no-install-recommends seabios
 
 RUN mkdir -p /res/bios && \
     cp x86_64-softmmu/qemu-system-x86_64 /res && \
